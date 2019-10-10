@@ -1,0 +1,8 @@
+Removed Member From Class: ClassName=LowerMachine Member=P3
+Added Component: Designator=P2(SH1.0-4P)
+Added Pin To Net: NetName=CAN_P Pin=P2-2
+Added Pin To Net: NetName=CAN_P Pin=P2-2
+Added Pin To Net: NetName=CAN_N Pin=P2-3
+Added Pin To Net: NetName=VCC Pin=P2-4
+Added Member To Class: ClassName=LowerMachine Member=Component P2 SH1.0-4P
+Added Room: Name=LowerMachine

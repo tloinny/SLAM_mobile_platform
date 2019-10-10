@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=R1 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R2 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R6 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R7 Old Footprint=Res-0603-M New Footprint=Res-0603
+Added Room: Name=LowerMachine

@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=RXD Pin=U4-2
+Added Component: Designator=D7(SOD-323)
+Added Pin To Net: NetName=NetD7_K Pin=U4-2
+Added Net: Name=NetD7_K
+Added Member To Class: ClassName=UperMachine Member=Component D7 DIODE

@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=C1 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C2 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C3 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C4 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Added Room: Name=LowerMachine

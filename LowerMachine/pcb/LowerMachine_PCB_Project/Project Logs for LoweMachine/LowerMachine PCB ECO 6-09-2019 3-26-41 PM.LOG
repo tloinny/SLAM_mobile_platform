@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=M+ Pin=J3-1
+Removed Pin From Net: NetName=M- Pin=J3-2
+Removed Pin From Net: NetName=GND Pin=U4-9
+Added Pin To Net: NetName=M- Pin=J3-1
+Added Pin To Net: NetName=M+ Pin=J3-2
+Added Room: Name=LowerMachine

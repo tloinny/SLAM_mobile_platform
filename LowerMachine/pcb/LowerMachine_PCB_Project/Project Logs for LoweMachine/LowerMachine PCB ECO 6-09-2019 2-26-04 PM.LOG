@@ -1,0 +1,7 @@
+Change Component DesignItemId : Designator=D1 Old DesignItemId=LED New DesignItemId=LED_SMD_BLUE
+Change Component DesignItemId : Designator=D2 Old DesignItemId=LED New DesignItemId=LED_SMD_WHITE
+Change Component Footprint: Designator=D1 Old Footprint=0805LED New Footprint=LED_0603_B
+Change Component Footprint: Designator=D2 Old Footprint=0805LED New Footprint=LED_0603_W
+Change Component Comment : Designator=D1 Old Comment=LED New Comment=LED_SMD_BLUE
+Change Component Comment : Designator=D2 Old Comment=LED_BULE New Comment=LED_SMD_WHITE
+Added Room: Name=LowerMachine

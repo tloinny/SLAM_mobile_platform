@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=CAN_P Pin=P2-4
+Removed Pin From Net: NetName=CAN_N Pin=P2-5
+Added Pin To Net: NetName=CAN_N Pin=P2-4
+Added Pin To Net: NetName=CAN_P Pin=P2-5
+Added Room: Name=LowerMachine

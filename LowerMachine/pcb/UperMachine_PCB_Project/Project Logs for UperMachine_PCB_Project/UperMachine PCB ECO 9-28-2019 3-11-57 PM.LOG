@@ -1,0 +1,14 @@
+Removed Pin From Net: NetName=PA10 Pin=U4-2
+Removed Pin From Net: NetName=PA9 Pin=U4-3
+Change Component Comment : Designator=C19 Old Comment=104 New Comment=10uf
+Added Component: Designator=D7(SOD-323)
+Added Component: Designator=R20(Res-0603)
+Added Pin To Net: NetName=PA9 Pin=R20-1
+Added Pin To Net: NetName=NetD7_K Pin=U4-2
+Added Net: Name=NetD7_K
+Added Pin To Net: NetName=NetR20_2 Pin=R20-2
+Added Pin To Net: NetName=NetR20_2 Pin=U4-3
+Added Net: Name=NetR20_2
+Added Member To Class: ClassName=UperMachine Member=Component D7 1N4148WS 
+Added Member To Class: ClassName=UperMachine Member=Component R20 470R
+Added Room: Name=UperMachine

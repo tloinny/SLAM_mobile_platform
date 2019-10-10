@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=GND Pin=S1-1
+Removed Pin From Net: NetName=NRST Pin=S1-2
+Removed Member From Class: ClassName=LowerMachine Member=S1
+Added Component: Designator=K1(SW-SMD-3X6X2.5)
+Added Pin To Net: NetName=GND Pin=K1-1
+Added Pin To Net: NetName=NRST Pin=K1-3
+Added Member To Class: ClassName=LowerMachine Member=Component K1 KEY
+Added Room: Name=LowerMachine

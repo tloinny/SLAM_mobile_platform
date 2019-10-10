@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=24V Pin=DC1-1
+Removed Pin From Net: NetName=GND Pin=DC1-2
+Removed Pin From Net: NetName=GND Pin=DC1-3
+Removed Member From Class: ClassName=UperMachine Member=DC1
+Added Component: Designator=J1(KF301-5.0-2P)
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=24V Pin=J1-2
+Added Member To Class: ClassName=UperMachine Member=Component J1 KF301-2P
+Added Room: Name=UperMachine

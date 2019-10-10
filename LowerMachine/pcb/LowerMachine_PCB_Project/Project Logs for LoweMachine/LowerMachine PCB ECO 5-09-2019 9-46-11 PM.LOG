@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=P* NewDesignator=P2
+Added Member To Class: ClassName=LowerMachine Member=Component P2 SH1.0-4P
+Added Room: Name=LowerMachine

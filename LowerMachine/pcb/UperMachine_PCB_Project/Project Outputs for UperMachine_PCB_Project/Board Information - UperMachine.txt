@@ -1,0 +1,180 @@
+Board Information Report
+Filename     : I:\WorkSpace\git±¾µØ²Ö¿â\SLAM_mobile_platform\LowerMachine\pcb\UperMachine_PCB_Project\UperMachine.PcbDoc
+Date         : 10/10/2019
+Time         : 5:37:45 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 2283.465milsx2283.465mils
+    Components on board, 62
+count : 2
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 149
+    Connections routed, 149
+    Connections remaining, 0
+count : 4
+
+Layer, Arcs, Pads, Vias, Tracks, Texts, Fills, Regions, ComponentBodies
+    Top Layer, 0, 248, 0, 517, 0, 0, 0, 0
+    Bottom Layer, 0, 0, 0, 234, 0, 0, 0, 0
+    Mechanical 1, 0, 0, 0, 0, 0, 0, 0, 53
+    Mechanical 13, 4, 0, 0, 58, 0, 0, 0, 9
+    Mechanical 15, 0, 0, 0, 44, 0, 0, 0, 0
+    Multi-Layer, 0, 8, 87, 0, 0, 0, 5, 0
+    Top Paste, 0, 0, 0, 0, 0, 0, 0, 0
+    Top Overlay, 38, 0, 0, 359, 155, 13, 0, 0
+    Top Solder, 0, 0, 0, 0, 0, 0, 0, 0
+    Bottom Solder, 0, 0, 0, 0, 0, 0, 0, 0
+    Bottom Overlay, 0, 0, 0, 0, 0, 0, 0, 0
+    Bottom Paste, 0, 0, 0, 0, 0, 0, 0, 0
+    Drill Guide, 0, 0, 0, 0, 0, 0, 0, 0
+    Keep-Out Layer, 8, 0, 0, 4, 0, 0, 0, 0
+    Drill Drawing, 0, 0, 0, 0, 0, 0, 0, 0
+count : 15
+
+Drill Pairs, Vias
+    Top Layer - Bottom Layer, 87
+count : 1
+
+Non-Plated Hole Size, Pads, Vias
+    0mils, 2, 0
+count : 1
+
+Plated Hole Size, Pads, Vias
+    0mils, 246, 0
+    7.874mils, 0, 4
+    12mils, 0, 83
+    23.622mils, 2, 0
+    31.496mils, 2, 0
+    47.244mils, 2, 0
+count : 6
+
+Non-Plated Slot Size / Length, Pads
+count : 0
+
+Plated Slot Size / Length, Pads
+    19.685mil / 35.433mil, 2
+count : 1
+
+Non-Plated Square Hole Size, Pads
+count : 0
+
+Plated Square Hole Size, Pads
+count : 0
+
+Top Layer Annular Ring Size, Count
+    0mils, 2
+    7.874mils, 4
+    11.811mils, 4
+    12mils, 83
+    43.307mils, 2
+count : 5
+
+Mid Layer Annular Ring Size, Count
+    0mils, 2
+    7.874mils, 4
+    11.811mils, 4
+    12mils, 83
+    43.307mils, 2
+count : 5
+
+Bottom Layer Annular Ring Size, Count
+    0mils, 2
+    7.874mils, 4
+    11.811mils, 4
+    12mils, 83
+    43.307mils, 2
+count : 5
+
+Pad Solder Mask, Count
+    4mils, 256
+count : 1
+
+Pad Paste Mask, Count
+    0mils, 256
+count : 1
+
+Pad Pwr/Gnd Expansion, Count
+    20mils, 256
+count : 1
+
+Pad Relief Conductor Width, Count
+    10mils, 256
+count : 1
+
+Pad Relief Air Gap, Count
+    10mils, 256
+count : 1
+
+Pad Relief Entries, Count
+    4, 256
+count : 1
+
+Via Solder Mask, Count
+    4mils, 87
+count : 1
+
+Via Pwr/Gnd Expansion, Count
+    20mils, 87
+count : 1
+
+Track Width, Count
+    0.5mils, 4
+    1.969mils, 21
+    3.937mils, 88
+    5.906mils, 122
+    6mils, 55
+    7.874mils, 80
+    8mils, 6
+    10mils, 664
+    15mils, 55
+    20mils, 106
+    30mils, 6
+    70mils, 9
+count : 12
+
+Arc Line Width, Count
+    0.5mils, 8
+    3.937mils, 4
+    7.874mils, 30
+    9.843mils, 5
+    23.622mils, 3
+count : 5
+
+Arc Radius, Count
+    4.921mils, 5
+    11.811mils, 3
+    19.685mils, 4
+    59.055mils, 4
+    70mils, 30
+    137.795mils, 4
+count : 6
+
+Arc Degrees, Count
+    48, 30
+    90, 4
+    360, 16
+count : 3
+
+Text Height, Count
+    20mils, 13
+    30mils, 134
+    50mils, 2
+    60mils, 6
+count : 4
+
+Text Width, Count
+    5mils, 147
+    10mils, 8
+count : 2
+
+Net Track Width, Count
+    6mils, 63
+    10mils, 8
+count : 2
+
+Net Via Size, Count
+    24mils, 71
+count : 1

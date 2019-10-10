@@ -1,0 +1,5 @@
+Change Net Name : Old Net Name=USB+ New Net Name=USB_P
+Change Net Name : Old Net Name=USB- New Net Name=USB_N
+Added Differential Pair: Name=USB
+Added Member To Class: ClassName=UperMachine Member=Component D3 LED_SMD_WHITE
+Added Room: Name=UperMachine

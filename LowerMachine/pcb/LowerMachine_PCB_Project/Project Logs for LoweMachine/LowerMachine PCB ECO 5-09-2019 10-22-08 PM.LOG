@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=NetD3_A Pin=J2-1
+Removed Pin From Net: NetName=GND Pin=J2-2
+Removed Pin From Net: NetName=GND Pin=P2-1
+Removed Pin From Net: NetName=CAN_P Pin=P2-2
+Removed Pin From Net: NetName=CAN_N Pin=P2-3
+Removed Pin From Net: NetName=VCC Pin=P2-4
+Removed Pin From Net: NetName=3.3V Pin=P7-1
+Removed Pin From Net: NetName=GND Pin=P7-3
+Removed Pin From Net: NetName=GND Pin=P7-4
+Removed Pin From Net: NetName=3.3V Pin=P7-6
+Removed Member From Class: ClassName=LowerMachine Member=J2
+Removed Member From Class: ClassName=LowerMachine Member=P7
+Change Component DesignItemId : Designator=P2 Old DesignItemId=SH1.0-4P New DesignItemId=PH2.0-6P
+Change Component Footprint: Designator=P2 Old Footprint=SH1.0-4P New Footprint=PH2.0S-6P
+Change Component Comment : Designator=P2 Old Comment=SH1.0-4P New Comment=PH2.0-6P
+Added Pin To Net: NetName=NetD3_A Pin=P2-1
+Added Pin To Net: NetName=GND Pin=P2-2
+Added Pin To Net: NetName=GND Pin=P2-3
+Added Pin To Net: NetName=CAN_P Pin=P2-4
+Added Pin To Net: NetName=CAN_N Pin=P2-5
+Added Pin To Net: NetName=VCC Pin=P2-6
+Added Pin To Net: NetName=GND Pin=R6-2
+Added Pin To Net: NetName=GND Pin=R7-1
+Added Room: Name=LowerMachine

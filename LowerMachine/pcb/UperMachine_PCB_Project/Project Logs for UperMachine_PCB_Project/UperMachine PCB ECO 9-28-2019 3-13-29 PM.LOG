@@ -1,0 +1,3 @@
+Change Net Name : Old Net Name=PA9 New Net Name=TXD
+Added Pin To Net: NetName=RXD Pin=U1-31
+Added Net: Name=RXD

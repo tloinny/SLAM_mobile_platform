@@ -1,0 +1,15 @@
+Change Component Designator: OldDesignator=M1 NewDesignator=D5
+Change Component Designator: OldDesignator=M2 NewDesignator=D4
+Change Component Designator: OldDesignator=M3 NewDesignator=D3
+Change Component Designator: OldDesignator=M4 NewDesignator=D2
+Added Component: Designator=D8(LED_0603_B)
+Added Component: Designator=R21(Res-0603)
+Added Pin To Net: NetName=GND Pin=D8-2
+Added Pin To Net: NetName=PB11 Pin=R21-1
+Added Pin To Net: NetName=NetD8_1 Pin=D8-1
+Added Pin To Net: NetName=NetD8_1 Pin=R21-2
+Added Net: Name=NetD8_1
+Added Member To Class: ClassName=UperMachine Member=Component D2 LED_SMD_WHITE
+Added Member To Class: ClassName=UperMachine Member=Component D8 LED_SMD_BLUE
+Added Member To Class: ClassName=UperMachine Member=Component R21 470
+Added Room: Name=UperMachine

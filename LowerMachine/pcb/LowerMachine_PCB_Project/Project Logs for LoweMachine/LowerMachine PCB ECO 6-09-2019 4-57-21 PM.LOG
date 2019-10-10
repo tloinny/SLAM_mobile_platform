@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=GND Pin=U4-9
+Change Component Footprint: Designator=C12 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C13 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C15 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C16 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=C17 Old Footprint=Cap-0603-M New Footprint=Cap-0603
+Change Component Footprint: Designator=R3 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R4 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R8 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R9 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R11 Old Footprint=Res-0603-M New Footprint=Res-0603
+Change Component Footprint: Designator=R12 Old Footprint=Res-0603-M New Footprint=Res-0603
+Added Room: Name=LowerMachine

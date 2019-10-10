@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=TXD Pin=R20-2
+Removed Pin From Net: NetName=TXD Pin=U4-3
+Removed Member From Class: ClassName=UperMachine Member=D7
+Added Pin To Net: NetName=TXD Pin=R20-1
+Added Pin To Net: NetName=NetR20_2 Pin=R20-2
+Added Pin To Net: NetName=NetR20_2 Pin=U4-3
+Added Net: Name=NetR20_2

@@ -1,0 +1,8 @@
+Change Component Designator: OldDesignator=D1 NewDesignator=PWR
+Change Net Name : Old Net Name=NetD1_1 New Net Name=NetPWR_1
+Change Net Name : Old Net Name=NetD2_1 New Net Name=NetM4_1
+Change Net Name : Old Net Name=NetD3_1 New Net Name=NetM3_1
+Change Net Name : Old Net Name=NetD4_1 New Net Name=NetM2_1
+Change Net Name : Old Net Name=NetD5_1 New Net Name=NetM1_1
+Change Net Name : Old Net Name=NetD8_1 New Net Name=NetR21_2
+Added Room: Name=UperMachine

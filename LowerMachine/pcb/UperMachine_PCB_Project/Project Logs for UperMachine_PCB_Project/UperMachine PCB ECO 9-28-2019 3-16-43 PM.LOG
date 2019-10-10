@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=TXD Pin=R20-1
+Added Pin To Net: NetName=TXD Pin=R20-2
+Added Pin To Net: NetName=RXD Pin=U4-2
+Added Pin To Net: NetName=TXD Pin=U4-3
+Added Room: Name=UperMachine

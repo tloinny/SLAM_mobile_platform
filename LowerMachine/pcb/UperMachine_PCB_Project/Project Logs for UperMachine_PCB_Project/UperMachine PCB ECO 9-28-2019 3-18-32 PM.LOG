@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=D7 Old Footprint=SOD-323 New Footprint=SOD-523
+Added Pin To Net: NetName=RXD Pin=D7-A
+Added Pin To Net: NetName=NetD7_K Pin=D7-K
+Added Member To Class: ClassName=UperMachine Member=Component D7 DIODE
