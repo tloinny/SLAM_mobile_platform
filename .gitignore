@@ -1,0 +1,5 @@
+\LowerMachine\pcb\
+\LowerMachine\model\
+\LowerMachine\stm32\*\Objects\
+\LowerMachine\stm32\*\Listings\
+\LowerMachine\stm32\*\DebugConfig\
