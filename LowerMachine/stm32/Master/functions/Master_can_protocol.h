@@ -36,15 +36,23 @@
 
 #define DelayForRespond delay_ms(6);
 
+typedef union Buf
+{
+	u8 s[can_buf_size];
+	float f;
+}Buf;
+
+extern Buf SendBuf;
+
 /*
  *统一声明变量
  */
-extern u8 can_send_buf[];
+//extern u8 can_send_buf[];
 extern u8 can_rec_buf[];
 extern u8 slave_num;
 extern u8 slave_buf_available;
 
-u8 CAN_send_motion_info(float rad, float speed, u32 ID);
+u8 CAN_send_motion_info(u8 dir, float speed, u32 ID);
 u8 CAN_send_cmd(u8 cmd, u32 ID);
 u8 CAN_distribute(u8 * buf, u8 len);
 void CAN_Call(void);
