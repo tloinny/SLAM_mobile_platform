@@ -54,7 +54,7 @@ extern u8 slave_buf_available;
 
 u8 CAN_send_motion_info(u8 dir, float speed, u32 ID);
 u8 CAN_send_cmd(u8 cmd, u32 ID);
-u8 CAN_distribute(u8 * buf, u8 len);
+u8 CAN_distribute(void);
 void CAN_Call(void);
 void clean_can_send_buf(void);
 void clean_can_rec_buf(void);

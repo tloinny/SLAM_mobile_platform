@@ -1,5 +1,7 @@
 #include "USART_Communication.h"
 
+UsartBuf usart_buf[3];
+
 int Status = FREE;
 
 void Match_CMD(u8* buf)
@@ -34,8 +36,22 @@ u8 CheckRecBuf()
 	return result;
 }
 
-void ConvertRecInfo2Vector(u8* Rec, car_speed* c_s)
+void ConvertRecInfo2Vector(car_speed* c_s)
 {
+	for(int i=0;i<3;++i)	/* 上位机一共会发送3组速度信息，分别对应Vx,Vy,W */
+	{
+		while(CheckRecBuf())
+		{
+			if(i>=3) break;
+			for(int n=0;n<DEBUG_Receive_length;++i)
+			{
+				usart_buf[i].s[n] = DEBUG_Rx_Buff[n];
+			}
+		}
+	}
+	c_s->Vx = usart_buf[0].f;
+	c_s->Vy = usart_buf[1].f;
+	c_s->W = usart_buf[2].f;
 }
 
 void Commuincate()
@@ -48,6 +64,8 @@ void Commuincate()
 			switch(Status)
 			{
 				case RecSpeed:
+					SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));	/* 通知上位机已经可以开始发送速度信息 */
+					ConvertRecInfo2Vector(&C_S);
 				break;
 				case SpeedFeedback:
 				break;

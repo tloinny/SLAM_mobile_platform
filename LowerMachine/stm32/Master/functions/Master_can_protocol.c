@@ -66,24 +66,9 @@ u8 CAN_send_cmd(u8 cmd, u32 ID)
  *				0----成功
  *				其他----失败
  */
-u8 CAN_distribute(u8 * buf, u8 len)
+u8 CAN_distribute()
 {
-	int i = 1;
 	u8 result=0;
-	for(;i<len-2;i+=3)	/* 以增量为3遍历buf */
-	{
-		*can_send_buf=*(buf+i);
-		*(can_send_buf+1)=*(buf+i+1);
-		*(can_send_buf+3)=0;
-		*(can_send_buf+4)=*(buf+i+2);	/* 根据buf配置can_send_buf的必要位 */
-		if(slave[(i-1)/3] != 0)	/* 如果节点存在，则分发数据 */
-		{
-			result += Can_Send_Msg(can_send_buf, can_buf_size, slave[(i-1)/3]);	/* 分发数据 */
-			DEBUG_USART_DMA_Tx_Start(can_send_buf, can_buf_size);	/* 给上位机反馈 */
-		}
-		DelayForRespond
-		clean_can_send_buf();
-	}
 	return result;
 }
 
