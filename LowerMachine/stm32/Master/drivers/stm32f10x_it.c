@@ -23,6 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "timer.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -124,6 +125,4 @@ void DebugMon_Handler(void)
 /**
   * @}
   */ 
-
-
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

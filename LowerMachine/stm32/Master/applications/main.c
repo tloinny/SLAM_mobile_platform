@@ -8,21 +8,21 @@
  * 
  *@description: Mecanum Mobile Platform application
  */
- 
-#include "sys_conf.h"
+#include "delay.h"
+#include "usart.h"
+#include "led.h"
+#include "can_protocol.h"
+#include "inverse_solution.h"
 
 int main(void)
 {
 	delay_init();
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	LED_Init();
-	uart2_init(115200);
-	motor_init();
+	DEBUG_USARTx_DMA_Config();
+	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 	LED0 = 1;
-	
-	C_S.Vx = 50;
-	C_S.Vy = 500;
-	C_S.W = 5;
-	speed_inverse_solution();
+	delay_ms(1000);
+	CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
 }
 

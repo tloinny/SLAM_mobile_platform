@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>STM32F103C8</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
+          <PackID>Keil.STM32F1xx_DFP.1.1.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
           <Cpu>IRAM(0x20000000,0x5000) IROM(0x08000000,0x10000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -391,19 +391,14 @@
           <GroupName>function</GroupName>
           <Files>
             <File>
-              <FileName>motor_operate.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\functions\motor_operate.c</FilePath>
-            </File>
-            <File>
               <FileName>inverse_solution.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\functions\inverse_solution.c</FilePath>
             </File>
             <File>
-              <FileName>pid.c</FileName>
+              <FileName>can_protocol.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\functions\pid.c</FilePath>
+              <FilePath>.\functions\can_protocol.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -431,29 +426,29 @@
               <FilePath>.\drivers\sys.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\drivers\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\drivers\timer.c</FilePath>
             </File>
             <File>
-              <FileName>motor_gpio.c</FileName>
+              <FileName>can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drivers\motor_gpio.c</FilePath>
+              <FilePath>.\drivers\can.c</FilePath>
             </File>
             <File>
-              <FileName>encoder.c</FileName>
+              <FileName>dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drivers\encoder.c</FilePath>
+              <FilePath>.\drivers\dma.c</FilePath>
             </File>
             <File>
-              <FileName>exit.c</FileName>
+              <FileName>dma_usart1_debug.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\drivers\exit.c</FilePath>
+              <FilePath>.\drivers\dma_usart1_debug.c</FilePath>
+            </File>
+            <File>
+              <FileName>SoftwareIIC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drivers\SoftwareIIC.c</FilePath>
             </File>
           </Files>
         </Group>

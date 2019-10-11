@@ -1,5 +1,5 @@
 Dependencies for Project 'DCMotorNode', Target 'Target 1': (DO NOT MODIFY !)
-F (.\applications\main.c)(0x5D8CAE24)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\applications\main.c)(0x5D8D98CC)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\drivers\delay.h)(0x5CE6B6B4)
 I (.\drivers\sys.h)(0x5CE6B6B4)
 I (.\drivers\stm32f10x.h)(0x5CE6B6B4)
@@ -272,7 +272,7 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5CE6B6B4)
 I (drivers\delay.h)(0x5CE6B6B4)
-F (.\drivers\stm32f10x_it.c)(0x5D8CAB7C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
+F (.\drivers\stm32f10x_it.c)(0x5D9FEF0C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\stm32f10x_it.o --omf_browse .\objects\stm32f10x_it.crf --depend .\objects\stm32f10x_it.d)
 I (drivers\stm32f10x_it.h)(0x5CE6B6B4)
 I (drivers\stm32f10x.h)(0x5CE6B6B4)
 I (.\Libraries\CORE\core_cm3.h)(0x5CE6B6B4)
@@ -379,7 +379,7 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5CE6B6B4)
 I (drivers\delay.h)(0x5CE6B6B4)
 I (drivers\usart.h)(0x5CE6B6B4)
 I (E:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-F (.\drivers\timer.c)(0x5D8D970A)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
+F (.\drivers\timer.c)(0x5D9FEE6F)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\timer.o --omf_browse .\objects\timer.crf --depend .\objects\timer.d)
 I (drivers\timer.h)(0x5D8D94D9)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x5CE6B6B4)
 I (.\drivers\stm32f10x.h)(0x5CE6B6B4)

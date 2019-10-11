@@ -1,9 +1,7 @@
 #ifndef __TIMER_H
 #define __TIMER_H
-#include "sys_conf.h"
+#include "stm32f10x_tim.h"
 
-void TIM3_Init(u16 arr,u16 psc);
-void TIM3_IRQHandler(void);
-void TIM4_PWM_Init(u16 arr,u16 psc);
-
+void TIM2_Init(float UnitTime_ms);
+void TIM2_IRQHandler(void);
 #endif

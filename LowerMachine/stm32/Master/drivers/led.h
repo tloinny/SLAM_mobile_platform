@@ -2,7 +2,7 @@
 #define _LED_H_	 
 #include "sys.h"
 
-#define LED0 PBout(10)// PB10
+#define LED0 PBout(15)// PB15
 
 void LED_Init(void);//≥ı ºªØ
 

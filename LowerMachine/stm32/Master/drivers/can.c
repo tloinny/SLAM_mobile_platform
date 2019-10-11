@@ -9,7 +9,7 @@
  *@description: CANµ◊≤„≈‰÷√
  */
  
-#include "sys_conf.h"
+#include "can.h"
 
 /**
  *@function CAN≥ı ºªØ

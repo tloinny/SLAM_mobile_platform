@@ -10,7 +10,18 @@
  */
 #ifndef _INVERSE_SOLUTION_H_
 #define _INVERSE_SOLUTION_H_
-#include "sys_conf.h"
+
+#define lenghtDistance 0.0824
+#define widthDistance 0.0665 /* unit meter */
+
+typedef struct
+{
+	float Vx;
+	float Vy;
+	float W;
+}car_speed;
+
+extern car_speed C_S;
 
 void speed_inverse_solution(void);
 

@@ -163,18 +163,12 @@ void TIM2_IRQHandler(void)
 		{
 			currentAngle = getRawDegrees();
 			preAngle = currentAngle;
-			
-			//TIM_Cmd(TIM1, DISABLE);
 			TIM1->CNT = 0;
-			//TIM_Cmd(TIM1, ENABLE);
 		}else
 		{
 			currentAngle = getRawDegrees();
-			
-			//TIM_Cmd(TIM1, DISABLE);
 			current_time = TIM1->CNT;
 			TIM1->CNT = 0;
-			//TIM_Cmd(TIM1, ENABLE);
 			sample_time = current_time/1000.0;
 			AngleDelta = currentAngle - preAngle;
 				if(AngleDelta >= 0)

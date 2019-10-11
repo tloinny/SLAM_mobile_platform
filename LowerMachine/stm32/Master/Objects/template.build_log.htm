@@ -9,7 +9,7 @@ License Information: l tloinny, l, LIC=----
  
 Tool Versions:
 Toolchain:       MDK-Lite  Version: 5.24.1
-Toolchain Path:  D:\MDK\ARM\ARMCC\Bin
+Toolchain Path:  E:\Keil5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 5 (build 528)
 Assembler:       Armasm.exe V5.06 update 5 (build 528)
 Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
@@ -17,53 +17,35 @@ Library Manager: ArmAr.exe V5.06 update 5 (build 528)
 Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
 CPU DLL:         SARMCM3.DLL V5.24.1
 Dialog DLL:      DARMSTM.dll V1.68.0.0
-Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Target DLL:      UL2CM3.DLL V1.160.3.0
 Dialog DLL:      TARMSTM.DLL V1.66.0.0
  
 <h2>Project:</h2>
-D:\Workspace\STM32-for-Mecanum-Mobile-Platform-master\template.uvprojx
-Project File Date:  09/03/2019
+I:\WorkSpace\git±¾µØ²Ö¿â\SLAM_mobile_platform\LowerMachine\stm32\Master\Master.uvprojx
+Project File Date:  10/11/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\MDK\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'E:\Keil5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling motor_operate.c...
-functions\motor_operate.c(35): error:  #20: identifier "W_S" is undefined
-  	if(W_S.Vw0 > 0)
-functions\motor_operate.c(43): error:  #20: identifier "W_S" is undefined
-  	if(W_S.Vw1  > 0)
-functions\motor_operate.c(51): error:  #20: identifier "W_S" is undefined
-  	if(W_S.Vw2 > 0)
-functions\motor_operate.c(59): error:  #20: identifier "W_S" is undefined
-  	if(W_S.Vw3 > 0)
-functions\motor_operate.c: 0 warnings, 4 errors
-compiling inverse_solution.c...
-compiling main.c...
-compiling pid.c...
-functions\pid.c(27): warning:  #223-D: function "PID_TIM2_Init" declared implicitly
-  	PID_TIM2_Init(s_t);
-functions\pid.c: 1 warning, 0 errors
-compiling led.c...
-compiling timer.c...
-compiling encoder.c...
-compiling exit.c...
-compiling motor_gpio.c...
-".\Objects\template.axf" - 4 Error(s), 1 Warning(s).
+compiling can_protocol.c...
+linking...
+Program Size: Code=4456 RO-data=268 RW-data=104 ZI-data=1128  
+FromELF: creating hex file...
+".\Objects\template.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
-                Keil.STM32F1xx_DFP.2.3.0
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.1.1.0.pack
+                Keil.STM32F1xx_DFP.1.1.0
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Target_1
-  D:\MDK\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  E:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

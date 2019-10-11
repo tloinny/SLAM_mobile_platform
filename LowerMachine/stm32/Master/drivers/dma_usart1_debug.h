@@ -4,7 +4,6 @@
 #include "stm32f10x.h"
 #include <stdio.h>
 
-
 // 串口工作参数宏定义
 #define  DEBUG_USARTx                   USART1
 #define  DEBUG_USART_CLK                RCC_APB2Periph_USART1
@@ -47,6 +46,10 @@
 // 中断接收开关
 #define  DEBUG_RX_Start									USART_DMACmd(DEBUG_USARTx, USART_DMAReq_Rx, ENABLE)
 #define  DEBUG_RX_Stop									USART_DMACmd(DEBUG_USARTx, USART_DMAReq_Rx, DISABLE)
+
+extern u8 DEBUG_Tx_Buff[DEBUG_TX_BUFF_SIZE];
+extern u8 DEBUG_Rx_Buff[DEBUG_RX_BUFF_SIZE];
+extern __IO u8 DEBUG_Receive_length;
 
 void DEBUG_USARTx_DMA_Config(void);
 void DEBUG_USART_DMA_Tx_Start(u8* DEBUG_Tx_Array, u8 Length);

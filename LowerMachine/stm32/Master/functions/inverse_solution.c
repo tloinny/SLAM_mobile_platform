@@ -15,8 +15,8 @@ car_speed C_S;
 
 void speed_inverse_solution()
 {
-	wheel_speed[0] = C_S.Vx - C_S.Vy - C_S.W *(a+b);
-	wheel_speed[1] = C_S.Vx + C_S.Vy + C_S.W *(a+b);
-	wheel_speed[2] = C_S.Vx - C_S.Vy + C_S.W *(a+b);
-	wheel_speed[3] = C_S.Vx + C_S.Vy - C_S.W *(a+b);
+	wheel_speed[0] = C_S.Vx - C_S.Vy - C_S.W *(lenghtDistance+widthDistance);
+	wheel_speed[1] = C_S.Vx + C_S.Vy + C_S.W *(lenghtDistance+widthDistance);
+	wheel_speed[2] = C_S.Vx - C_S.Vy + C_S.W *(lenghtDistance+widthDistance);
+	wheel_speed[3] = C_S.Vx + C_S.Vy - C_S.W *(lenghtDistance+widthDistance);
 }

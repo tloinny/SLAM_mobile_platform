@@ -126,14 +126,4 @@ void DebugMon_Handler(void)
   * @}
   */ 
 
-/**
-  * @brief  This function handles SysTick Handler.
-  * @param  None
-  * @retval None
-  */
-void SysTick_Handler(void)
-{
-  ++sample_time;
-}
-
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

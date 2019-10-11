@@ -2,7 +2,7 @@
 .\objects\usart.o: drivers\sys.h
 .\objects\usart.o: .\drivers\stm32f10x.h
 .\objects\usart.o: .\Libraries\CORE\core_cm3.h
-.\objects\usart.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usart.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\system_stm32f10x.h
 .\objects\usart.o: .\drivers\stm32f10x_conf.h
 .\objects\usart.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -32,4 +32,4 @@
 .\objects\usart.o: drivers\delay.h
 .\objects\usart.o: drivers\sys.h
 .\objects\usart.o: drivers\usart.h
-.\objects\usart.o: D:\MDK\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
