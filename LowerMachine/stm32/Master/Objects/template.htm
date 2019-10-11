@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Oct 11 11:20:35 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Oct 11 14:24:14 2019
 <BR><P>
 <H3>Maximum Stack Usage =        164 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -263,7 +263,7 @@ Global Symbols
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[3b]"></a>CAN_Call</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, can_protocol.o(i.CAN_Call))
+<P><STRONG><a name="[3b]"></a>CAN_Call</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, master_can_protocol.o(i.CAN_Call))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = CAN_Call &rArr; CAN_send_cmd &rArr; Can_Send_Msg &rArr; CAN_TransmitStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Receive_Msg
@@ -319,7 +319,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
 </UL>
 
-<P><STRONG><a name="[3c]"></a>CAN_send_cmd</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, can_protocol.o(i.CAN_send_cmd))
+<P><STRONG><a name="[3c]"></a>CAN_send_cmd</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, master_can_protocol.o(i.CAN_send_cmd))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = CAN_send_cmd &rArr; Can_Send_Msg &rArr; CAN_TransmitStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
@@ -363,11 +363,11 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = DEBUG_USARTx_DMA_Config &rArr; DEBUG_USART_Config &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DMACmd
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_ITConfig
 <LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Cmd
 <LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DEBUG_USART_Config
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHBPeriphClockCmd
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_Init
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -532,7 +532,7 @@ Global Symbols
 
 <P><STRONG><a name="[6a]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
-<P><STRONG><a name="[46]"></a>clean_can_send_buf</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, can_protocol.o(i.clean_can_send_buf))
+<P><STRONG><a name="[46]"></a>clean_can_send_buf</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, master_can_protocol.o(i.clean_can_send_buf))
 <BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_send_cmd
 </UL>
 

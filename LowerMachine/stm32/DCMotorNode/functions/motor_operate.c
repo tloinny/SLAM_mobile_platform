@@ -1,6 +1,6 @@
 /**
  *@title Mecanum Mobile Platform firmware config file
- * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/STM32-for-Abot]
+ * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/SLAM_mobile_platform]
  *
  *@created on 2019-4-28  
  *@author:tony-lin

@@ -29,3 +29,6 @@
 .\objects\dma.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\dma.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\dma.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\objects\dma.o: drivers\delay.h
+.\objects\dma.o: drivers\sys.h
+.\objects\dma.o: drivers\delay.h

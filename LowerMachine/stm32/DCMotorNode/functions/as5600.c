@@ -40,13 +40,13 @@ void as5600_init()
 				printf("Current Magnitude: %d\r\n",getMagnitude());
 				setStartPosition(0);
 				setEndPosition(360);
-				delay_ms(2000);
+				delay_ms(500);
 				break;
 			}else
 			{
 				printf("Can't detect magnet\r\n");
 			}
-			delay_ms(100);
+			delay_ms(1000);
 		}
 	}
 	TIM1_Init(10);

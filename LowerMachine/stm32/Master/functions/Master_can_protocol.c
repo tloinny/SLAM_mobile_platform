@@ -6,10 +6,10 @@
  *@author:tony-lin
  *@version 1.0.0 
  * 
- *@description: Abot关节节点CAN通讯协议驱动
+ *@description: CAN通讯协议驱动
  */
  
-#include "can_protocol.h"
+#include "Master_can_protocol.h"
 
 u8 can_send_buf[can_buf_size] = {0};	/* CAN总线发送缓存区 */
 u8 can_rec_buf[can_buf_size] = {0};	/* CAN总线接收缓存区 */

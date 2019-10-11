@@ -1,6 +1,6 @@
 /**
  *@title Abot Firmware
- * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/STM32-for-Abot]
+ * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/SLAM_mobile_platform]
  *
  *@created on 2019-1-08  
  *@author:tony-lin

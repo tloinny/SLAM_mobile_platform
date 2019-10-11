@@ -31,10 +31,10 @@
 .\objects\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\main.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\main.o: .\drivers\delay.h
-.\objects\main.o: .\drivers\usart.h
-.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\drivers\led.h
-.\objects\main.o: .\functions\can_protocol.h
+.\objects\main.o: .\functions\Master_can_protocol.h
 .\objects\main.o: .\drivers\can.h
 .\objects\main.o: .\drivers\dma_usart1_debug.h
+.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: .\functions\inverse_solution.h
+.\objects\main.o: .\functions\USART_Communication.h

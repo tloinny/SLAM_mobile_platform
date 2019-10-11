@@ -8,11 +8,12 @@
 #define IN1 PBout(6)
 #define IN2 PBout(7)
 
-typedef struct motor
+typedef struct
 {
 	GPIO_TypeDef* motor_gpio_type[2];
 	GPIO_InitTypeDef motor_gpio[2];
 }motor;
+
 extern motor Motor;
 
 void motor_io_init(void);

@@ -1,6 +1,6 @@
 /**
  *@title Mecanum Mobile Platform Firmware
- * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/STM32-for-Mecanum-Mobile-Platform]
+ * Copyright: Copyright (c) 2019 Abot [https://github.com/tloinny/SLAM_mobile_platform]
  *
  *@date on 2019-4-24  
  *@author:tony-lin
@@ -29,13 +29,15 @@ int main(void)
 	int len;
 	LED0 = 1;   
 		while(1)
-		{				  
+		{				
+			RecBuf.f = 123.123;			
+			printf("%f\r\n",RecBuf.f);
 			//printf("main\r\n");
-			len = Can_Receive_Msg(RecBuf.s);
-				if(len != 0)
-				{
-					matchMsg(&RecBuf);
-				}
+//			len = Can_Receive_Msg(RecBuf.s);
+//				if(len != 0)
+//				{
+//					matchMsg(&RecBuf);
+//				}
 		}
 }
 
