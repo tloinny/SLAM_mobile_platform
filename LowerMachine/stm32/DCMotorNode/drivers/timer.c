@@ -22,8 +22,12 @@ int PWM_output = 0;
 
 float sample_time = 0;
 long current_time = 0;
-//long pre_time = 0;
 
+/**
+ *@function TIM1 initialization, Timer1 is used for only timing
+ *@param 
+ *			UnitTime_ms
+ */
 void TIM1_Init(float UnitTime_ms)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
@@ -48,9 +52,9 @@ void TIM1_Init(float UnitTime_ms)
 }
 
 /**
- *@function TIM2 初始化 用于采集速度反馈
+ *@function TIM2 initialization. Timer2 is used to collecting the speed of DC motor.
  *@param 
- *			UnitTime_ms: 采样周期，单位ms
+ *			UnitTime_ms
  */
 void TIM2_Init(float UnitTime_ms)
 {  
@@ -77,18 +81,18 @@ void TIM2_Init(float UnitTime_ms)
 }
 
 /**
- *@function TIM3 初始化 用于PID控制 
+ *@function TIM3 initialization. Timer3 is used to do the PID control of DC motor's speed.
  *@param 
- *			sampleTime： PID控制周期，单位ms
+ *			UnitTime_ms： PID controlling cycle
  */
-void PID_TIM3_Init(float sampleTime_ms)
+void PID_TIM3_Init(float UnitTime_ms)
 {  
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);	/* 使能定时器3时钟 */
 	
    /* 初始化TIM3 */
-	TIM_TimeBaseStructure.TIM_Period = 1000*sampleTime_ms - 1; /* 设置在下一个更新事件装入活动的自动重装载寄存器周期的值 */
+	TIM_TimeBaseStructure.TIM_Period = 1000*UnitTime_ms - 1; /* 设置在下一个更新事件装入活动的自动重装载寄存器周期的值 */
 	TIM_TimeBaseStructure.TIM_Prescaler = 71; /* 设置用来作为TIMx时钟频率除数的预分频值 */
 	
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; /* 设置时钟分割:TDTS = Tck_tim */
@@ -107,7 +111,7 @@ void PID_TIM3_Init(float sampleTime_ms)
 }
 
 /**
- *@function TIM4 PWM 初始化 
+ *@function TIM4 initialization. Timer4 is used to generate PWM signal to control the DC motor.
  *@param 
  *			arr：自动重装值
  *			psc：时钟预分频数
@@ -139,15 +143,6 @@ void TIM4_PWM_Init(u16 arr,u16 psc)
 	TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR2上的预装载寄存器 */
 	
 	TIM_Cmd(TIM4, ENABLE);  /* 使能TIM4 */
-}
-
-void TIM1_UP_IRQHandler(void)
-{
-	if (TIM_GetITStatus(TIM1, TIM_IT_Update) != RESET)
-	{
-		TIM_ClearITPendingBit(TIM1, TIM_IT_Update);
-		//printf("TIM1\r\n");
-	}
 }
 
 /**

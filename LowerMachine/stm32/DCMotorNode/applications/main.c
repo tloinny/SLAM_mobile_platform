@@ -29,7 +29,10 @@ int main(void)
 	LED0 = 1;   
 		while(1)
 		{				
-			
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				matchMsg(&RecBuf);
+			}
 		}
 }
 
