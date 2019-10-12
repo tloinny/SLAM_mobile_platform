@@ -16,7 +16,7 @@
  */
 #define C_CALL						'C'
 #define C_ACTION 					'A'
-#define C_STOP 						'S'
+#define C_STOP 						'T'
 #define C_FEEDBACK				'F'
 
 /*
@@ -51,7 +51,7 @@ extern u8 can_rec_buf[];
 extern u8 slave_num;
 extern u8 slave_buf_available;
 
-u8 CAN_send_motion_info(u8 dir, float speed, u32 ID);
+u8 CAN_send_wheel_speed(float speed, u32 ID);
 u8 CAN_send_cmd(u8 cmd, u32 ID);
 u8 CAN_distribute(void);
 void CAN_Call(void);

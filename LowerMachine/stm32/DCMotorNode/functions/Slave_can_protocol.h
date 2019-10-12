@@ -6,10 +6,11 @@
 /*
  *cmd
  */
+#define ACTION									'A'
 #define SET_SPEED								'S'
 #define CALL										'C'
 #define STOP 										'T'
-#define ASK_FOR_SPEED_FEEDNACK	'A'
+#define ASK_FOR_SPEED_FEEDNACK	'F'
 
 /*
  *feedback
@@ -30,7 +31,6 @@
 #define c_receive_call			"RC"
 #define c_motor_ready 			"R2"
 #define c_motor_stoped			"S2"
-
 #endif
 
 #if SLAVE3

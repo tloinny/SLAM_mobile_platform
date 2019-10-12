@@ -114,7 +114,7 @@ Section Cross References
     slave_can_protocol.o(i.CAN_send_feedback) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
     slave_can_protocol.o(i.CAN_send_speed) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
     slave_can_protocol.o(i.CAN_send_speed) refers to slave_can_protocol.o(.data) for SendBuf
-    slave_can_protocol.o(i.clean_can_send_buf) refers to slave_can_protocol.o(.data) for can_send_buf
+    slave_can_protocol.o(i.clean_can_send_buf) refers to slave_can_protocol.o(.data) for SendBuf
     slave_can_protocol.o(i.matchMsg) refers to slave_can_protocol.o(i.CAN_send_feedback) for CAN_send_feedback
     slave_can_protocol.o(i.matchMsg) refers to motor_operate.o(i.motor_brake) for motor_brake
     slave_can_protocol.o(i.matchMsg) refers to slave_can_protocol.o(i.CAN_send_speed) for CAN_send_speed
@@ -635,7 +635,7 @@ Removing Unused input sections from the image.
     Removing slave_can_protocol.o(i.CAN_send_speed), (44 bytes).
     Removing slave_can_protocol.o(i.clean_can_send_buf), (24 bytes).
     Removing slave_can_protocol.o(i.matchMsg), (88 bytes).
-    Removing slave_can_protocol.o(.data), (32 bytes).
+    Removing slave_can_protocol.o(.data), (16 bytes).
     Removing sys.o(.emb_text), (6 bytes).
     Removing sys.o(i.Ex_NVIC_Config), (160 bytes).
     Removing sys.o(i.INTX_DISABLE), (4 bytes).
@@ -1108,7 +1108,7 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-494 unused section(s) (total 20351 bytes) removed from the image.
+494 unused section(s) (total 20335 bytes) removed from the image.
 
 ==============================================================================
 

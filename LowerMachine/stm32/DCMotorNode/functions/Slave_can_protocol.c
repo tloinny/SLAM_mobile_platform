@@ -11,8 +11,7 @@
 
 #include "Slave_can_protocol.h"
 
-u8 can_send_buf[can_buf_size] = {0};	/* CAN发送缓存区 */
-u8 can_rec_buf[can_buf_size] = {0};	/* CAN接收缓存区 */
+float speed_temp_buf = 0;
 
 Buf SendBuf;
 Buf RecBuf;
@@ -55,7 +54,7 @@ u8 CAN_send_speed(float speed_f)
 }
 
 /**
- *@function 清除CAN发送缓存区内容
+ *@function clean the data in SendBuf
  *@param void
  *@return void
  */
@@ -64,17 +63,37 @@ void clean_can_send_buf()
 	int i = 0;
 	for(;i<can_buf_size;++i)
 	{
-		can_send_buf[i] = 0;
+		SendBuf.s[i] = 0;
 	}
 }
+
+/**
+ *@function clean the data in RecBuf
+ *@param void
+ *@return void
+ */
+void clean_can_rec_buf()
+{
+	int i = 0;
+	for(;i<can_buf_size;++i)
+	{
+		RecBuf.s[i] = 0;
+	}
+}
+
 
 void matchMsg(Buf *buf)
 {
 	switch(buf->s[4])
 	{
+		case ACTION:
+			wheel_speed_goal = speed_temp_buf;
+		break;
 		case SET_SPEED:
 			buf->s[4] = 0;
-			wheel_speed_goal  = buf->f;
+			speed_temp_buf  = buf->f;
+			clean_can_rec_buf();
+			CAN_send_feedback(c_motor_ready);
 		break;
 		case CALL:
 			CAN_send_feedback(c_receive_call);

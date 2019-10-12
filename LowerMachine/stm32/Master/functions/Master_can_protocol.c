@@ -31,11 +31,11 @@ Buf RecBuf;
  *				0----成功
  *				其他----失败
  */
-u8 CAN_send_motion_info(u8 dir, float speed, u32 ID)
+u8 CAN_send_wheel_speed(float speed, u32 ID)
 {
 	u8 result = 0;
 	SendBuf.f = speed;
-	SendBuf.s[4] = dir;
+	SendBuf.s[4] = 'S';
 	result = Can_Send_Msg(SendBuf.s, can_buf_size, ID);
 	return result;
 }
@@ -73,10 +73,9 @@ u8 CAN_distribute()
 	u8 result=0;
 		for(int i=0;i<4;++i)
 		{
-			SendBuf.f = wheel_speed[i];
 			if(slave[i] != 0)
 			{
-				result += Can_Send_Msg(SendBuf.s, can_buf_size, slave[i]);
+				result += CAN_send_wheel_speed(wheel_speed[i], slave[i]);
 			}
 			DelayForRespond
 			clean_can_send_buf();
@@ -111,7 +110,7 @@ void CAN_Call()
 }
 
 /**
- *@function 
+ *@function Ask all the lower machine to feedback thire speed right now
  *@param void
  *@return void
  */
@@ -136,7 +135,7 @@ void CAN_CallForFeedBack()
 
 
 /**
- *@function 清除can_send_buf中的数据
+ *@function clean the data in SendBuf
  *@param void
  *@return void
  */
@@ -150,7 +149,7 @@ void clean_can_send_buf()
 }
 
 /**
- *@function 清除can_rec_buf中的数据
+ *@function clean the data in RecBuf
  *@param void
  *@return void
  */
@@ -164,7 +163,7 @@ void clean_can_rec_buf()
 }
 
 /**
- *@function 匹配来自从机的反馈信息，并且做出反应
+ *@function match the feedback from lower machine and do the corresponding action.
  *@param void
  *@return void
  */
@@ -174,20 +173,20 @@ void match_feedback(u8* feedback)
 	u8 result = 0;
 	switch(*(feedback+4))
 	{
-		case 'R':	/* c_motor_ready:表示某个从机已经做好准备工作 */
+		case 'R':	/* c_motor_ready: means that there one of the lower machines is ready for action now */
 				if((*(feedback+5)-'0')>=0 && (*(feedback+5)-'0')<slave_num_max)
 				{
 					if(ready_list[(*(feedback+5)-'0')] == 0)
 					{
-						ready_list[(*(feedback+5)-'0')] = 1;	/* 标志为已准备完成 */
+						ready_list[(*(feedback+5)-'0')] = 1;	/* mark as allready */
 						++ready_num;
 					}
 				}
-				for(i=0;i<slave_num_max && ready_num == slave_num;++i) /* 当所有有效节点都完成准备工作 */
+				for(i=0;i<slave_num_max && ready_num == slave_num;++i) /* make sure that all the lower machines are ready */
 				{
-					result = (1 && (slave[i]*ready_list[i] == slave[i]));	/* 防止一些在未知原因下进入总线的节点对此产生干扰 */
+					result = (1 && (slave[i]*ready_list[i] == slave[i]));	/* In order to avoid that there some unexpect slave node in the CAN bus */
 				}
-				if(result) CAN_send_cmd(C_ACTION,slave_all);	/* 通知所有从机开始驱动电机 */
+				if(result) CAN_send_cmd(C_ACTION,slave_all);	/* Ask all the slave node to action. */
 		break;
 		default:
 		break;		
