@@ -71,6 +71,16 @@ u8 CAN_send_cmd(u8 cmd, u32 ID)
 u8 CAN_distribute()
 {
 	u8 result=0;
+		for(int i=0;i<4;++i)
+		{
+			SendBuf.f = wheel_speed[i];
+			if(slave[i] != 0)
+			{
+				result += Can_Send_Msg(SendBuf.s, can_buf_size, slave[i]);
+			}
+			DelayForRespond
+			clean_can_send_buf();
+		}
 	return result;
 }
 

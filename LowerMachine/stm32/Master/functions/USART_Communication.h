@@ -36,7 +36,7 @@ extern int Status;
 
 void Match_CMD(u8* buf);
 void SendResponse(u8* buf, int size);
-void SendSpeedFeedBack(u8* buf, int size);
+void SendSpeedFeedBack(float* buf, int size);
 u8 CheckRecBuf(void);
 void ConvertRecInfo2Vector(car_speed* c_s);
 void USART_Commuincate(void);

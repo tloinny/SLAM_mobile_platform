@@ -3,6 +3,7 @@
 
 #include "can.h"
 #include "dma_usart1_debug.h"
+#include "inverse_solution.h"
 
 /*
  *数组容量设置
@@ -54,6 +55,7 @@ u8 CAN_send_motion_info(u8 dir, float speed, u32 ID);
 u8 CAN_send_cmd(u8 cmd, u32 ID);
 u8 CAN_distribute(void);
 void CAN_Call(void);
+void CAN_CallForFeedBack(void);
 void clean_can_send_buf(void);
 void clean_can_rec_buf(void);
 u8 home_all(void);

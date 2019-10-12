@@ -25,7 +25,7 @@ void SendResponse(u8* buf, int size)
 	DEBUG_USART_DMA_Tx_Start(buf,size);
 }
 
-void SendSpeedFeedBack(u8* buf, int size)
+void SendSpeedFeedBack(float* buf, int size)
 {
 	for(int i=0;i<size;++i)
 	{
@@ -79,7 +79,7 @@ void USART_Commuincate()
 					Status = FREE;	/* Set the working status to FREE. */
 				break;
 				case SpeedFeedback: 
-					CAN_CallForFeedBack();
+					CAN_CallForFeedBack();	/* Ask the lower machines for speed feedback */
 					SendResponse(BeginSendFeedback,sizeof(BeginSendFeedback)/sizeof(u8));	/* Notice the host machine that is the time to recieve the speed feedback. */
 					SendSpeedFeedBack(speed_feedback_buf, 4);	/* Send the speed feedback to host machine via USART */
 					Status = FREE;	/* Set the working status to FREE. */

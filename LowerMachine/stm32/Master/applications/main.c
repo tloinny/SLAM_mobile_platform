@@ -21,8 +21,7 @@ int main(void)
 	LED_Init();
 	DEBUG_USARTx_DMA_Config();
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
-	LED0 = 1;
-	delay_ms(1000);
+	delay_ms(500);
 	CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
 		while(1)
 		{

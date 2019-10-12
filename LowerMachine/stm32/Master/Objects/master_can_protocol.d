@@ -35,3 +35,4 @@
 .\objects\master_can_protocol.o: .\drivers\sys.h
 .\objects\master_can_protocol.o: .\drivers\dma_usart1_debug.h
 .\objects\master_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\master_can_protocol.o: functions\inverse_solution.h

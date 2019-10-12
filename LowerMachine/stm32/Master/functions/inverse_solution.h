@@ -22,6 +22,7 @@ typedef struct
 }car_speed;
 
 extern car_speed C_S;
+extern float wheel_speed[4];
 
 void speed_inverse_solution(void);
 
