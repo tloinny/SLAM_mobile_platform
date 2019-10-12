@@ -28,7 +28,7 @@ Buf RecBuf;
 u8 CAN_send_feedback(u8 *feedback)
 {
 	u8 result;
-	result = Can_Send_Msg(feedback, 3, master);
+	result = Can_Send_Msg(feedback, 8, master);
 	return result;
 }
 
@@ -77,11 +77,11 @@ void matchMsg(Buf *buf)
 			wheel_speed_goal  = buf->f;
 		break;
 		case CALL:
-			CAN_send_feedback(received_call);
+			CAN_send_feedback(c_receive_call);
 		break;
 		case STOP:
 			motor_brake();
-			CAN_send_feedback(motor_stoped);
+			CAN_send_feedback(c_motor_stoped);
 		break;
 		case ASK_FOR_SPEED_FEEDNACK:
 			CAN_send_speed(speed_feedback);

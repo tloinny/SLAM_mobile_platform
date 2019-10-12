@@ -177,9 +177,9 @@ void match_feedback(u8* feedback)
 		case 'R':	/* c_motor_ready:表示某个从机已经做好准备工作 */
 				if((*(feedback+5)-'0')>=0 && (*(feedback+5)-'0')<slave_num_max)
 				{
-					if(ready_list[(*(feedback+1)-'0')] == 0)
+					if(ready_list[(*(feedback+5)-'0')] == 0)
 					{
-						ready_list[(*(feedback+1)-'0')] = 1;	/* 标志为已准备完成 */
+						ready_list[(*(feedback+5)-'0')] = 1;	/* 标志为已准备完成 */
 						++ready_num;
 					}
 				}

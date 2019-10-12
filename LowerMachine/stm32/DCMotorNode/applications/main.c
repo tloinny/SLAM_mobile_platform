@@ -26,18 +26,10 @@ int main(void)
 	uart2_init(256000);
 	motor_init();
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
-	int len;
 	LED0 = 1;   
 		while(1)
 		{				
-			RecBuf.f = -123.123;			
-			printf("%f\r\n",RecBuf.f);
-			//printf("main\r\n");
-//			len = Can_Receive_Msg(RecBuf.s);
-//				if(len != 0)
-//				{
-//					matchMsg(&RecBuf);
-//				}
+			
 		}
 }
 

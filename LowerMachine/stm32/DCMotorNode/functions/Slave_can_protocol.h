@@ -10,11 +10,34 @@
 #define CALL										'C'
 #define STOP 										'T'
 #define ASK_FOR_SPEED_FEEDNACK	'A'
+
 /*
  *feedback
  */
-#define received_call	"RC"
-#define motor_stoped	"MS"
+#if SLAVE0
+#define c_receive_call			"RC"
+#define c_motor_ready 			"R0"
+#define c_motor_stoped			"S0"
+#endif
+
+#if SLAVE1
+#define c_receive_call			"RC"
+#define c_motor_ready 			"R1"
+#define c_motor_stoped			"S1"
+#endif
+
+#if SLAVE2
+#define c_receive_call			"RC"
+#define c_motor_ready 			"R2"
+#define c_motor_stoped			"S2"
+
+#endif
+
+#if SLAVE3
+#define c_receive_call			"RC"
+#define c_motor_ready 			"R3"
+#define c_motor_stoped			"S3"
+#endif
 
 #define can_buf_size 8
 

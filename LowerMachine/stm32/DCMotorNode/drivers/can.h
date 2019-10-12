@@ -3,7 +3,7 @@
 #include "sys.h"	   
 #include "led.h"
 
-#define SLAVE0 0
+#define SLAVE0 1
 #define SLAVE1 0
 #define SLAVE2 0
 #define SLAVE3 0
