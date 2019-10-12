@@ -14,6 +14,9 @@ void Match_CMD(u8* buf)
 		case CallForSpeedFeedback:
 			Status = SpeedFeedback;
 		break;
+		case StopAll:
+			Status = AllStop;
+		break;
 		default:
 			Status = FREE;
 		break;
@@ -84,6 +87,9 @@ void USART_Commuincate()
 					SendSpeedFeedBack(speed_feedback_buf, 4);	/* Send the speed feedback to host machine via USART */
 					Status = FREE;	/* Set the working status to FREE. */
 				break;
+				case AllStop:
+					CAN_send_cmd(C_STOP,slave_all);
+					Status = FREE;	/* Set the working status to FREE. */
 				default:
 				break;
 			}

@@ -9,8 +9,9 @@
 /**
  *CMD
  */
-#define SpeedInfo 'S'
-#define CallForSpeedFeedback 'C'
+#define SpeedInfo							'S'
+#define CallForSpeedFeedback	'C'
+#define StopAll								'O'
 
 /**
  *Response
@@ -22,9 +23,10 @@
 /**
  *STATUS
  */
-#define RecSpeed 0
-#define SpeedFeedback 1
-#define FREE -1
+#define RecSpeed				0
+#define SpeedFeedback		1
+#define AllStop					2
+#define FREE						-1
 
 typedef union UsartBuf
 {

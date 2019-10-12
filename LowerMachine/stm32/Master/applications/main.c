@@ -26,6 +26,10 @@ int main(void)
 		while(1)
 		{
 			USART_Commuincate();
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				match_feedback(RecBuf.s);				
+			}
 		}
 }
 

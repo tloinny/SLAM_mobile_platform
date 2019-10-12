@@ -172,10 +172,10 @@ void match_feedback(u8* feedback)
 {
 	u8 i;
 	u8 result = 0;
-	switch(*feedback)
+	switch(*(feedback+4))
 	{
 		case 'R':	/* c_motor_ready:表示某个从机已经做好准备工作 */
-				if((*(feedback+1)-'0')>=0 && (*(feedback+1)-'0')<slave_num_max)
+				if((*(feedback+5)-'0')>=0 && (*(feedback+5)-'0')<slave_num_max)
 				{
 					if(ready_list[(*(feedback+1)-'0')] == 0)
 					{
@@ -185,12 +185,12 @@ void match_feedback(u8* feedback)
 				}
 				for(i=0;i<slave_num_max && ready_num == slave_num;++i) /* 当所有有效节点都完成准备工作 */
 				{
-					result = 1 && (slave[i]*ready_list[i] == slave[i]);	/* 防止一些在未知原因下进入总线的节点对此产生干扰 */
+					result = (1 && (slave[i]*ready_list[i] == slave[i]));	/* 防止一些在未知原因下进入总线的节点对此产生干扰 */
 				}
 				if(result) CAN_send_cmd(C_ACTION,slave_all);	/* 通知所有从机开始驱动电机 */
-			break;
+		break;
 		default:
-			break;		
+		break;		
 	}
 	clean_can_rec_buf();
 }
