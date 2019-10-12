@@ -2,6 +2,7 @@
 #define _USART_COMMUNICATION_H_
 #include "dma_usart1_debug.h"
 #include "inverse_solution.h"
+#include "Master_can_protocol.h"
 
 #define buf_size 8
 
@@ -15,6 +16,7 @@
  *Response
  */
 #define BeginRecSpeedInfo "BRSI"
+#define BeginSendFeedback	"BSFB"
 #define Online	"ONLINE"
 
 /**
@@ -30,11 +32,13 @@ typedef union UsartBuf
 	float f;
 }UsartBuf;
 
+extern int Status;
+
 void Match_CMD(u8* buf);
 void SendResponse(u8* buf, int size);
 void SendSpeedFeedBack(u8* buf, int size);
 u8 CheckRecBuf(void);
 void ConvertRecInfo2Vector(car_speed* c_s);
-void Commuincate(void);
+void USART_Commuincate(void);
 
 #endif

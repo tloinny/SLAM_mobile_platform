@@ -26,9 +26,7 @@ int main(void)
 	CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
 		while(1)
 		{
-			Commuincate();
-			speed_inverse_solution();
-			CAN_distribute();
+			USART_Commuincate();
 		}
 }
 

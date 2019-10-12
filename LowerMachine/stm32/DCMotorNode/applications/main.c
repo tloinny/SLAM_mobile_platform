@@ -30,7 +30,7 @@ int main(void)
 	LED0 = 1;   
 		while(1)
 		{				
-			RecBuf.f = 123.123;			
+			RecBuf.f = -123.123;			
 			printf("%f\r\n",RecBuf.f);
 			//printf("main\r\n");
 //			len = Can_Receive_Msg(RecBuf.s);

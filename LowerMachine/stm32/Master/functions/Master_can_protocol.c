@@ -11,13 +11,15 @@
  
 #include "Master_can_protocol.h"
 
-//u8 can_send_buf[can_buf_size] = {0};	/* CAN总线发送缓存区 */
-u8 can_rec_buf[can_buf_size] = {0};	/* CAN总线接收缓存区 */
+float speed_feedback_buf[4] = {0};	/* speed feedback recieve buffer */
+
 u32 slave[slave_num_max] = {slave_0,slave_1,slave_2,slave_3,slave_4,slave_5};	/* 节点ID表 */
 u8 slave_num = 0;	/* 可用节点计数 */
 u8 ready_num = 0;	/* 已准备好的节点计数 */
 u8 ready_list[slave_num_max] = {0};	/* 准备好的节点列表 */
+
 Buf SendBuf;
+Buf RecBuf;
 
 /**
  *@function CAN向从机发送速度信息和弧度制的角度信息
@@ -94,8 +96,34 @@ void CAN_Call()
 		{
 			++slave_num;	/* 计算可用节点数 */
 		}
+		clean_can_rec_buf();
 	}
 }
+
+/**
+ *@function 
+ *@param void
+ *@return void
+ */
+void CAN_CallForFeedBack()
+{
+	u32 time_out = 10;
+	u32 count = 0;
+	for(int i=0;i<slave_num_max;++i)
+	{
+		CAN_send_cmd(C_FEEDBACK,slave[i]);
+		for(count=0;(Can_Receive_Msg(RecBuf.s) == 0) && count < time_out; ++count,delay_ms(6));	/* 阻塞性等待从机回复 */
+		if(count >= time_out || !(RecBuf.s[4] == 'F' && RecBuf.s[5] == 'B' && RecBuf.s[6] == i))
+		{
+			speed_feedback_buf[i] = 0;
+		}else
+		{
+			speed_feedback_buf[i] = RecBuf.f;
+		}
+		clean_can_rec_buf();
+	}
+}
+
 
 /**
  *@function 清除can_send_buf中的数据
@@ -121,7 +149,7 @@ void clean_can_rec_buf()
 	int i = 0;
 	for(;i<can_buf_size;++i)
 	{
-		can_rec_buf[i] = 0;
+		RecBuf.s[i] = 0;
 	}
 }
 

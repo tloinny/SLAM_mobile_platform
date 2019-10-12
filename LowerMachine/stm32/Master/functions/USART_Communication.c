@@ -27,6 +27,14 @@ void SendResponse(u8* buf, int size)
 
 void SendSpeedFeedBack(u8* buf, int size)
 {
+	for(int i=0;i<size;++i)
+	{
+		usart_buf[0].f = *(buf+i);
+		usart_buf[0].s[4] = 'M';
+		usart_buf[0].s[5] = 'S';
+		usart_buf[0].s[6] = i;
+		DEBUG_USART_DMA_Tx_Start(usart_buf[0].s,8);
+	}
 }
 
 u8 CheckRecBuf()
@@ -38,15 +46,15 @@ u8 CheckRecBuf()
 
 void ConvertRecInfo2Vector(car_speed* c_s)
 {
-	for(int i=0;i<3;++i)	/* 上位机一共会发送3组速度信息，分别对应Vx,Vy,W */
+	for(int i=0;i<3;)	/* 上位机一共会发送3组速度信息，分别对应Vx,Vy,W */
 	{
-		while(CheckRecBuf())
+		if(CheckRecBuf())
 		{
-			if(i>=3) break;
 			for(int n=0;n<DEBUG_Receive_length;++i)
 			{
 				usart_buf[i].s[n] = DEBUG_Rx_Buff[n];
 			}
+			++i;
 		}
 	}
 	c_s->Vx = usart_buf[0].f;
@@ -54,7 +62,7 @@ void ConvertRecInfo2Vector(car_speed* c_s)
 	c_s->W = usart_buf[2].f;
 }
 
-void Commuincate()
+void USART_Commuincate()
 {
 	if(CheckRecBuf())
 	{
@@ -64,10 +72,17 @@ void Commuincate()
 			switch(Status)
 			{
 				case RecSpeed:
-					SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));	/* 通知上位机已经可以开始发送速度信息 */
-					ConvertRecInfo2Vector(&C_S);
+					SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));	/* Notice the host machine that is the time to send speed infomation. */
+					ConvertRecInfo2Vector(&C_S);	/* Convert the speed infomation from USART to speed vector. */
+					speed_inverse_solution();	/* Using the speed vector to do speed inverse solution and get the wheels' target speed. */
+					CAN_distribute();	/* Distribute the wheels' to lower machines via CAN bus. */
+					Status = FREE;	/* Set the working status to FREE. */
 				break;
-				case SpeedFeedback:
+				case SpeedFeedback: 
+					CAN_CallForFeedBack();
+					SendResponse(BeginSendFeedback,sizeof(BeginSendFeedback)/sizeof(u8));	/* Notice the host machine that is the time to recieve the speed feedback. */
+					SendSpeedFeedBack(speed_feedback_buf, 4);	/* Send the speed feedback to host machine via USART */
+					Status = FREE;	/* Set the working status to FREE. */
 				break;
 				default:
 				break;

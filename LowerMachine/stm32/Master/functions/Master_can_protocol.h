@@ -14,13 +14,9 @@
  *cmd
  */
 #define C_CALL						'C'
-#define C_READY						'R'
 #define C_ACTION 					'A'
 #define C_STOP 						'S'
-#define C_HOME 						'H'
-#define C_MOTOR_DISABLE		'D'
-#define C_MOTOR_ENABLE		'E'
-
+#define C_FEEDBACK				'F'
 
 /*
  *ID
@@ -43,6 +39,8 @@ typedef union Buf
 }Buf;
 
 extern Buf SendBuf;
+extern Buf RecBuf;
+extern float speed_feedback_buf[4];
 
 /*
  *统一声明变量

@@ -32,3 +32,8 @@
 .\objects\usart_communication.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\usart_communication.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\usart_communication.o: functions\inverse_solution.h
+.\objects\usart_communication.o: functions\Master_can_protocol.h
+.\objects\usart_communication.o: .\drivers\can.h
+.\objects\usart_communication.o: .\drivers\sys.h
+.\objects\usart_communication.o: .\drivers\delay.h
+.\objects\usart_communication.o: .\drivers\sys.h
