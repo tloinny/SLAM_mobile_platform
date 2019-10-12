@@ -12,7 +12,7 @@ Section Cross References
     main.o(i.main) refers to can.o(i.CAN_Mode_Init) for CAN_Mode_Init
     main.o(i.main) refers to f2d.o(.text) for __aeabi_f2d
     main.o(i.main) refers to printfa.o(i.__0printf) for __2printf
-    main.o(i.main) refers to can_protocol.o(.data) for RecBuf
+    main.o(i.main) refers to slave_can_protocol.o(.data) for RecBuf
     motor_operate.o(i.motor_brake) refers to stm32f10x_gpio.o(i.GPIO_SetBits) for GPIO_SetBits
     motor_operate.o(i.motor_brake) refers to motor_gpio.o(.bss) for Motor
     motor_operate.o(i.motor_brake) refers to motor_operate.o(.data) for motor_state
@@ -114,15 +114,15 @@ Section Cross References
     as5600.o(i.writeOneByte) refers to softwareiic.o(i.IIC_Send_Byte) for IIC_Send_Byte
     as5600.o(i.writeOneByte) refers to softwareiic.o(i.IIC_Wait_Ack) for IIC_Wait_Ack
     as5600.o(i.writeOneByte) refers to softwareiic.o(i.IIC_Stop) for IIC_Stop
-    can_protocol.o(i.CAN_send_feedback) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
-    can_protocol.o(i.CAN_send_speed) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
-    can_protocol.o(i.CAN_send_speed) refers to can_protocol.o(.data) for SendBuf
-    can_protocol.o(i.clean_can_send_buf) refers to can_protocol.o(.data) for can_send_buf
-    can_protocol.o(i.matchMsg) refers to can_protocol.o(i.CAN_send_feedback) for CAN_send_feedback
-    can_protocol.o(i.matchMsg) refers to motor_operate.o(i.motor_brake) for motor_brake
-    can_protocol.o(i.matchMsg) refers to can_protocol.o(i.CAN_send_speed) for CAN_send_speed
-    can_protocol.o(i.matchMsg) refers to motor_operate.o(.data) for wheel_speed_goal
-    can_protocol.o(i.matchMsg) refers to timer.o(.data) for speed_feedback
+    slave_can_protocol.o(i.CAN_send_feedback) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
+    slave_can_protocol.o(i.CAN_send_speed) refers to can.o(i.Can_Send_Msg) for Can_Send_Msg
+    slave_can_protocol.o(i.CAN_send_speed) refers to slave_can_protocol.o(.data) for SendBuf
+    slave_can_protocol.o(i.clean_can_send_buf) refers to slave_can_protocol.o(.data) for can_send_buf
+    slave_can_protocol.o(i.matchMsg) refers to slave_can_protocol.o(i.CAN_send_feedback) for CAN_send_feedback
+    slave_can_protocol.o(i.matchMsg) refers to motor_operate.o(i.motor_brake) for motor_brake
+    slave_can_protocol.o(i.matchMsg) refers to slave_can_protocol.o(i.CAN_send_speed) for CAN_send_speed
+    slave_can_protocol.o(i.matchMsg) refers to motor_operate.o(.data) for wheel_speed_goal
+    slave_can_protocol.o(i.matchMsg) refers to timer.o(.data) for speed_feedback
     delay.o(i.delay_init) refers to misc.o(i.SysTick_CLKSourceConfig) for SysTick_CLKSourceConfig
     delay.o(i.delay_init) refers to system_stm32f10x.o(.data) for SystemCoreClock
     delay.o(i.delay_init) refers to delay.o(.data) for fac_us
@@ -634,10 +634,10 @@ Removing Unused input sections from the image.
     Removing as5600.o(i.getStartPosition), (12 bytes).
     Removing as5600.o(i.setMaxAngle), (64 bytes).
     Removing as5600.o(.constdata), (19 bytes).
-    Removing can_protocol.o(i.CAN_send_feedback), (22 bytes).
-    Removing can_protocol.o(i.CAN_send_speed), (40 bytes).
-    Removing can_protocol.o(i.clean_can_send_buf), (24 bytes).
-    Removing can_protocol.o(i.matchMsg), (88 bytes).
+    Removing slave_can_protocol.o(i.CAN_send_feedback), (22 bytes).
+    Removing slave_can_protocol.o(i.CAN_send_speed), (40 bytes).
+    Removing slave_can_protocol.o(i.clean_can_send_buf), (24 bytes).
+    Removing slave_can_protocol.o(i.matchMsg), (88 bytes).
     Removing sys.o(.emb_text), (6 bytes).
     Removing sys.o(i.Ex_NVIC_Config), (160 bytes).
     Removing sys.o(i.INTX_DISABLE), (4 bytes).
@@ -1209,8 +1209,8 @@ Image Symbol Table
     drivers\sys.c                            0x00000000   Number         0  sys.o ABSOLUTE
     drivers\timer.c                          0x00000000   Number         0  timer.o ABSOLUTE
     drivers\usart.c                          0x00000000   Number         0  usart.o ABSOLUTE
+    functions\Slave_can_protocol.c           0x00000000   Number         0  slave_can_protocol.o ABSOLUTE
     functions\as5600.c                       0x00000000   Number         0  as5600.o ABSOLUTE
-    functions\can_protocol.c                 0x00000000   Number         0  can_protocol.o ABSOLUTE
     functions\motor_operate.c                0x00000000   Number         0  motor_operate.o ABSOLUTE
     functions\pid.c                          0x00000000   Number         0  pid.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
@@ -1352,7 +1352,7 @@ Image Symbol Table
     .data                                    0x20000000   Section        8  motor_operate.o(.data)
     .data                                    0x20000008   Section       48  pid.o(.data)
     .data                                    0x20000038   Section       10  as5600.o(.data)
-    .data                                    0x20000044   Section       32  can_protocol.o(.data)
+    .data                                    0x20000044   Section       32  slave_can_protocol.o(.data)
     .data                                    0x20000064   Section        4  delay.o(.data)
     fac_us                                   0x20000064   Data           1  delay.o(.data)
     fac_ms                                   0x20000066   Data           2  delay.o(.data)
@@ -1626,10 +1626,10 @@ Image Symbol Table
     _rawEndAngle                             0x2000003c   Data           2  as5600.o(.data)
     _mPosition                               0x2000003e   Data           2  as5600.o(.data)
     _maxAngle                                0x20000040   Data           2  as5600.o(.data)
-    can_send_buf                             0x20000044   Data           8  can_protocol.o(.data)
-    can_rec_buf                              0x2000004c   Data           8  can_protocol.o(.data)
-    SendBuf                                  0x20000054   Data           8  can_protocol.o(.data)
-    RecBuf                                   0x2000005c   Data           8  can_protocol.o(.data)
+    can_send_buf                             0x20000044   Data           8  slave_can_protocol.o(.data)
+    can_rec_buf                              0x2000004c   Data           8  slave_can_protocol.o(.data)
+    SendBuf                                  0x20000054   Data           8  slave_can_protocol.o(.data)
+    RecBuf                                   0x2000005c   Data           8  slave_can_protocol.o(.data)
     __stdout                                 0x20000068   Data           4  usart.o(.data)
     USART1_RX_BUF                            0x2000006c   Data           8  usart.o(.data)
     USART2_RX_BUF                            0x20000074   Data           8  usart.o(.data)
@@ -1811,7 +1811,7 @@ Memory Map of the image
     0x20000008   0x08002c9c   0x00000030   Data   RW          200    .data               pid.o
     0x20000038   0x08002ccc   0x0000000a   Data   RW          282    .data               as5600.o
     0x20000042   0x08002cd6   0x00000002   PAD
-    0x20000044   0x08002cd8   0x00000020   Data   RW          418    .data               can_protocol.o
+    0x20000044   0x08002cd8   0x00000020   Data   RW          418    .data               slave_can_protocol.o
     0x20000064   0x08002cf8   0x00000004   Data   RW          457    .data               delay.o
     0x20000068   0x08002cfc   0x00000018   Data   RW          671    .data               usart.o
     0x20000080   0x08002d14   0x00000028   Data   RW          734    .data               timer.o
@@ -1830,7 +1830,6 @@ Image component sizes
 
        638         86          0         10          0       7631   as5600.o
        192         10          0          0          0        928   can.o
-         0          0          0         32          0       1234   can_protocol.o
        220         26          0          4          0       1727   delay.o
         56          6          0          0          0        487   led.o
        100         22          0          0          0     260595   main.o
@@ -1838,6 +1837,7 @@ Image component sizes
        104         10          0          0         16       1380   motor_gpio.o
        116         16          0          8          0       1356   motor_operate.o
        350         90          0         48          0       3710   pid.o
+         0          0          0         32          0       1270   slave_can_protocol.o
        684        102          0          0          0       4322   softwareiic.o
         36          8        236          0       1024        824   startup_stm32f10x_md.o
        540          6          0          0          0       2584   stm32f10x_can.o
@@ -1852,7 +1852,7 @@ Image component sizes
        504         38          0         24          0       4347   usart.o
 
     ----------------------------------------------------------------------
-      6676        700        268        208       1040     325063   Object Totals
+      6676        700        268        208       1040     325099   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         16          0          0          2          0          0   (incl. Padding)
 
@@ -1918,8 +1918,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     11144        806        268        208       1040     322375   Grand Totals
-     11144        806        268        208       1040     322375   ELF Image Totals
+     11144        806        268        208       1040     322411   Grand Totals
+     11144        806        268        208       1040     322411   ELF Image Totals
      11144        806        268        208          0          0   ROM Totals
 
 ==============================================================================

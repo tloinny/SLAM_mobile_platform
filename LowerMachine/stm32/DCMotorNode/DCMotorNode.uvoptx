@@ -162,7 +162,7 @@
           <Type>0</Type>
           <LineNumber>33</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134225580</Address>
+          <Address>134228032</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -356,8 +356,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>.\functions\can_protocol.c</PathWithFileName>
-      <FilenameWithoutPath>can_protocol.c</FilenameWithoutPath>
+      <PathWithFileName>.\functions\Slave_can_protocol.c</PathWithFileName>
+      <FilenameWithoutPath>Slave_can_protocol.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

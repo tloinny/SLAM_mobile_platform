@@ -123,7 +123,7 @@ void CAN_CallForFeedBack()
 	{
 		CAN_send_cmd(C_FEEDBACK,slave[i]);
 		for(count=0;(Can_Receive_Msg(RecBuf.s) == 0) && count < time_out; ++count,delay_ms(6));	/* 阻塞性等待从机回复 */
-		if(count >= time_out || !(RecBuf.s[4] == 'F' && RecBuf.s[5] == 'B' && RecBuf.s[6] == i))
+		if(count >= time_out || !(RecBuf.s[4] == 'F' && RecBuf.s[5] == 'S' && RecBuf.s[6] - '0' == i))
 		{
 			speed_feedback_buf[i] = 0;
 		}else

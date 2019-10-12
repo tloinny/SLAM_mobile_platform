@@ -42,5 +42,5 @@
 .\objects\main.o: .\drivers\timer.h
 .\objects\main.o: .\functions\motor_operate.h
 .\objects\main.o: .\functions\pid.h
-.\objects\main.o: .\functions\can_protocol.h
+.\objects\main.o: .\functions\Slave_can_protocol.h
 .\objects\main.o: .\drivers\can.h

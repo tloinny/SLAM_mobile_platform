@@ -9,7 +9,7 @@
  *@description:
  */
 
-#include "can_protocol.h"
+#include "Slave_can_protocol.h"
 
 u8 can_send_buf[can_buf_size] = {0};	/* CAN发送缓存区 */
 u8 can_rec_buf[can_buf_size] = {0};	/* CAN接收缓存区 */

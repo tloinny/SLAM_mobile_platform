@@ -3,7 +3,7 @@
 ".\objects\motor_operate.o"
 ".\objects\pid.o"
 ".\objects\as5600.o"
-".\objects\can_protocol.o"
+".\objects\slave_can_protocol.o"
 ".\objects\delay.o"
 ".\objects\led.o"
 ".\objects\stm32f10x_it.o"

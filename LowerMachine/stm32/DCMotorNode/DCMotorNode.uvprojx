@@ -406,9 +406,9 @@
               <FilePath>.\functions\as5600.c</FilePath>
             </File>
             <File>
-              <FileName>can_protocol.c</FileName>
+              <FileName>Slave_can_protocol.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\functions\can_protocol.c</FilePath>
+              <FilePath>.\functions\Slave_can_protocol.c</FilePath>
             </File>
           </Files>
         </Group>

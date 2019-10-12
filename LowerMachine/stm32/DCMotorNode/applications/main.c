@@ -14,7 +14,7 @@
  #include "motor_operate.h"
  #include "pid.h"
  #include "as5600.h"
- #include "can_protocol.h"
+ #include "Slave_can_protocol.h"
  
  #define DelayForRespond delay_ms(6);
  
