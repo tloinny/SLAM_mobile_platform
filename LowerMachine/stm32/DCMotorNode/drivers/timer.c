@@ -205,7 +205,6 @@ void TIM3_IRQHandler(void)
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
 	{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-		//printf("timer3 update------\r\n");
 		setGoal(wheel_speed_goal);
 		if(speed_feedback != -1)
 		{

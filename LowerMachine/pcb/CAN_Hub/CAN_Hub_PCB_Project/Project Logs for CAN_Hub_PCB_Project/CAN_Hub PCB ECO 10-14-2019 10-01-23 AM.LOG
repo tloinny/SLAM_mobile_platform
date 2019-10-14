@@ -1,0 +1,91 @@
+Added Component: Designator=DC1(DC-005)
+Added Component: Designator=J1(PH2.0-6P)
+Added Component: Designator=J2(PH2.0-6P)
+Added Component: Designator=J3(PH2.0-6P)
+Added Component: Designator=J4(PH2.0-6P)
+Added Component: Designator=J5(PH2.0-6P)
+Added Component: Designator=P1(Header_SMD_2.54X8)
+Added Component: Designator=P2(Header_SMD_2.54X8)
+Added Component: Designator=PWR(LED_0603_B)
+Added Component: Designator=R1(Res-0603)
+Added Component: Designator=USB1(USB-MICRO-SMD_C)
+Added Pin To Net: NetName=24V Pin=DC1-1
+Added Pin To Net: NetName=24V Pin=J1-1
+Added Pin To Net: NetName=24V Pin=J2-1
+Added Pin To Net: NetName=24V Pin=J3-1
+Added Pin To Net: NetName=24V Pin=J4-1
+Added Pin To Net: NetName=24V Pin=J5-1
+Added Net: Name=24V
+Added Pin To Net: NetName=CAN_N Pin=J1-4
+Added Pin To Net: NetName=CAN_N Pin=J2-4
+Added Pin To Net: NetName=CAN_N Pin=J3-4
+Added Pin To Net: NetName=CAN_N Pin=J4-4
+Added Pin To Net: NetName=CAN_N Pin=J5-4
+Added Net: Name=CAN_N
+Added Pin To Net: NetName=CAN_P Pin=J1-5
+Added Pin To Net: NetName=CAN_P Pin=J2-5
+Added Pin To Net: NetName=CAN_P Pin=J3-5
+Added Pin To Net: NetName=CAN_P Pin=J4-5
+Added Pin To Net: NetName=CAN_P Pin=J5-5
+Added Net: Name=CAN_P
+Added Pin To Net: NetName=GND Pin=DC1-2
+Added Pin To Net: NetName=GND Pin=DC1-3
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J1-3
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Pin To Net: NetName=GND Pin=J2-3
+Added Pin To Net: NetName=GND Pin=J3-2
+Added Pin To Net: NetName=GND Pin=J3-3
+Added Pin To Net: NetName=GND Pin=J4-2
+Added Pin To Net: NetName=GND Pin=J4-3
+Added Pin To Net: NetName=GND Pin=J5-2
+Added Pin To Net: NetName=GND Pin=J5-3
+Added Pin To Net: NetName=GND Pin=P1-9
+Added Pin To Net: NetName=GND Pin=P1-10
+Added Pin To Net: NetName=GND Pin=P1-11
+Added Pin To Net: NetName=GND Pin=P1-12
+Added Pin To Net: NetName=GND Pin=P1-13
+Added Pin To Net: NetName=GND Pin=P1-14
+Added Pin To Net: NetName=GND Pin=P1-15
+Added Pin To Net: NetName=GND Pin=P1-16
+Added Pin To Net: NetName=GND Pin=P2-9
+Added Pin To Net: NetName=GND Pin=P2-10
+Added Pin To Net: NetName=GND Pin=P2-11
+Added Pin To Net: NetName=GND Pin=P2-12
+Added Pin To Net: NetName=GND Pin=P2-13
+Added Pin To Net: NetName=GND Pin=P2-14
+Added Pin To Net: NetName=GND Pin=P2-15
+Added Pin To Net: NetName=GND Pin=P2-16
+Added Pin To Net: NetName=GND Pin=PWR-2
+Added Pin To Net: NetName=GND Pin=USB1-4
+Added Pin To Net: NetName=GND Pin=USB1-5
+Added Net: Name=GND
+Added Pin To Net: NetName=NetPWR_1 Pin=PWR-1
+Added Pin To Net: NetName=NetPWR_1 Pin=R1-2
+Added Net: Name=NetPWR_1
+Added Pin To Net: NetName=VCC Pin=J1-6
+Added Pin To Net: NetName=VCC Pin=J2-6
+Added Pin To Net: NetName=VCC Pin=J3-6
+Added Pin To Net: NetName=VCC Pin=J4-6
+Added Pin To Net: NetName=VCC Pin=J5-6
+Added Pin To Net: NetName=VCC Pin=P1-1
+Added Pin To Net: NetName=VCC Pin=P1-2
+Added Pin To Net: NetName=VCC Pin=P1-3
+Added Pin To Net: NetName=VCC Pin=P1-4
+Added Pin To Net: NetName=VCC Pin=P1-5
+Added Pin To Net: NetName=VCC Pin=P1-6
+Added Pin To Net: NetName=VCC Pin=P1-7
+Added Pin To Net: NetName=VCC Pin=P1-8
+Added Pin To Net: NetName=VCC Pin=P2-1
+Added Pin To Net: NetName=VCC Pin=P2-2
+Added Pin To Net: NetName=VCC Pin=P2-3
+Added Pin To Net: NetName=VCC Pin=P2-4
+Added Pin To Net: NetName=VCC Pin=P2-5
+Added Pin To Net: NetName=VCC Pin=P2-6
+Added Pin To Net: NetName=VCC Pin=P2-7
+Added Pin To Net: NetName=VCC Pin=P2-8
+Added Pin To Net: NetName=VCC Pin=R1-1
+Added Pin To Net: NetName=VCC Pin=USB1-1
+Added Net: Name=VCC
+Added Class: Name=CAN_Hub
+Added Room: Name=CAN_Hub
