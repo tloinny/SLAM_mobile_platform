@@ -166,6 +166,7 @@ void TIM2_IRQHandler(void)
 			TIM1->CNT = 0;
 			sample_time = current_time/1000.0;
 			AngleDelta = currentAngle - preAngle;
+			if(AngleDelta <= 0.087891 && AngleDelta >= -0.087891) AngleDelta=0;
 				if(AngleDelta >= 0)
 				{
 					if(AngleDelta <= 90)
@@ -186,12 +187,16 @@ void TIM2_IRQHandler(void)
 						AngleDelta += 360;
 					}
 				}
-			speed_feedback = (AngleDelta/sample_time) * 166.666667;
+			speed_feedback = (AngleDelta/sample_time) * 166.66666667;
 			preAngle = currentAngle;
-			//printf("AngleDelta: %f \r\n", AngleDelta);
-			//printf("speed_feedback: %f\r\n", speed_feedback);
-			//printf("current_time: %d\r\n", current_time);
-			//printf("sample_time: %f\r\n", sample_time);
+//				if(speed_feedback > 7000||speed_feedback<-7000)
+//				{
+//					printf("A: %f ", AngleDelta);
+//					printf("s: %f\r\n", sample_time);
+//				}
+			printf("A: %f ", AngleDelta);
+//			printf("s: %f ", speed_feedback);
+//			printf("t: %f\r\n", sample_time);
 			}
 		}
 }

@@ -50,7 +50,7 @@ void as5600_init()
 		}
 	}
 	TIM1_Init(10);
-	TIM2_Init(1);
+	TIM2_Init(0.1);
 }
 
 u8 getAddress()
@@ -308,7 +308,7 @@ float convertRawAngleToDegrees(u16 newAngle)
 {
   /* Raw data reports 0 - 4095 segments, which is 0.087890625 of a degree */
   float retVal = newAngle * 0.087890625;
-	//printf("RawRad: %d RawDegress: %f \r\n", newAngle, retVal);
+//	printf("RawRad: %d RawDegress: %f \r\n", newAngle, retVal);
   return retVal;
 }
 

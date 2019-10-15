@@ -29,10 +29,12 @@ int main(void)
 	LED0 = 1;   
 		while(1)
 		{				
-			if(Can_Receive_Msg(RecBuf.s) != 0)
-			{
-				matchMsg(&RecBuf);
-			}
+//			if(Can_Receive_Msg(RecBuf.s) != 0)
+//			{
+//				matchMsg(&RecBuf);
+//			}
+//			printf("speed_feedback: %f ", speed_feedback);
+//			printf("sample_time: %f\r\n", sample_time);
 		}
 }
 
