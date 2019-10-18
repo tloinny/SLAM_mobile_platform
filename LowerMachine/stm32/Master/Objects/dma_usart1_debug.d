@@ -29,4 +29,7 @@
 .\objects\dma_usart1_debug.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\dma_usart1_debug.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\dma_usart1_debug.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\objects\dma_usart1_debug.o: drivers\delay.h
+.\objects\dma_usart1_debug.o: drivers\sys.h
+.\objects\dma_usart1_debug.o: drivers\delay.h
 .\objects\dma_usart1_debug.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h

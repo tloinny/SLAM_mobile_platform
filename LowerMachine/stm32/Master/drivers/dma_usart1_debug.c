@@ -207,5 +207,6 @@ void DEBUG_USART_DMA_Tx_Start(u8* Tx_Array, u8 Length)
 	DEBUG_TX_DMA_CHANNEL->CMAR = (u32)Tx_Array;//设置发送的内存地址
 	DEBUG_TX_DMA_CHANNEL->CNDTR = Length;//设置发送的数据长度
 	DMA_Cmd(DEBUG_TX_DMA_CHANNEL, ENABLE);
+	delay_us(450);
 }
 

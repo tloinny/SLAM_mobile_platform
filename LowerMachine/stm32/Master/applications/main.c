@@ -21,9 +21,9 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	LED_Init();
 	DEBUG_USARTx_DMA_Config();
-	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
+	//CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 	delay_ms(500);
-	CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
+	//CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
 	RUN_LED = 1;
 	M1_LED = 1;
 	M2_LED = 1;
@@ -31,13 +31,12 @@ int main(void)
 	M4_LED = 1;
 		while(1)
 		{
-			u8 buf[8] = {1,2,3,4};
-			DEBUG_USART_DMA_Tx_Start(buf,4);
-//			USART_Commuincate();
-//			if(Can_Receive_Msg(RecBuf.s) != 0)
-//			{
-//				match_feedback(RecBuf.s);				
-//			}
+			SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));
+			USART_Commuincate();
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				match_feedback(RecBuf.s);				
+			}
 		}
 }
 

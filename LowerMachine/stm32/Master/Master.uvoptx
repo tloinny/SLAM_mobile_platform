@@ -150,41 +150,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>25</LineNumber>
+          <LineNumber>205</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134222232</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\drivers\timer.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\template\drivers/timer.c\25</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>35</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134223420</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\applications\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\template\applications/main.c\35</Expression>
-        </Bp>
-        <Bp>
-          <Number>2</Number>
-          <Type>0</Type>
-          <LineNumber>208</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134220510</Address>
+          <Address>134220886</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -193,23 +161,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\drivers\dma_usart1_debug.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\drivers/dma_usart1_debug.c\208</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>209</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134220512</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\drivers\dma_usart1_debug.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\template\drivers/dma_usart1_debug.c\209</Expression>
+          <Expression>\\template\drivers/dma_usart1_debug.c\205</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -222,6 +174,11 @@
           <count>1</count>
           <WinNumber>1</WinNumber>
           <ItemText>buf</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>((DMA_Channel_TypeDef *) ((((uint32_t)0x40000000) + 0x20000) + 0x0044))</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -266,6 +223,12 @@
       <pszMrulep></pszMrulep>
       <pSingCmdsp></pSingCmdsp>
       <pMultCmdsp></pMultCmdsp>
+      <SystemViewers>
+        <Entry>
+          <Name>System Viewer\DMA1</Name>
+          <WinId>35905</WinId>
+        </Entry>
+      </SystemViewers>
     </TargetOption>
   </Target>
 

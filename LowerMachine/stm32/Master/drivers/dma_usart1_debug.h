@@ -2,13 +2,14 @@
 #define __DMA_USART1_DEBUG_H
 
 #include "stm32f10x.h"
+#include "delay.h"
 #include <stdio.h>
 
 // 串口工作参数宏定义
 #define  DEBUG_USARTx                   USART1
 #define  DEBUG_USART_CLK                RCC_APB2Periph_USART1
 #define  DEBUG_USART_APBxClkCmd         RCC_APB2PeriphClockCmd
-#define  DEBUG_USART_BAUDRATE           115200
+#define  DEBUG_USART_BAUDRATE           256000
 
 // USART GPIO 引脚宏定义
 #define  DEBUG_USART_GPIO_CLK           (RCC_APB2Periph_GPIOA)
