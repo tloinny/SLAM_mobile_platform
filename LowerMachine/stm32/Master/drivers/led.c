@@ -39,5 +39,5 @@ void LED_Init(void)
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11;
 	GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
-	TIM2_Init(500);
+	TIM2_Init(1000);
 }

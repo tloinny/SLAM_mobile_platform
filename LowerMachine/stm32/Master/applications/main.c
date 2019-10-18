@@ -14,6 +14,7 @@
 #include "inverse_solution.h"
 #include "USART_Communication.h"
 
+
 int main(void)
 {
 	delay_init();
@@ -23,13 +24,20 @@ int main(void)
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 	delay_ms(500);
 	CAN_Call();	/* CAN广播一次，查看总线上有哪些节点 */
+	RUN_LED = 1;
+	M1_LED = 1;
+	M2_LED = 1;
+	M3_LED = 1;
+	M4_LED = 1;
 		while(1)
 		{
-			USART_Commuincate();
-			if(Can_Receive_Msg(RecBuf.s) != 0)
-			{
-				match_feedback(RecBuf.s);				
-			}
+			u8 buf[8] = {1,2,3,4};
+			DEBUG_USART_DMA_Tx_Start(buf,4);
+//			USART_Commuincate();
+//			if(Can_Receive_Msg(RecBuf.s) != 0)
+//			{
+//				match_feedback(RecBuf.s);				
+//			}
 		}
 }
 
