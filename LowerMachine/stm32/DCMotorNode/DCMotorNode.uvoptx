@@ -160,18 +160,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>225</LineNumber>
+          <LineNumber>41</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134223276</Address>
+          <Address>134225288</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\DCMotorNode\drivers\timer.c</Filename>
+          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\DCMotorNode\functions\motor_operate.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\drivers/timer.c\225</Expression>
+          <Expression>\\template\functions/motor_operate.c\41</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>46</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134225350</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\DCMotorNode\functions\motor_operate.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\template\functions/motor_operate.c\46</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

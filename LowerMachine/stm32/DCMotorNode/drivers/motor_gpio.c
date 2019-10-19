@@ -20,7 +20,7 @@ motor Motor;
  */
 void motor_io_init()
 {
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);  /* 使能GPIO外设 */
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);  /* 使能GPIO外设 */
 
 	/* 配置PWM脚 */
 	Motor.motor_gpio[0].GPIO_Pin = GPIO_Pin_6;	/* IN1 */

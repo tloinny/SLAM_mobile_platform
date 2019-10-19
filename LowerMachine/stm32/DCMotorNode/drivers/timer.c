@@ -100,7 +100,7 @@ void PID_TIM3_Init(float UnitTime_ms)
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  /*TIM向上计数模式 */
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure); /* 根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位 */
 
-	TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE );
+	TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;	/* TIM3中断 */
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 4;	/* 抢占优先级2 */
@@ -154,6 +154,7 @@ void TIM2_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
 	{
+		printf("t\r\n");
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 		if(preAngle == -1)
 		{
@@ -214,15 +215,26 @@ void TIM3_IRQHandler(void)
 		if(speed_feedback != -1)
 		{
 			PWM_output += update(speed_feedback);	/* 增量式PID */
+			if(PWM_output >= 1)
+			{
+				PWM_output = 1;
+				printf("P:%f\r\n",PWM_output);
+			}else if(PWM_output <= -1)
+			{
+				PWM_output = -1;
+				printf("P:%f\r\n",PWM_output);
+			}
 		}
-		if(PWM_output > 1)
-		{
-			PWM_output = 1;
-		}else if(PWM_output < -1)
-		{
-			PWM_output = -1;
-		}
-		printf("PID running:%f\r\n",PWM_output);
-		//motor_run(PWM_output);
+		//PWM_output = 1.1;
+//		if(PWM_output >= 1)
+//		{
+//			PWM_output = 1;
+//		}else if(PWM_output <= -1)
+//		{
+//			PWM_output = -1;
+//		}
+		//printf("P:%f\r\n",PWM_output);
+		//PWM_output = -1;
+		motor_run(PWM_output);
 	}
 }
