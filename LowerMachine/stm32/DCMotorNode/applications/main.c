@@ -29,7 +29,10 @@ int main(void)
 	LED0 = 1;
 		while(1)
 		{				
-			motor_run(0.9);
+			wheel_speed_goal = 3000;
+			motor_run(PWM_output);
+			delay_ms(100);
+//			motor_run(0.9);
 //			for(float i=0;i<0.5;i+=0.05)
 //			{
 //				motor_run(i);

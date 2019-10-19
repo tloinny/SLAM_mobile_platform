@@ -19,7 +19,7 @@ double unit_time = 0;
 float AngleDelta = 0;
 float Pre_AngleDelta = 0;
 
-int PWM_output = 0;
+float PWM_output = 0;
 
 float sample_time = 0;
 long current_time = 0;
@@ -192,8 +192,8 @@ void TIM2_IRQHandler(void)
 			{
 				AngleDelta = Pre_AngleDelta;
 			}
-			printf("A: %f ", AngleDelta);
-			printf("c: %f\r\n", currentAngle);
+//			printf("A: %f ", AngleDelta);
+//			printf("c: %f\r\n", currentAngle);
 			speed_feedback = (AngleDelta/sample_time) * 166.66666667;
 			preAngle = currentAngle;
 			Pre_AngleDelta = AngleDelta;
@@ -215,13 +215,14 @@ void TIM3_IRQHandler(void)
 		{
 			PWM_output += update(speed_feedback);	/* ÔöÁ¿Ê½PID */
 		}
-		if(PWM_output > 255)
+		if(PWM_output > 1)
 		{
-			PWM_output = 255;
-		}else if(PWM_output < -255)
+			PWM_output = 1;
+		}else if(PWM_output < -1)
 		{
-			PWM_output = -255;
+			PWM_output = -1;
 		}
-		motor_run(PWM_output);
+		printf("PID running:%f\r\n",PWM_output);
+		//motor_run(PWM_output);
 	}
 }
