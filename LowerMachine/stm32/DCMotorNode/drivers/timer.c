@@ -154,7 +154,6 @@ void TIM2_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
 	{
-		printf("t\r\n");
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 		if(preAngle == -1)
 		{
@@ -193,8 +192,6 @@ void TIM2_IRQHandler(void)
 			{
 				AngleDelta = Pre_AngleDelta;
 			}
-//			printf("A: %f ", AngleDelta);
-//			printf("c: %f\r\n", currentAngle);
 			speed_feedback = (AngleDelta/sample_time) * 166.66666667;
 			preAngle = currentAngle;
 			Pre_AngleDelta = AngleDelta;
@@ -215,26 +212,16 @@ void TIM3_IRQHandler(void)
 		if(speed_feedback != -1)
 		{
 			PWM_output += update(speed_feedback);	/* ÔöÁ¿Ê½PID */
+			printf("s:%f ",speed_feedback);
 			if(PWM_output >= 1)
 			{
 				PWM_output = 1;
-				printf("P:%f\r\n",PWM_output);
 			}else if(PWM_output <= -1)
 			{
 				PWM_output = -1;
-				printf("P:%f\r\n",PWM_output);
 			}
 		}
-		//PWM_output = 1.1;
-//		if(PWM_output >= 1)
-//		{
-//			PWM_output = 1;
-//		}else if(PWM_output <= -1)
-//		{
-//			PWM_output = -1;
-//		}
-		//printf("P:%f\r\n",PWM_output);
-		//PWM_output = -1;
+		printf("P:%f\r\n",PWM_output);
 		motor_run(PWM_output);
 	}
 }

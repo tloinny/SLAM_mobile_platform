@@ -50,7 +50,7 @@ void as5600_init()
 		}
 	}
 	TIM1_Init(10);
-	TIM2_Init(3);
+	TIM2_Init(2);
 }
 
 u8 getAddress()

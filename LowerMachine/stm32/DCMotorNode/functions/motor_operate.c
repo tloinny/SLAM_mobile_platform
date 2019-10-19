@@ -23,7 +23,7 @@ void motor_init(void)
 {
 	TIM4_PWM_Init(TIM4_ARR,TIM4_PSC);	/* 初始化TIM4,提供给电机驱动使用 */
 	as5600_init();	/* 初始化磁编码器 */
-	PID_CONTROLLER(1,0,0,50);	/* 初始化PID控制器，包括定时器3 */
+	PID_CONTROLLER(0.0002,0.00001,0.0001,50);	/* 初始化PID控制器，包括定时器3 */
 }
 
 /**
