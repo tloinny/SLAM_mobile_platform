@@ -194,7 +194,7 @@ void TIM2_IRQHandler(void)
 //					printf("A: %f ", AngleDelta);
 //					printf("s: %f\r\n", sample_time);
 //				}
-			printf("A: %f ", AngleDelta);
+//			printf("A: %f ", AngleDelta);
 //			printf("s: %f ", speed_feedback);
 //			printf("t: %f\r\n", sample_time);
 			}
