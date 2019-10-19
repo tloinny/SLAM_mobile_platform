@@ -17,6 +17,7 @@ float preAngle = -1;
 float speed_feedback  = -1;
 double unit_time = 0;
 float AngleDelta = 0;
+float Pre_AngleDelta = 0;
 
 int PWM_output = 0;
 
@@ -43,7 +44,7 @@ void TIM1_Init(float UnitTime_ms)
 	
 	NVIC_InitTypeDef NVIC_InitStructure;
 	NVIC_InitStructure.NVIC_IRQChannel = TIM1_UP_IRQn;	/* TIM1中断 */
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;	/* 抢占优先级0 */
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	/* 抢占优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	/* 从优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	/* 使能中断 */
 	NVIC_Init(&NVIC_InitStructure);
@@ -186,19 +187,18 @@ void TIM2_IRQHandler(void)
 					{
 						AngleDelta += 360;
 					}
-				}
+				}		
+			if(motor_state*AngleDelta < 0)
+			{
+				AngleDelta = Pre_AngleDelta;
+			}
+			printf("A: %f ", AngleDelta);
+			printf("c: %f\r\n", currentAngle);
 			speed_feedback = (AngleDelta/sample_time) * 166.66666667;
 			preAngle = currentAngle;
-//				if(speed_feedback > 7000||speed_feedback<-7000)
-//				{
-//					printf("A: %f ", AngleDelta);
-//					printf("s: %f\r\n", sample_time);
-//				}
-//			printf("A: %f ", AngleDelta);
-//			printf("s: %f ", speed_feedback);
-//			printf("t: %f\r\n", sample_time);
-			}
+			Pre_AngleDelta = AngleDelta;
 		}
+	}
 }
 
 /**

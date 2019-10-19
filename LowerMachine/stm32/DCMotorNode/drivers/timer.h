@@ -5,6 +5,10 @@
 
 #define MaxSpeed 6000
 
+extern float currentAngle;
+extern float preAngle;
+extern float AngleDelta;
+
 extern float speed_feedback;
 extern float sample_time;
 

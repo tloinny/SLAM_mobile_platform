@@ -29,18 +29,19 @@ int main(void)
 	LED0 = 1;
 		while(1)
 		{				
-			for(float i=0;i<1;i+=0.05)
-			{
-				motor_run(i);
-				delay_ms(100);
-				printf("i: %f\r\n", i);
-			}
-			for(float i=1;i>0;i-=0.05)
-			{
-				motor_run(i);
-				delay_ms(100);
-				printf("i: %f\r\n", i);
-			}
+			motor_run(0.9);
+//			for(float i=0;i<0.5;i+=0.05)
+//			{
+//				motor_run(i);
+//				delay_ms(100);
+//				printf("i: %f\r\n", i);
+//			}
+//			for(float i=0.5;i>0;i-=0.05)
+//			{
+//				motor_run(i);
+//				delay_ms(100);
+//				printf("i: %f\r\n", i);
+//			}
 //			if(Can_Receive_Msg(RecBuf.s) != 0)
 //			{
 //				matchMsg(&RecBuf);

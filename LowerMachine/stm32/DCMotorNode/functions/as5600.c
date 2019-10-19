@@ -308,7 +308,7 @@ float convertRawAngleToDegrees(u16 newAngle)
 {
   /* Raw data reports 0 - 4095 segments, which is 0.087890625 of a degree */
   float retVal = newAngle * 0.087890625;
-//	printf("RawRad: %d RawDegress: %f \r\n", newAngle, retVal);
+	//printf("R: %d RD: %f ", newAngle, retVal);
   return retVal;
 }
 
