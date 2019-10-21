@@ -112,7 +112,7 @@ void clear()
  */
 float update(float FeedbackValue)
 {
-	float Error = Goal - FeedbackValue;
+	float Error = FeedbackValue-Goal;
 	float delta_error = Error - LastError;	
 
 	PTerm = kp * delta_error;
@@ -123,6 +123,7 @@ float update(float FeedbackValue)
 
 	Output = PTerm + ki * ITerm + kd * DTerm;
 	Output *= -1;
-	printf("E:%f,DE:%f,LE:%f,LLE:%f,Out:%f\r\n",Error,delta_error,LastError,LLastError,Output);
+	printf("A:%f, p:%f, Goal:%f, ",FeedbackValue,PWM_output,wheel_speed_goal);
+	printf("E:%f, Out:%f\r\n",Error,Output);
 	return Output;
 }

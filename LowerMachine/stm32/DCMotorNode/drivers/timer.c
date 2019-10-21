@@ -170,7 +170,7 @@ void TIM2_IRQHandler(void)
 			sample_time_sum += TIM1->CNT;
 			TIM1->CNT = 0;
 			AngleDelta = currentAngle - preAngle;
-			if(AngleDelta <= 1 && AngleDelta >= -1) AngleDelta=0;
+			if(abs(AngleDelta)<=1) AngleDelta=0;
 			if(AngleDelta >= 0)
 			{
 				if(AngleDelta <= 1024)
@@ -213,7 +213,7 @@ void TIM2_IRQHandler(void)
 				}			
 				AngleDelta_average = AngleDelta_sum/(max_st-noise_num);
 				sample_time_unit = sample_time_sum / max_st;
-				printf("s:%d st_a:%d\r\n",AngleDelta_average,sample_time_unit);
+				//printf("s:%d st_a:%d\r\n",AngleDelta_average,sample_time_unit);
 				sample_time_sum = 0;
 				AngleDelta_sum = 0;
 			}else
@@ -248,7 +248,6 @@ void TIM3_IRQHandler(void)
 			}
 		}
 		motor_run(PWM_output);
-		//printf("A:%d, p:%f, Goal:%f\r\n",AngleDelta_average,PWM_output,wheel_speed_goal);
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}
 }
