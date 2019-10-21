@@ -44,3 +44,5 @@
 .\objects\motor_gpio.o: .\drivers\motor_gpio.h
 .\objects\motor_gpio.o: .\functions\pid.h
 .\objects\motor_gpio.o: .\drivers\timer.h
+.\objects\motor_gpio.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\motor_gpio.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h

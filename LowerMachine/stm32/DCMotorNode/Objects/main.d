@@ -42,6 +42,8 @@
 .\objects\main.o: .\drivers\SoftwareIIC.h
 .\objects\main.o: .\drivers\timer.h
 .\objects\main.o: .\functions\motor_operate.h
+.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: .\functions\pid.h
 .\objects\main.o: .\functions\Slave_can_protocol.h
 .\objects\main.o: .\drivers\can.h

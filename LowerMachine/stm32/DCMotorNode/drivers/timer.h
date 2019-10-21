@@ -2,6 +2,8 @@
 #define __TIMER_H
 #include "stm32f10x_tim.h"
 #include "motor_operate.h"
+#include <stdlib.h>
+#include <math.h>
 
 #define MaxSpeed 6000
 

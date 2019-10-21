@@ -56,8 +56,8 @@ void setSampleTime(float sample_time)
  */
 void setGoal(float goal)
 {
-	Goal = (goal*68.27)/sample_time_unit;
-//		Goal = goal;
+//	Goal = (goal*68.27)/sample_time_unit;
+	Goal = goal;
 }
 
 /**
@@ -122,5 +122,7 @@ float update(float FeedbackValue)
 	LastError = Error;
 
 	Output = PTerm + ki * ITerm + kd * DTerm;
+	Output *= -1;
+	printf("E:%f,DE:%f,LE:%f,LLE:%f,Out:%f\r\n",Error,delta_error,LastError,LLastError,Output);
 	return Output;
 }

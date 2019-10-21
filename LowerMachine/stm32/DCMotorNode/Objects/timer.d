@@ -43,4 +43,6 @@
 .\objects\timer.o: .\drivers\sys.h
 .\objects\timer.o: .\drivers\timer.h
 .\objects\timer.o: .\functions\pid.h
+.\objects\timer.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\timer.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\timer.o: drivers\led.h

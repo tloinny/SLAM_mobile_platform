@@ -43,4 +43,6 @@
 .\objects\slave_can_protocol.o: .\drivers\SoftwareIIC.h
 .\objects\slave_can_protocol.o: .\drivers\timer.h
 .\objects\slave_can_protocol.o: .\functions\motor_operate.h
+.\objects\slave_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\slave_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\slave_can_protocol.o: functions\pid.h

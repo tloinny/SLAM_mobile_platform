@@ -43,3 +43,5 @@
 .\objects\stm32f10x_it.o: .\drivers\sys.h
 .\objects\stm32f10x_it.o: .\drivers\timer.h
 .\objects\stm32f10x_it.o: .\functions\pid.h
+.\objects\stm32f10x_it.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\stm32f10x_it.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h

@@ -44,3 +44,5 @@
 .\objects\pid.o: .\drivers\sys.h
 .\objects\pid.o: .\drivers\timer.h
 .\objects\pid.o: .\functions\pid.h
+.\objects\pid.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\pid.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h

@@ -44,3 +44,5 @@
 .\objects\as5600.o: .\functions\as5600.h
 .\objects\as5600.o: .\functions\pid.h
 .\objects\as5600.o: .\drivers\timer.h
+.\objects\as5600.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\as5600.o: E:\Keil5\ARM\ARMCC\Bin\..\include\math.h

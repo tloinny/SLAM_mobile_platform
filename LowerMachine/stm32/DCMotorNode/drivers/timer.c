@@ -26,7 +26,7 @@ int AngleDelta = 0;
 const int max_st = 13;
 int sample_times = 0;
 int AngleDelta_sum = 0;
-int AngleDelta_average = 0;
+int AngleDelta_average = -1;
 int sample_log[max_st]={0};
 int AngleDelta_middle = 0;
 
@@ -108,7 +108,7 @@ void PID_TIM3_Init(float UnitTime_ms)
 	TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;	/* TIM3中断 */
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	/* 抢占优先级2 */
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;	/* 抢占优先级2 */
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;	/* 从优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	/* 使能中断 */
 	NVIC_Init(&NVIC_InitStructure);
@@ -201,7 +201,7 @@ void TIM2_IRQHandler(void)
 				AngleDelta_middle = sample_log[max_st/2];
 				for(int i=0;i<max_st;++i)
 				{
-					if(sample_log[i]<=AngleDelta_middle*(1+0.1) && sample_log[i]>=AngleDelta_middle*(1-0.1))
+					if(abs(sample_log[i]-AngleDelta_middle)<=abs(AngleDelta_middle*0.1))
 					{
 						AngleDelta_sum += sample_log[i];
 					}else
@@ -213,7 +213,7 @@ void TIM2_IRQHandler(void)
 				}			
 				AngleDelta_average = AngleDelta_sum/(max_st-noise_num);
 				sample_time_unit = sample_time_sum / max_st;
-				printf("s:%d st:%d\r\n",AngleDelta_average,sample_time_sum);
+				printf("s:%d st_a:%d\r\n",AngleDelta_average,sample_time_unit);
 				sample_time_sum = 0;
 				AngleDelta_sum = 0;
 			}else
@@ -235,9 +235,10 @@ void TIM3_IRQHandler(void)
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
 	{
 		setGoal(wheel_speed_goal);
-		if(speed_feedback != -1)
+		if(AngleDelta_average != -1)
 		{
-			PWM_output += update(speed_feedback);	/* 增量式PID */
+//			PWM_output += update(speed_feedback);	/* 增量式PID */
+			PWM_output += update(AngleDelta_average);	/* 增量式PID */
 			if(PWM_output >= 1)
 			{
 				PWM_output = 1;
@@ -247,6 +248,7 @@ void TIM3_IRQHandler(void)
 			}
 		}
 		motor_run(PWM_output);
+		//printf("A:%d, p:%f, Goal:%f\r\n",AngleDelta_average,PWM_output,wheel_speed_goal);
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}
 }
