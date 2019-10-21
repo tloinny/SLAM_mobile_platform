@@ -116,7 +116,7 @@ float update(float FeedbackValue)
 	float delta_error = Error - LastError;	
 
 	PTerm = kp * delta_error;
-	ITerm += Error;
+	ITerm = Error;
 	DTerm = Error - 2*LastError + LLastError;
 	LLastError = LastError;
 	LastError = Error;

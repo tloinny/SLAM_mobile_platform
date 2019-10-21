@@ -1356,7 +1356,7 @@ Image Symbol Table
     i.setStartPosition                       0x08003004   Section        0  as5600.o(i.setStartPosition)
     i.uart2_init                             0x0800304c   Section        0  usart.o(i.uart2_init)
     i.update                                 0x080030f0   Section        0  pid.o(i.update)
-    i.writeOneByte                           0x08003258   Section        0  as5600.o(i.writeOneByte)
+    i.writeOneByte                           0x08003250   Section        0  as5600.o(i.writeOneByte)
     .data                                    0x20000000   Section        8  motor_operate.o(.data)
     .data                                    0x20000008   Section       48  pid.o(.data)
     .data                                    0x20000038   Section       10  as5600.o(.data)
@@ -1620,10 +1620,10 @@ Image Symbol Table
     setSampleTime                            0x08002ff9   Thumb Code     6  pid.o(i.setSampleTime)
     setStartPosition                         0x08003005   Thumb Code    62  as5600.o(i.setStartPosition)
     uart2_init                               0x0800304d   Thumb Code   154  usart.o(i.uart2_init)
-    update                                   0x080030f1   Thumb Code   268  pid.o(i.update)
-    writeOneByte                             0x08003259   Thumb Code    46  as5600.o(i.writeOneByte)
-    Region$$Table$$Base                      0x08003288   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080032a8   Number         0  anon$$obj.o(Region$$Table)
+    update                                   0x080030f1   Thumb Code   260  pid.o(i.update)
+    writeOneByte                             0x08003251   Thumb Code    46  as5600.o(i.writeOneByte)
+    Region$$Table$$Base                      0x08003280   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080032a0   Number         0  anon$$obj.o(Region$$Table)
     motor_state                              0x20000000   Data           4  motor_operate.o(.data)
     wheel_speed_goal                         0x20000004   Data           4  motor_operate.o(.data)
     kp                                       0x20000008   Data           4  pid.o(.data)
@@ -1677,9 +1677,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003374, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000336c, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000032a8, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000032a0, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1830,26 +1830,26 @@ Memory Map of the image
     0x08002ff8   0x08002ff8   0x0000000c   Code   RO          208    i.setSampleTime     pid.o
     0x08003004   0x08003004   0x00000048   Code   RO          289    i.setStartPosition  as5600.o
     0x0800304c   0x0800304c   0x000000a4   Code   RO          690    i.uart2_init        usart.o
-    0x080030f0   0x080030f0   0x00000168   Code   RO          209    i.update            pid.o
-    0x08003258   0x08003258   0x0000002e   Code   RO          290    i.writeOneByte      as5600.o
-    0x08003286   0x08003286   0x00000002   PAD
-    0x08003288   0x08003288   0x00000020   Data   RO         4263    Region$$Table       anon$$obj.o
+    0x080030f0   0x080030f0   0x00000160   Code   RO          209    i.update            pid.o
+    0x08003250   0x08003250   0x0000002e   Code   RO          290    i.writeOneByte      as5600.o
+    0x0800327e   0x0800327e   0x00000002   PAD
+    0x08003280   0x08003280   0x00000020   Data   RO         4263    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080032a8, Size: 0x00000510, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080032a0, Size: 0x00000510, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080032a8   0x00000008   Data   RW          160    .data               motor_operate.o
-    0x20000008   0x080032b0   0x00000030   Data   RW          210    .data               pid.o
-    0x20000038   0x080032e0   0x0000000a   Data   RW          292    .data               as5600.o
-    0x20000042   0x080032ea   0x00000002   PAD
-    0x20000044   0x080032ec   0x00000014   Data   RW          429    .data               slave_can_protocol.o
-    0x20000058   0x08003300   0x00000004   Data   RW          473    .data               delay.o
-    0x2000005c   0x08003304   0x00000018   Data   RW          691    .data               usart.o
-    0x20000074   0x0800331c   0x00000030   Data   RW          756    .data               timer.o
-    0x200000a4   0x0800334c   0x00000014   Data   RW         2509    .data               stm32f10x_rcc.o
-    0x200000b8   0x08003360   0x00000014   Data   RW         3883    .data               system_stm32f10x.o
+    0x20000000   0x080032a0   0x00000008   Data   RW          160    .data               motor_operate.o
+    0x20000008   0x080032a8   0x00000030   Data   RW          210    .data               pid.o
+    0x20000038   0x080032d8   0x0000000a   Data   RW          292    .data               as5600.o
+    0x20000042   0x080032e2   0x00000002   PAD
+    0x20000044   0x080032e4   0x00000014   Data   RW          429    .data               slave_can_protocol.o
+    0x20000058   0x080032f8   0x00000004   Data   RW          473    .data               delay.o
+    0x2000005c   0x080032fc   0x00000018   Data   RW          691    .data               usart.o
+    0x20000074   0x08003314   0x00000030   Data   RW          756    .data               timer.o
+    0x200000a4   0x08003344   0x00000014   Data   RW         2509    .data               stm32f10x_rcc.o
+    0x200000b8   0x08003358   0x00000014   Data   RW         3883    .data               system_stm32f10x.o
     0x200000cc        -       0x00000034   Zero   RW          754    .bss                timer.o
     0x20000100        -       0x00000010   Zero   RW          805    .bss                motor_gpio.o
     0x20000110        -       0x00000400   Zero   RW         3923    STACK               startup_stm32f10x_md.o
@@ -1870,7 +1870,7 @@ Image component sizes
        172         22          0          0          0       2285   misc.o
        104         10          0          0         16       1380   motor_gpio.o
        240         40          0          8          0       1846   motor_operate.o
-       506        142          0         48          0       3754   pid.o
+       498        142          0         48          0       3754   pid.o
        214         34          0         20          0       3544   slave_can_protocol.o
        842        102          0          0          0       5041   softwareiic.o
         36          8        236          0       1024        824   startup_stm32f10x_md.o
@@ -1886,7 +1886,7 @@ Image component sizes
        504         38          0         24          0       4347   usart.o
 
     ----------------------------------------------------------------------
-      8376        826        268        204       1092     332863   Object Totals
+      8368        826        268        204       1092     332863   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         26          0          0          2          0          0   (incl. Padding)
 
@@ -1950,15 +1950,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12700        932        268        204       1092     329647   Grand Totals
-     12700        932        268        204       1092     329647   ELF Image Totals
-     12700        932        268        204          0          0   ROM Totals
+     12692        932        268        204       1092     329647   Grand Totals
+     12692        932        268        204       1092     329647   ELF Image Totals
+     12692        932        268        204          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                12968 (  12.66kB)
+    Total RO  Size (Code + RO Data)                12960 (  12.66kB)
     Total RW  Size (RW Data + ZI Data)              1296 (   1.27kB)
-    Total ROM Size (Code + RO Data + RW Data)      13172 (  12.86kB)
+    Total ROM Size (Code + RO Data + RW Data)      13164 (  12.86kB)
 
 ==============================================================================
 
