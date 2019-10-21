@@ -39,6 +39,7 @@
 .\objects\motor_operate.o: .\drivers\delay.h
 .\objects\motor_operate.o: .\drivers\usart.h
 .\objects\motor_operate.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\motor_operate.o: .\drivers\sys.h
 .\objects\motor_operate.o: .\drivers\timer.h
 .\objects\motor_operate.o: .\functions\motor_operate.h
 .\objects\motor_operate.o: functions\pid.h

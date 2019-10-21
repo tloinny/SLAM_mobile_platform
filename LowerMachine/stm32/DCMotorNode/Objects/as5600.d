@@ -36,6 +36,7 @@
 .\objects\as5600.o: .\drivers\delay.h
 .\objects\as5600.o: .\drivers\usart.h
 .\objects\as5600.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\as5600.o: .\drivers\sys.h
 .\objects\as5600.o: .\drivers\timer.h
 .\objects\as5600.o: .\functions\motor_operate.h
 .\objects\as5600.o: .\drivers\motor_gpio.h

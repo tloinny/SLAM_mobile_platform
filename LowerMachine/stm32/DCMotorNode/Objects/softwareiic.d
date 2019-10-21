@@ -33,3 +33,6 @@
 .\objects\softwareiic.o: drivers\delay.h
 .\objects\softwareiic.o: drivers\sys.h
 .\objects\softwareiic.o: drivers\delay.h
+.\objects\softwareiic.o: drivers\usart.h
+.\objects\softwareiic.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\softwareiic.o: drivers\sys.h

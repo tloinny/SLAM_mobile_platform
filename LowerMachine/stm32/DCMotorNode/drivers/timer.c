@@ -11,18 +11,24 @@
 #include "timer.h"
 #include "led.h"
 
-float currentAngle = 0;
-float preAngle = -1;
-
 float speed_feedback  = -1;
-double unit_time = 0;
-float AngleDelta = 0;
-float Pre_AngleDelta = 0;
+float unit_time = 0;
 
 float PWM_output = 0;
 
-float sample_time = 0;
-long current_time = 0;
+int sample_time_sum = 0;
+int sample_time_unit = 0;
+
+int currentAngle = 0;
+int preAngle = -1;
+int AngleDelta = 0;
+
+const int max_st = 13;
+int sample_times = 0;
+int AngleDelta_sum = 0;
+int AngleDelta_average = 0;
+int sample_log[max_st]={0};
+int AngleDelta_middle = 0;
 
 /**
  *@function TIM1 initialization, Timer1 is used for only timing
@@ -40,12 +46,11 @@ void TIM1_Init(float UnitTime_ms)
 	TIM_TimeBaseStructure.TIM_RepetitionCounter = 0;
 	TIM_TimeBaseInit(TIM1,&TIM_TimeBaseStructure);
 	TIM_ClearFlag(TIM1,TIM_FLAG_Update);
-	TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE);  
 	
 	NVIC_InitTypeDef NVIC_InitStructure;
 	NVIC_InitStructure.NVIC_IRQChannel = TIM1_UP_IRQn;	/* TIM1中断 */
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	/* 抢占优先级0 */
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	/* 从优先级0 */
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;	/* 从优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	/* 使能中断 */
 	NVIC_Init(&NVIC_InitStructure);
 	
@@ -65,7 +70,7 @@ void TIM2_Init(float UnitTime_ms)
    /* 初始化TIM2 */
 	TIM_TimeBaseStructure.TIM_Period = 1000*UnitTime_ms - 1; /* 设置在下一个更新事件装入活动的自动重装载寄存器周期的值 */
 	TIM_TimeBaseStructure.TIM_Prescaler = 71; /* 设置用来作为TIMx时钟频率除数的预分频值 */
-	unit_time = UnitTime_ms/1000;
+	unit_time = UnitTime_ms*1000;
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; /* 设置时钟分割:TDTS = Tck_tim */
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  /*TIM向上计数模式 */
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure); /* 根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位 */
@@ -74,7 +79,7 @@ void TIM2_Init(float UnitTime_ms)
 	
 	NVIC_InitTypeDef NVIC_InitStructure;
 	NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;	/* TIM2中断 */
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;	/* 抢占优先级2 */
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	/* 抢占优先级2 */
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;	/* 从优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	/* 使能中断 */
 	NVIC_Init(&NVIC_InitStructure);
@@ -103,8 +108,8 @@ void PID_TIM3_Init(float UnitTime_ms)
 	TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;	/* TIM3中断 */
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 4;	/* 抢占优先级2 */
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;	/* 从优先级0 */
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;	/* 抢占优先级2 */
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;	/* 从优先级0 */
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	/* 使能中断 */
 	NVIC_Init(&NVIC_InitStructure);
 	
@@ -154,48 +159,70 @@ void TIM2_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
 	{
-		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 		if(preAngle == -1)
 		{
-			currentAngle = getRawDegrees();
+			currentAngle = getRawAngle();
 			preAngle = currentAngle;
 			TIM1->CNT = 0;
 		}else
 		{
-			currentAngle = getRawDegrees();
-			current_time = TIM1->CNT;
+			currentAngle = getRawAngle();
+			sample_time_sum += TIM1->CNT;
 			TIM1->CNT = 0;
-			sample_time = current_time/1000.0;
 			AngleDelta = currentAngle - preAngle;
-			if(AngleDelta <= 0.087891 && AngleDelta >= -0.087891) AngleDelta=0;
-				if(AngleDelta >= 0)
+			if(AngleDelta <= 1 && AngleDelta >= -1) AngleDelta=0;
+			if(AngleDelta >= 0)
+			{
+				if(AngleDelta <= 1024)
 				{
-					if(AngleDelta <= 90)
-					{
-						motor_state = 1;	/* 正转 */	
-					}else
-					{
-						motor_state = -1;	/* 反转 */
-						AngleDelta -= 360;
-					}
+					motor_state = 1;	/* 正转 */
 				}else
 				{
-					if(AngleDelta >= -90)
+					motor_state = -1;	/* 反转 */
+					AngleDelta -= 4095;
+				}
+			}else
+			{
+				if(AngleDelta >= -1024)
+				{
+					motor_state = -1;
+				}else
+				{
+					motor_state = 1;
+					AngleDelta += 4095;
+				}
+			}
+			preAngle = currentAngle;
+			if(sample_times>=max_st)
+			{
+				int noise_num = 0;
+				sample_times = 0;
+				BubbleSort(sample_log, max_st);
+				AngleDelta_middle = sample_log[max_st/2];
+				for(int i=0;i<max_st;++i)
+				{
+					if(sample_log[i]<=AngleDelta_middle*(1+0.1) && sample_log[i]>=AngleDelta_middle*(1-0.1))
 					{
-						motor_state = -1;
+						AngleDelta_sum += sample_log[i];
 					}else
 					{
-						AngleDelta += 360;
+						++noise_num;
+						sample_log[i] = 0;
 					}
-				}		
-			if(motor_state*AngleDelta < 0)
+					sample_log[i] = 0;
+				}			
+				AngleDelta_average = AngleDelta_sum/(max_st-noise_num);
+				sample_time_unit = sample_time_sum / max_st;
+				printf("s:%d st:%d\r\n",AngleDelta_average,sample_time_sum);
+				sample_time_sum = 0;
+				AngleDelta_sum = 0;
+			}else
 			{
-				AngleDelta = Pre_AngleDelta;
+				sample_log[sample_times] = AngleDelta;
 			}
-			speed_feedback = (AngleDelta/sample_time) * 166.66666667;
-			preAngle = currentAngle;
-			Pre_AngleDelta = AngleDelta;
+			++sample_times;
 		}
+		TIM_ClearITPendingBit(TIM2, TIM_IT_Update); 
 	}
 }
 
@@ -207,12 +234,10 @@ void TIM3_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
 	{
-		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 		setGoal(wheel_speed_goal);
 		if(speed_feedback != -1)
 		{
 			PWM_output += update(speed_feedback);	/* 增量式PID */
-			printf("s:%f ",speed_feedback);
 			if(PWM_output >= 1)
 			{
 				PWM_output = 1;
@@ -221,7 +246,19 @@ void TIM3_IRQHandler(void)
 				PWM_output = -1;
 			}
 		}
-		printf("P:%f\r\n",PWM_output);
 		motor_run(PWM_output);
+		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}
+}
+
+void BubbleSort(int *buf, int len)
+{
+	for(int i=0;i<len-1;++i) 
+		for(int j=0;j<len-i-1;++j)
+			if(*(buf+j)<*(buf+j+1))
+			{
+				int temp = *(buf+j+1);
+				*(buf+j+1) = *(buf+j);
+				*(buf+j) = temp;
+			}
 }

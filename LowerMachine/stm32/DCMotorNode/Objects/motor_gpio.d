@@ -38,6 +38,7 @@
 .\objects\motor_gpio.o: .\drivers\delay.h
 .\objects\motor_gpio.o: .\drivers\usart.h
 .\objects\motor_gpio.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\motor_gpio.o: .\drivers\sys.h
 .\objects\motor_gpio.o: .\drivers\timer.h
 .\objects\motor_gpio.o: .\functions\motor_operate.h
 .\objects\motor_gpio.o: .\drivers\motor_gpio.h

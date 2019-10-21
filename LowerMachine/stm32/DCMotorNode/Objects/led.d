@@ -32,3 +32,5 @@
 .\objects\led.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\led.o: drivers\delay.h
 .\objects\led.o: drivers\sys.h
+.\objects\led.o: drivers\usart.h
+.\objects\led.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h

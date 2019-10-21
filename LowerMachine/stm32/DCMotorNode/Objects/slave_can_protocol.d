@@ -33,14 +33,14 @@
 .\objects\slave_can_protocol.o: .\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\slave_can_protocol.o: .\drivers\delay.h
 .\objects\slave_can_protocol.o: .\drivers\sys.h
+.\objects\slave_can_protocol.o: .\drivers\usart.h
+.\objects\slave_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\slave_can_protocol.o: .\drivers\led.h
 .\objects\slave_can_protocol.o: functions\motor_operate.h
 .\objects\slave_can_protocol.o: .\drivers\motor_gpio.h
 .\objects\slave_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\time.h
 .\objects\slave_can_protocol.o: .\functions\as5600.h
 .\objects\slave_can_protocol.o: .\drivers\SoftwareIIC.h
-.\objects\slave_can_protocol.o: .\drivers\usart.h
-.\objects\slave_can_protocol.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\slave_can_protocol.o: .\drivers\timer.h
 .\objects\slave_can_protocol.o: .\functions\motor_operate.h
 .\objects\slave_can_protocol.o: functions\pid.h

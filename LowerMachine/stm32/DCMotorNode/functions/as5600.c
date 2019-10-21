@@ -50,7 +50,7 @@ void as5600_init()
 		}
 	}
 	TIM1_Init(10);
-	TIM2_Init(2);
+	TIM2_Init(0.5);
 }
 
 u8 getAddress()
@@ -64,9 +64,9 @@ u16 setMaxAngle(u16 newMaxAngle)
   _maxAngle = newMaxAngle;
  
   writeOneByte(_mang_hi, (_maxAngle&0xff00)>>8);
-  delay_us(2); 
+  IIC_delay_us(2); 
   writeOneByte(_mang_lo, (_maxAngle&0x00ff)<<8); 
-  delay_us(2);         
+  IIC_delay_us(2);         
 
   retVal = readTwoBytes(_mang_hi, _mang_lo);
   return retVal;
@@ -82,9 +82,9 @@ u16 setStartPosition(u16 startAngle)
   _rawStartAngle = startAngle;
 
   writeOneByte(_zpos_hi, (_rawStartAngle&0xff00)>>8);
-  delay_us(2); 
+  IIC_delay_us(2); 
   writeOneByte(_zpos_lo, (_rawStartAngle&0x00ff)<<8); 
-  delay_us(2);                
+  IIC_delay_us(2);                
   _zPosition = readTwoBytes(_zpos_hi, _zpos_lo);
   
   return(_zPosition);
@@ -100,9 +100,9 @@ u16 setEndPosition(u16 endAngle)
   _rawEndAngle = endAngle;
  
   writeOneByte(_mpos_hi, (_rawEndAngle&0xff00)>>8);
-  delay_us(2); 
+  IIC_delay_us(2); 
   writeOneByte(_mpos_lo, (_rawEndAngle&0x00ff)<<8); 
-  delay_us(2);                
+  IIC_delay_us(2);                
   _mPosition = readTwoBytes(_mpos_hi, _mpos_lo);
   
   return(_mPosition);

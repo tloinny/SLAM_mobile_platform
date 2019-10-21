@@ -41,5 +41,6 @@
 .\objects\pid.o: .\drivers\delay.h
 .\objects\pid.o: .\drivers\usart.h
 .\objects\pid.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\pid.o: .\drivers\sys.h
 .\objects\pid.o: .\drivers\timer.h
 .\objects\pid.o: .\functions\pid.h

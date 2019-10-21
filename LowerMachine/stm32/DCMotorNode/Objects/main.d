@@ -33,6 +33,7 @@
 .\objects\main.o: .\drivers\delay.h
 .\objects\main.o: .\drivers\usart.h
 .\objects\main.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\drivers\sys.h
 .\objects\main.o: .\drivers\led.h
 .\objects\main.o: .\functions\motor_operate.h
 .\objects\main.o: .\drivers\motor_gpio.h

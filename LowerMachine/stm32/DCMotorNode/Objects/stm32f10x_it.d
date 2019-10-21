@@ -40,5 +40,6 @@
 .\objects\stm32f10x_it.o: .\drivers\delay.h
 .\objects\stm32f10x_it.o: .\drivers\usart.h
 .\objects\stm32f10x_it.o: E:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\stm32f10x_it.o: .\drivers\sys.h
 .\objects\stm32f10x_it.o: .\drivers\timer.h
 .\objects\stm32f10x_it.o: .\functions\pid.h
