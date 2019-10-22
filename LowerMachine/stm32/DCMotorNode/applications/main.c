@@ -34,6 +34,7 @@ int main(void)
 			printf("main\r\n");
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
+				printf("%s\r\n",RecBuf.s);
 				matchMsg(&RecBuf);
 			}
 		}

@@ -122,7 +122,5 @@ float update(float FeedbackValue)
 	LastError = Error;
 
 	Output = PTerm + ki * ITerm + kd * DTerm;
-	printf("A:%f, p:%f, ",FeedbackValue,PWM_output);
-	printf("Out:%f\r\n",Error,Output);
 	return Output;
 }
