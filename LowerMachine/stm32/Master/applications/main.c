@@ -36,6 +36,11 @@ int main(void)
 				CAN_send_wheel_speed(i, slave_0);
 				delay_ms(300);
 			}
+			for(int i=-5500;i<-300;i+=100)
+			{
+				CAN_send_wheel_speed(i, slave_0);
+				delay_ms(300);
+			}
 //			SendBuf.f = 300;
 //			CAN_send_wheel_speed(SendBuf.f, slave_0);
 //			USART_Commuincate();

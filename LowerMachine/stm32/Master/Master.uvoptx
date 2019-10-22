@@ -150,9 +150,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>38</LineNumber>
+          <LineNumber>36</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134223434</Address>
+          <Address>134223558</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -161,12 +161,28 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\applications\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\applications/main.c\38</Expression>
+          <Expression>\\template\applications/main.c\36</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>41</LineNumber>
+          <LineNumber>35</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>.\applications\main.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>46</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -205,6 +221,11 @@
           <count>4</count>
           <WinNumber>1</WinNumber>
           <ItemText>DEBUG_Rx_Buff</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SendBuf</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
