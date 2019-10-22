@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=RXD Pin=D7-A
+Removed Member From Class: ClassName=UperMachine Member=D7
+Added Pin To Net: NetName=RXD Pin=U4-2
+Added Room: Name=UperMachine
