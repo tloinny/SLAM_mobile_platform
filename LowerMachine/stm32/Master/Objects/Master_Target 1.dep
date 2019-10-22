@@ -1,5 +1,5 @@
 Dependencies for Project 'Master', Target 'Target 1': (DO NOT MODIFY !)
-F (.\applications\main.c)(0x5DAE79BD)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\applications\main.c)(0x5DAE988C)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\drivers\delay.h)(0x5CE6B6B4)
 I (.\drivers\sys.h)(0x5CE6B6B4)
 I (.\drivers\stm32f10x.h)(0x5CE6B6B4)
@@ -34,7 +34,7 @@ I (.\drivers\led.h)(0x5DA147D8)
 I (.\drivers\timer.h)(0x5D9FEC14)
 I (.\functions\Master_can_protocol.h)(0x5DA1790E)
 I (.\drivers\can.h)(0x5D9FF10F)
-I (.\drivers\dma_usart1_debug.h)(0x5DA98666)
+I (.\drivers\dma_usart1_debug.h)(0x5DAE9328)
 I (E:\Keil5\ARM\ARMCC\include\stdio.h)(0x5DAD3C13)
 I (.\functions\inverse_solution.h)(0x5DA14033)
 I (.\functions\USART_Communication.h)(0x5DA16F27)
@@ -73,12 +73,12 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5CE6B6B4)
 I (.\drivers\delay.h)(0x5CE6B6B4)
-I (.\drivers\dma_usart1_debug.h)(0x5DA98666)
+I (.\drivers\dma_usart1_debug.h)(0x5DAE9328)
 I (E:\Keil5\ARM\ARMCC\include\stdio.h)(0x5DAD3C13)
 I (functions\inverse_solution.h)(0x5DA14033)
-F (.\functions\USART_Communication.c)(0x5DA97B28)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\usart_communication.o --omf_browse .\objects\usart_communication.crf --depend .\objects\usart_communication.d)
+F (.\functions\USART_Communication.c)(0x5DAE8FF5)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\usart_communication.o --omf_browse .\objects\usart_communication.crf --depend .\objects\usart_communication.d)
 I (functions\USART_Communication.h)(0x5DA16F27)
-I (.\drivers\dma_usart1_debug.h)(0x5DA98666)
+I (.\drivers\dma_usart1_debug.h)(0x5DAE9328)
 I (.\drivers\stm32f10x.h)(0x5CE6B6B4)
 I (.\Libraries\CORE\core_cm3.h)(0x5CE6B6B4)
 I (E:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -305,8 +305,8 @@ I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h)(0x5CE6B6B4)
 I (.\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5CE6B6B4)
 I (drivers\delay.h)(0x5CE6B6B4)
-F (.\drivers\dma_usart1_debug.c)(0x5DA9865B)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\dma_usart1_debug.o --omf_browse .\objects\dma_usart1_debug.crf --depend .\objects\dma_usart1_debug.d)
-I (drivers\dma_usart1_debug.h)(0x5DA98666)
+F (.\drivers\dma_usart1_debug.c)(0x5DAE982D)(--c99 -c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\applications -I .\drivers -I .\Libraries\STM32F10x_StdPeriph_Driver\inc -I .\Libraries\CORE -I .\functions-I.\RTE\_Target_1-IE:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include-IE:\Keil5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\objects\dma_usart1_debug.o --omf_browse .\objects\dma_usart1_debug.crf --depend .\objects\dma_usart1_debug.d)
+I (drivers\dma_usart1_debug.h)(0x5DAE9328)
 I (drivers\stm32f10x.h)(0x5CE6B6B4)
 I (.\Libraries\CORE\core_cm3.h)(0x5CE6B6B4)
 I (E:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)

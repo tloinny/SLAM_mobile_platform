@@ -31,13 +31,13 @@ int main(void)
 	M4_LED = 1;
 		while(1)
 		{
-			CAN_send_cmd(C_CALL,slave_0);
-//			SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));
-//			USART_Commuincate();
-//			if(Can_Receive_Msg(RecBuf.s) != 0)
-//			{
-//				match_feedback(RecBuf.s);				
-//			}
+			SendBuf.f = 300;
+			CAN_send_wheel_speed(SendBuf.f, slave_0);
+			USART_Commuincate();
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				match_feedback(RecBuf.s);				
+			}
 		}
 }
 

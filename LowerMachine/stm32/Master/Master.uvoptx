@@ -152,7 +152,7 @@
           <Type>0</Type>
           <LineNumber>205</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134220886</Address>
+          <Address>134221642</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -179,6 +179,11 @@
           <count>2</count>
           <WinNumber>1</WinNumber>
           <ItemText>((DMA_Channel_TypeDef *) ((((uint32_t)0x40000000) + 0x20000) + 0x0044))</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DEBUG_Receive_length</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
