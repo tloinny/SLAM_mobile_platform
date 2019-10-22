@@ -69,7 +69,6 @@ void USART_Commuincate()
 {
 	if(CheckRecBuf())
 	{
-		SendResponse(BeginRecSpeedInfo,sizeof(BeginRecSpeedInfo)/sizeof(u8));	
 		Match_CMD(DEBUG_Rx_Buff);
 		if(Status != FREE)
 		{

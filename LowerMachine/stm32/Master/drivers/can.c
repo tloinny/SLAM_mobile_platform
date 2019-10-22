@@ -140,7 +140,7 @@ u8 Can_Receive_Msg(u8 *buf)
 {		   		   
  	u32 i;
 	CanRxMsg RxMessage;
-  if( CAN_MessagePending(CAN1,CAN_FIFO0)==0)return 0;		/* 判断是否接收到数据 */
+  if(CAN_MessagePending(CAN1,CAN_FIFO0)==0)return 0;		/* 判断是否接收到数据 */
   CAN_Receive(CAN1, CAN_FIFO0, &RxMessage);	/* 读取数据 */
   for(i=0;i<8;i++)
 	{
