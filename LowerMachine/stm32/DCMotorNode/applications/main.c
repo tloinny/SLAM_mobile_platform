@@ -29,8 +29,6 @@ int main(void)
 	LED0 = 0;
 		while(1)
 		{		
-			delay_ms(1000);
-			printf("main\r\n");
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
 				printf("%f\r\n",RecBuf.f);

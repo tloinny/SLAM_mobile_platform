@@ -31,13 +31,18 @@ int main(void)
 	M4_LED = 1;
 		while(1)
 		{
-			SendBuf.f = 300;
-			CAN_send_wheel_speed(SendBuf.f, slave_0);
-			USART_Commuincate();
-			if(Can_Receive_Msg(RecBuf.s) != 0)
+			for(int i=300;i<5500;i+=100)
 			{
-				match_feedback(RecBuf.s);				
+				CAN_send_wheel_speed(i, slave_0);
+				delay_ms(300);
 			}
+//			SendBuf.f = 300;
+//			CAN_send_wheel_speed(SendBuf.f, slave_0);
+//			USART_Commuincate();
+//			if(Can_Receive_Msg(RecBuf.s) != 0)
+//			{
+//				match_feedback(RecBuf.s);				
+//			}
 		}
 }
 

@@ -150,34 +150,34 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>76</LineNumber>
+          <LineNumber>38</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134224138</Address>
+          <Address>134223434</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\functions\USART_Communication.c</Filename>
+          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\applications\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\functions/USART_Communication.c\76</Expression>
+          <Expression>\\template\applications/main.c\38</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>73</LineNumber>
+          <LineNumber>41</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134224122</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\functions\USART_Communication.c</Filename>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>.\applications\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\functions/USART_Communication.c\73</Expression>
+          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
