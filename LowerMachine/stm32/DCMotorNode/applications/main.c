@@ -30,7 +30,7 @@ int main(void)
 	motor_run(-0.5);
 		while(1)
 		{		
-			wheel_speed_goal = 150;
+			wheel_speed_goal = -10;
 			delay_ms(1000);
 			//printf("main\r\n");
 			if(Can_Receive_Msg(RecBuf.s) != 0)
