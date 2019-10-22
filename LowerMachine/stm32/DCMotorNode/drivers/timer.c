@@ -23,7 +23,7 @@ int currentAngle = 0;
 int preAngle = -1;
 int AngleDelta = 0;
 
-const int max_st = 13;
+const int max_st = 15;
 int sample_times = 0;
 int AngleDelta_sum = 0;
 int AngleDelta_average = -1;
@@ -213,7 +213,6 @@ void TIM2_IRQHandler(void)
 				}			
 				AngleDelta_average = AngleDelta_sum/(max_st-noise_num);
 				sample_time_unit = sample_time_sum / max_st;
-				//printf("s:%d st_a:%d\r\n",AngleDelta_average,sample_time_unit);
 				sample_time_sum = 0;
 				AngleDelta_sum = 0;
 			}else
@@ -222,7 +221,7 @@ void TIM2_IRQHandler(void)
 			}
 			++sample_times;
 		}
-		TIM_ClearITPendingBit(TIM2, TIM_IT_Update); 
+		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 	}
 }
 
@@ -237,7 +236,6 @@ void TIM3_IRQHandler(void)
 		setGoal(wheel_speed_goal);
 		if(AngleDelta_average != -1)
 		{
-//			PWM_output += update(speed_feedback);	/* 增量式PID */
 			PWM_output += update(AngleDelta_average);	/* 增量式PID */
 			if(PWM_output >= 1)
 			{

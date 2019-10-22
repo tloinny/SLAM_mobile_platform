@@ -27,12 +27,11 @@ int main(void)
 	motor_init();
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 	LED0 = 1;
-	motor_run(-0.5);
 		while(1)
 		{		
-			wheel_speed_goal = -10;
+			wheel_speed_goal = -5000;
 			delay_ms(1000);
-			//printf("main\r\n");
+			printf("main\r\n");
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
 				matchMsg(&RecBuf);

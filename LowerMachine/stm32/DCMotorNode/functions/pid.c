@@ -56,8 +56,8 @@ void setSampleTime(float sample_time)
  */
 void setGoal(float goal)
 {
-//	Goal = (goal*68.27)/sample_time_unit;
-	Goal = goal;
+	Goal = goal*0.6826*sample_time_unit*0.0001;
+	Goal > 0? (Goal-=0.4) : (Goal+=0.4);	/* compensation */
 }
 
 /**
