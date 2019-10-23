@@ -235,18 +235,24 @@ void TIM3_IRQHandler(void)
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
 	{
 		setGoal(wheel_speed_goal);
-		if(AngleDelta_average != -1)
+		if(wheel_speed_goal!=0)
 		{
-			PWM_output += update(AngleDelta_average);	/* 增量式PID */
-			if(PWM_output >= 1)
+			if(AngleDelta_average != -1)
 			{
-				PWM_output = 1;
-			}else if(PWM_output <= -1)
-			{
-				PWM_output = -1;
+				PWM_output += update(AngleDelta_average);	/* 增量式PID */
+				if(PWM_output >= 1)
+				{
+					PWM_output = 1;
+				}else if(PWM_output <= -1)
+				{
+					PWM_output = -1;
+				}
 			}
+			motor_run(PWM_output);
+		}else
+		{
+			motor_brake();
 		}
-		motor_run(PWM_output);
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}
 }

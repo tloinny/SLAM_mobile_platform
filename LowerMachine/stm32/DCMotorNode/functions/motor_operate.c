@@ -53,7 +53,7 @@ void motor_run(float Duty_cycle)
  */
 void motor_brake(void)
 {
-	GPIO_SetBits(Motor.motor_gpio_type[0],Motor.motor_gpio[0].GPIO_Pin);
-	GPIO_SetBits(Motor.motor_gpio_type[1],Motor.motor_gpio[1].GPIO_Pin);
+	TIM_SetCompare1(TIM4, 1000);	/* IN1 HIGH */
+	TIM_SetCompare2(TIM4, 1000);	/* IN2 HIGH */
 	motor_state = 0;
 }
