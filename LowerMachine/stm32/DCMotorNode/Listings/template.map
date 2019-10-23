@@ -11,9 +11,11 @@ Section Cross References
     main.o(i.main) refers to motor_operate.o(i.motor_init) for motor_init
     main.o(i.main) refers to can.o(i.CAN_Mode_Init) for CAN_Mode_Init
     main.o(i.main) refers to can.o(i.Can_Receive_Msg) for Can_Receive_Msg
+    main.o(i.main) refers to f2d.o(.text) for __aeabi_f2d
+    main.o(i.main) refers to printfa.o(i.__0printf) for __2printf
     main.o(i.main) refers to slave_can_protocol.o(i.matchMsg) for matchMsg
-    main.o(i.main) refers to motor_operate.o(.data) for wheel_speed_goal
     main.o(i.main) refers to slave_can_protocol.o(.data) for RecBuf
+    main.o(i.main) refers to motor_operate.o(.data) for wheel_speed_goal
     motor_operate.o(i.motor_brake) refers to stm32f10x_tim.o(i.TIM_SetCompare1) for TIM_SetCompare1
     motor_operate.o(i.motor_brake) refers to stm32f10x_tim.o(i.TIM_SetCompare2) for TIM_SetCompare2
     motor_operate.o(i.motor_brake) refers to motor_operate.o(.data) for motor_state
@@ -50,8 +52,6 @@ Section Cross References
     pid.o(i.setSampleTime) refers to pid.o(.data) for SampleTime
     pid.o(i.update) refers to fadd.o(.text) for __aeabi_frsub
     pid.o(i.update) refers to fmul.o(.text) for __aeabi_fmul
-    pid.o(i.update) refers to f2d.o(.text) for __aeabi_f2d
-    pid.o(i.update) refers to printfa.o(i.__0printf) for __2printf
     pid.o(i.update) refers to pid.o(.data) for Goal
     as5600.o(i.as5600_init) refers to softwareiic.o(i.IIC_Init) for IIC_Init
     as5600.o(i.as5600_init) refers to as5600.o(i.detectMagnet) for detectMagnet
@@ -1347,21 +1347,21 @@ Image Symbol Table
     i.getMagnitude                           0x08002cb8   Section        0  as5600.o(i.getMagnitude)
     i.getRawAngle                            0x08002cc6   Section        0  as5600.o(i.getRawAngle)
     i.main                                   0x08002cd4   Section        0  main.o(i.main)
-    i.matchMsg                               0x08002d2c   Section        0  slave_can_protocol.o(i.matchMsg)
-    i.motor_brake                            0x08002da8   Section        0  motor_operate.o(i.motor_brake)
-    i.motor_init                             0x08002dd0   Section        0  motor_operate.o(i.motor_init)
-    i.motor_io_init                          0x08002e00   Section        0  motor_gpio.o(i.motor_io_init)
-    i.motor_run                              0x08002e68   Section        0  motor_operate.o(i.motor_run)
-    i.readOneByte                            0x08002f04   Section        0  as5600.o(i.readOneByte)
-    i.readTwoBytes                           0x08002f3c   Section        0  as5600.o(i.readTwoBytes)
-    i.setEndPosition                         0x08002fc8   Section        0  as5600.o(i.setEndPosition)
-    i.setGoal                                0x08003010   Section        0  pid.o(i.setGoal)
-    i.setPID                                 0x080030c8   Section        0  pid.o(i.setPID)
-    i.setSampleTime                          0x080030e4   Section        0  pid.o(i.setSampleTime)
-    i.setStartPosition                       0x080030f0   Section        0  as5600.o(i.setStartPosition)
-    i.uart2_init                             0x08003138   Section        0  usart.o(i.uart2_init)
-    i.update                                 0x080031dc   Section        0  pid.o(i.update)
-    i.writeOneByte                           0x08003304   Section        0  as5600.o(i.writeOneByte)
+    i.matchMsg                               0x08002d48   Section        0  slave_can_protocol.o(i.matchMsg)
+    i.motor_brake                            0x08002dc4   Section        0  motor_operate.o(i.motor_brake)
+    i.motor_init                             0x08002dec   Section        0  motor_operate.o(i.motor_init)
+    i.motor_io_init                          0x08002e1c   Section        0  motor_gpio.o(i.motor_io_init)
+    i.motor_run                              0x08002e84   Section        0  motor_operate.o(i.motor_run)
+    i.readOneByte                            0x08002f20   Section        0  as5600.o(i.readOneByte)
+    i.readTwoBytes                           0x08002f58   Section        0  as5600.o(i.readTwoBytes)
+    i.setEndPosition                         0x08002fe4   Section        0  as5600.o(i.setEndPosition)
+    i.setGoal                                0x0800302c   Section        0  pid.o(i.setGoal)
+    i.setPID                                 0x080030e4   Section        0  pid.o(i.setPID)
+    i.setSampleTime                          0x08003100   Section        0  pid.o(i.setSampleTime)
+    i.setStartPosition                       0x0800310c   Section        0  as5600.o(i.setStartPosition)
+    i.uart2_init                             0x08003154   Section        0  usart.o(i.uart2_init)
+    i.update                                 0x080031f8   Section        0  pid.o(i.update)
+    i.writeOneByte                           0x080032bc   Section        0  as5600.o(i.writeOneByte)
     .data                                    0x20000000   Section        8  motor_operate.o(.data)
     .data                                    0x20000008   Section       48  pid.o(.data)
     .data                                    0x20000038   Section       10  as5600.o(.data)
@@ -1612,24 +1612,24 @@ Image Symbol Table
     fputc                                    0x08002c9d   Thumb Code    24  usart.o(i.fputc)
     getMagnitude                             0x08002cb9   Thumb Code    14  as5600.o(i.getMagnitude)
     getRawAngle                              0x08002cc7   Thumb Code    12  as5600.o(i.getRawAngle)
-    main                                     0x08002cd5   Thumb Code    74  main.o(i.main)
-    matchMsg                                 0x08002d2d   Thumb Code   100  slave_can_protocol.o(i.matchMsg)
-    motor_brake                              0x08002da9   Thumb Code    30  motor_operate.o(i.motor_brake)
-    motor_init                               0x08002dd1   Thumb Code    32  motor_operate.o(i.motor_init)
-    motor_io_init                            0x08002e01   Thumb Code    94  motor_gpio.o(i.motor_io_init)
-    motor_run                                0x08002e69   Thumb Code   138  motor_operate.o(i.motor_run)
-    readOneByte                              0x08002f05   Thumb Code    56  as5600.o(i.readOneByte)
-    readTwoBytes                             0x08002f3d   Thumb Code   130  as5600.o(i.readTwoBytes)
-    setEndPosition                           0x08002fc9   Thumb Code    62  as5600.o(i.setEndPosition)
-    setGoal                                  0x08003011   Thumb Code   152  pid.o(i.setGoal)
-    setPID                                   0x080030c9   Thumb Code    14  pid.o(i.setPID)
-    setSampleTime                            0x080030e5   Thumb Code     6  pid.o(i.setSampleTime)
-    setStartPosition                         0x080030f1   Thumb Code    62  as5600.o(i.setStartPosition)
-    uart2_init                               0x08003139   Thumb Code   154  usart.o(i.uart2_init)
-    update                                   0x080031dd   Thumb Code   228  pid.o(i.update)
-    writeOneByte                             0x08003305   Thumb Code    46  as5600.o(i.writeOneByte)
-    Region$$Table$$Base                      0x08003334   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003354   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x08002cd5   Thumb Code    96  main.o(i.main)
+    matchMsg                                 0x08002d49   Thumb Code   100  slave_can_protocol.o(i.matchMsg)
+    motor_brake                              0x08002dc5   Thumb Code    30  motor_operate.o(i.motor_brake)
+    motor_init                               0x08002ded   Thumb Code    32  motor_operate.o(i.motor_init)
+    motor_io_init                            0x08002e1d   Thumb Code    94  motor_gpio.o(i.motor_io_init)
+    motor_run                                0x08002e85   Thumb Code   138  motor_operate.o(i.motor_run)
+    readOneByte                              0x08002f21   Thumb Code    56  as5600.o(i.readOneByte)
+    readTwoBytes                             0x08002f59   Thumb Code   130  as5600.o(i.readTwoBytes)
+    setEndPosition                           0x08002fe5   Thumb Code    62  as5600.o(i.setEndPosition)
+    setGoal                                  0x0800302d   Thumb Code   152  pid.o(i.setGoal)
+    setPID                                   0x080030e5   Thumb Code    14  pid.o(i.setPID)
+    setSampleTime                            0x08003101   Thumb Code     6  pid.o(i.setSampleTime)
+    setStartPosition                         0x0800310d   Thumb Code    62  as5600.o(i.setStartPosition)
+    uart2_init                               0x08003155   Thumb Code   154  usart.o(i.uart2_init)
+    update                                   0x080031f9   Thumb Code   154  pid.o(i.update)
+    writeOneByte                             0x080032bd   Thumb Code    46  as5600.o(i.writeOneByte)
+    Region$$Table$$Base                      0x080032ec   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800330c   Number         0  anon$$obj.o(Region$$Table)
     motor_state                              0x20000000   Data           4  motor_operate.o(.data)
     wheel_speed_goal                         0x20000004   Data           4  motor_operate.o(.data)
     kp                                       0x20000008   Data           4  pid.o(.data)
@@ -1683,9 +1683,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003420, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000033d8, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003354, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000330c, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1823,40 +1823,40 @@ Memory Map of the image
     0x08002cb8   0x08002cb8   0x0000000e   Code   RO          278    i.getMagnitude      as5600.o
     0x08002cc6   0x08002cc6   0x0000000c   Code   RO          280    i.getRawAngle       as5600.o
     0x08002cd2   0x08002cd2   0x00000002   PAD
-    0x08002cd4   0x08002cd4   0x00000058   Code   RO            1    i.main              main.o
-    0x08002d2c   0x08002d2c   0x0000007c   Code   RO          428    i.matchMsg          slave_can_protocol.o
-    0x08002da8   0x08002da8   0x00000028   Code   RO          157    i.motor_brake       motor_operate.o
-    0x08002dd0   0x08002dd0   0x00000030   Code   RO          158    i.motor_init        motor_operate.o
-    0x08002e00   0x08002e00   0x00000068   Code   RO          804    i.motor_io_init     motor_gpio.o
-    0x08002e68   0x08002e68   0x0000009c   Code   RO          159    i.motor_run         motor_operate.o
-    0x08002f04   0x08002f04   0x00000038   Code   RO          285    i.readOneByte       as5600.o
-    0x08002f3c   0x08002f3c   0x0000008c   Code   RO          286    i.readTwoBytes      as5600.o
-    0x08002fc8   0x08002fc8   0x00000048   Code   RO          287    i.setEndPosition    as5600.o
-    0x08003010   0x08003010   0x000000b8   Code   RO          206    i.setGoal           pid.o
-    0x080030c8   0x080030c8   0x0000001c   Code   RO          207    i.setPID            pid.o
-    0x080030e4   0x080030e4   0x0000000c   Code   RO          208    i.setSampleTime     pid.o
-    0x080030f0   0x080030f0   0x00000048   Code   RO          289    i.setStartPosition  as5600.o
-    0x08003138   0x08003138   0x000000a4   Code   RO          690    i.uart2_init        usart.o
-    0x080031dc   0x080031dc   0x00000128   Code   RO          209    i.update            pid.o
-    0x08003304   0x08003304   0x0000002e   Code   RO          290    i.writeOneByte      as5600.o
-    0x08003332   0x08003332   0x00000002   PAD
-    0x08003334   0x08003334   0x00000020   Data   RO         4263    Region$$Table       anon$$obj.o
+    0x08002cd4   0x08002cd4   0x00000074   Code   RO            1    i.main              main.o
+    0x08002d48   0x08002d48   0x0000007c   Code   RO          428    i.matchMsg          slave_can_protocol.o
+    0x08002dc4   0x08002dc4   0x00000028   Code   RO          157    i.motor_brake       motor_operate.o
+    0x08002dec   0x08002dec   0x00000030   Code   RO          158    i.motor_init        motor_operate.o
+    0x08002e1c   0x08002e1c   0x00000068   Code   RO          804    i.motor_io_init     motor_gpio.o
+    0x08002e84   0x08002e84   0x0000009c   Code   RO          159    i.motor_run         motor_operate.o
+    0x08002f20   0x08002f20   0x00000038   Code   RO          285    i.readOneByte       as5600.o
+    0x08002f58   0x08002f58   0x0000008c   Code   RO          286    i.readTwoBytes      as5600.o
+    0x08002fe4   0x08002fe4   0x00000048   Code   RO          287    i.setEndPosition    as5600.o
+    0x0800302c   0x0800302c   0x000000b8   Code   RO          206    i.setGoal           pid.o
+    0x080030e4   0x080030e4   0x0000001c   Code   RO          207    i.setPID            pid.o
+    0x08003100   0x08003100   0x0000000c   Code   RO          208    i.setSampleTime     pid.o
+    0x0800310c   0x0800310c   0x00000048   Code   RO          289    i.setStartPosition  as5600.o
+    0x08003154   0x08003154   0x000000a4   Code   RO          690    i.uart2_init        usart.o
+    0x080031f8   0x080031f8   0x000000c4   Code   RO          209    i.update            pid.o
+    0x080032bc   0x080032bc   0x0000002e   Code   RO          290    i.writeOneByte      as5600.o
+    0x080032ea   0x080032ea   0x00000002   PAD
+    0x080032ec   0x080032ec   0x00000020   Data   RO         4263    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003354, Size: 0x00000518, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800330c, Size: 0x00000518, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08003354   0x00000008   Data   RW          160    .data               motor_operate.o
-    0x20000008   0x0800335c   0x00000030   Data   RW          210    .data               pid.o
-    0x20000038   0x0800338c   0x0000000a   Data   RW          292    .data               as5600.o
-    0x20000042   0x08003396   0x00000002   PAD
-    0x20000044   0x08003398   0x00000014   Data   RW          429    .data               slave_can_protocol.o
-    0x20000058   0x080033ac   0x00000004   Data   RW          473    .data               delay.o
-    0x2000005c   0x080033b0   0x00000018   Data   RW          691    .data               usart.o
-    0x20000074   0x080033c8   0x00000030   Data   RW          756    .data               timer.o
-    0x200000a4   0x080033f8   0x00000014   Data   RW         2509    .data               stm32f10x_rcc.o
-    0x200000b8   0x0800340c   0x00000014   Data   RW         3883    .data               system_stm32f10x.o
+    0x20000000   0x0800330c   0x00000008   Data   RW          160    .data               motor_operate.o
+    0x20000008   0x08003314   0x00000030   Data   RW          210    .data               pid.o
+    0x20000038   0x08003344   0x0000000a   Data   RW          292    .data               as5600.o
+    0x20000042   0x0800334e   0x00000002   PAD
+    0x20000044   0x08003350   0x00000014   Data   RW          429    .data               slave_can_protocol.o
+    0x20000058   0x08003364   0x00000004   Data   RW          473    .data               delay.o
+    0x2000005c   0x08003368   0x00000018   Data   RW          691    .data               usart.o
+    0x20000074   0x08003380   0x00000030   Data   RW          756    .data               timer.o
+    0x200000a4   0x080033b0   0x00000014   Data   RW         2509    .data               stm32f10x_rcc.o
+    0x200000b8   0x080033c4   0x00000014   Data   RW         3883    .data               system_stm32f10x.o
     0x200000cc        -       0x0000003c   Zero   RW          754    .bss                timer.o
     0x20000108        -       0x00000010   Zero   RW          805    .bss                motor_gpio.o
     0x20000118        -       0x00000400   Zero   RW         3923    STACK               startup_stm32f10x_md.o
@@ -1873,11 +1873,11 @@ Image component sizes
        436         24          0          0          0       2777   can.o
        144         22          0          4          0       1204   delay.o
         56          6          0          0          0        487   led.o
-        88         14          0          0          0     260591   main.o
+       116         20          0          0          0     260595   main.o
        172         22          0          0          0       2285   misc.o
        104         10          0          0         16       1380   motor_gpio.o
        244         44          0          8          0       1846   motor_operate.o
-       614        144          0         48          0       3830   pid.o
+       514        118          0         48          0       3794   pid.o
        214         34          0         20          0       3544   slave_can_protocol.o
        842        102          0          0          0       5041   softwareiic.o
         36          8        236          0       1024        824   startup_stm32f10x_md.o
@@ -1893,7 +1893,7 @@ Image component sizes
        504         38          0         24          0       4347   usart.o
 
     ----------------------------------------------------------------------
-      8492        834        268        204       1100     332943   Object Totals
+      8420        814        268        204       1100     332911   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         26          0          0          2          0          0   (incl. Padding)
 
@@ -1958,15 +1958,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12872        940        268        204       1100     329763   Grand Totals
-     12872        940        268        204       1100     329763   ELF Image Totals
-     12872        940        268        204          0          0   ROM Totals
+     12800        920        268        204       1100     329731   Grand Totals
+     12800        920        268        204       1100     329731   ELF Image Totals
+     12800        920        268        204          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13140 (  12.83kB)
+    Total RO  Size (Code + RO Data)                13068 (  12.76kB)
     Total RW  Size (RW Data + ZI Data)              1304 (   1.27kB)
-    Total ROM Size (Code + RO Data + RW Data)      13344 (  13.03kB)
+    Total ROM Size (Code + RO Data + RW Data)      13272 (  12.96kB)
 
 ==============================================================================
 

@@ -123,6 +123,5 @@ float update(float FeedbackValue)
 	LastError = Error;
 
 	Output = PTerm + ki * ITerm + kd * DTerm;
-	printf("E:%f, G:%f, S:%f, O:%f\r\n",Error,Goal,FeedbackValue,Output);
 	return Output;
 }

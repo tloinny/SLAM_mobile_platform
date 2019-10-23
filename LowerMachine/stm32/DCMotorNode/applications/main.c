@@ -28,12 +28,11 @@ int main(void)
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 	LED0 = 0;
 		while(1)
-		{		
-			wheel_speed_goal = 0.0;
+		{	
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
-//				printf("%f\r\n",RecBuf.f);
-//				wheel_speed_goal = RecBuf.f;
+				printf("%f\r\n",RecBuf.f);
+				wheel_speed_goal = RecBuf.f;
 				matchMsg(&RecBuf);
 			}
 		}
