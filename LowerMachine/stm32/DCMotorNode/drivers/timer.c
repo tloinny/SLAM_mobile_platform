@@ -213,6 +213,7 @@ void TIM2_IRQHandler(void)
 				}			
 				AngleDelta_average = AngleDelta_sum/(max_st-noise_num);
 				sample_time_unit = sample_time_sum / max_st;
+				//printf("A:%d\r\n",AngleDelta_average);
 				sample_time_sum = 0;
 				AngleDelta_sum = 0;
 			}else

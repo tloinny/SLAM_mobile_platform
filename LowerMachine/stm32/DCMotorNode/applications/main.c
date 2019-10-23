@@ -29,10 +29,11 @@ int main(void)
 	LED0 = 0;
 		while(1)
 		{		
+			wheel_speed_goal = 0.0;
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
-				printf("%f\r\n",RecBuf.f);
-				wheel_speed_goal = RecBuf.f;
+//				printf("%f\r\n",RecBuf.f);
+//				wheel_speed_goal = RecBuf.f;
 				matchMsg(&RecBuf);
 			}
 		}

@@ -14,7 +14,6 @@
 #include "inverse_solution.h"
 #include "USART_Communication.h"
 
-
 int main(void)
 {
 	delay_init();
@@ -41,8 +40,7 @@ int main(void)
 				CAN_send_wheel_speed(i, slave_0);
 				delay_ms(300);
 			}
-//			SendBuf.f = 300;
-//			CAN_send_wheel_speed(SendBuf.f, slave_0);
+
 //			USART_Commuincate();
 //			if(Can_Receive_Msg(RecBuf.s) != 0)
 //			{

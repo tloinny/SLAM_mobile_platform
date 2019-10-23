@@ -57,6 +57,7 @@ void setSampleTime(float sample_time)
 void setGoal(float goal)
 {
 	Goal = goal*0.6826*sample_time_unit*0.0001;
+	if(Goal!=0)
 	Goal > 0? (Goal-=0.4) : (Goal+=0.4);	/* compensation */
 }
 
@@ -122,5 +123,6 @@ float update(float FeedbackValue)
 	LastError = Error;
 
 	Output = PTerm + ki * ITerm + kd * DTerm;
+	printf("E:%f, G:%f, S:%f, O:%f\r\n",Error,Goal,FeedbackValue,Output);
 	return Output;
 }
