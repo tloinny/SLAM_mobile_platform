@@ -26,15 +26,16 @@ int main(void)
 	uart2_init(256000);
 	motor_init();
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
-	LED0 = 0;
+	LED0 = 1;
 		while(1)
 		{	
-			if(Can_Receive_Msg(RecBuf.s) != 0)
-			{
-				printf("%f\r\n",RecBuf.f);
-				wheel_speed_goal = RecBuf.f;
-				matchMsg(&RecBuf);
-			}
+			motor_run(1);
+//			if(Can_Receive_Msg(RecBuf.s) != 0)
+//			{
+//				printf("%f\r\n",RecBuf.f);
+//				wheel_speed_goal = RecBuf.f;
+//				matchMsg(&RecBuf);
+//			}
 		}
 }
 
