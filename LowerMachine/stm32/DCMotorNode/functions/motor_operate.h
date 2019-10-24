@@ -14,6 +14,7 @@ extern int motor_state;
 extern float wheel_speed_goal;
 
 void motor_init(void);
-void motor_run(float Duty_cycle);
+void motor_run_FastDecay(float Duty_cycle);
+void motor_run_SlowDecay(float Duty_cycle);
 void motor_brake(void);
 #endif

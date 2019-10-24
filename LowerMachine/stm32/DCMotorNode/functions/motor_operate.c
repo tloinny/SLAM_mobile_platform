@@ -31,7 +31,27 @@ void motor_init(void)
  *@param Duty_cycle占空比
  *@return void
  */
-void motor_run(float Duty_cycle)
+void motor_run_FastDecay(float Duty_cycle)
+{
+	if(Duty_cycle > 0)
+	{
+		TIM_SetCompare1(TIM4, Duty_cycle*999.0);	/* IN1 PWM */
+		TIM_SetCompare2(TIM4, 0);	/* IN2 LOW */
+		motor_state = 1;
+	}else if(Duty_cycle < 0)
+	{
+		TIM_SetCompare1(TIM4, 0);	/* IN1 LOW */
+		TIM_SetCompare2(TIM4, -1*Duty_cycle*999.0);	/* IN2 PWM */
+		motor_state = -1;
+	}
+}
+
+/**
+ *@function 电机运动
+ *@param Duty_cycle占空比
+ *@return void
+ */
+void motor_run_SlowDecay(float Duty_cycle)
 {
 	if(Duty_cycle > 0)
 	{

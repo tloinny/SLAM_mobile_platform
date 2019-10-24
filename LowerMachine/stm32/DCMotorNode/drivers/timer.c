@@ -247,7 +247,7 @@ void TIM3_IRQHandler(void)
 					PWM_output = -1;
 				}
 			}
-			motor_run(PWM_output);
+			motor_run_FastDecay(PWM_output);
 		}else
 		{
 			motor_brake();
