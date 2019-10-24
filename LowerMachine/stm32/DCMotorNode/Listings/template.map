@@ -27,6 +27,7 @@ Section Cross References
     motor_operate.o(i.motor_run_FastDecay) refers to fmul.o(.text) for __aeabi_fmul
     motor_operate.o(i.motor_run_FastDecay) refers to motor_operate.o(.data) for motor_state
     motor_operate.o(i.motor_run_SlowDecay) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    motor_operate.o(i.motor_run_SlowDecay) refers to fadd.o(.text) for __aeabi_frsub
     motor_operate.o(i.motor_run_SlowDecay) refers to f2d.o(.text) for __aeabi_f2d
     motor_operate.o(i.motor_run_SlowDecay) refers to dmul.o(.text) for __aeabi_dmul
     motor_operate.o(i.motor_run_SlowDecay) refers to dfixui.o(.text) for __aeabi_d2uiz
@@ -630,7 +631,7 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
-    Removing motor_operate.o(i.motor_run_SlowDecay), (156 bytes).
+    Removing motor_operate.o(i.motor_run_SlowDecay), (180 bytes).
     Removing pid.o(i.getKd), (12 bytes).
     Removing pid.o(i.getKi), (12 bytes).
     Removing pid.o(i.getKp), (12 bytes).
@@ -1131,7 +1132,7 @@ Removing Unused input sections from the image.
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-500 unused section(s) (total 20563 bytes) removed from the image.
+500 unused section(s) (total 20587 bytes) removed from the image.
 
 ==============================================================================
 
