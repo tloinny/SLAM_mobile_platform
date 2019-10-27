@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=ADC Pin=U1-11
+Added Pin To Net: NetName=ADC Pin=U1-10
+Added Pin To Net: NetName=PA1 Pin=U1-11
+Added Net: Name=PA1
+Added Room: Name=LowerMachine
