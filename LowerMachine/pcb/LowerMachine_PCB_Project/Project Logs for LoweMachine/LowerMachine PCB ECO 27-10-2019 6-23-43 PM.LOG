@@ -1,0 +1,57 @@
+Removed Pin From Net: NetName=VCC Pin=R11-1
+Removed Pin From Net: NetName=PB9 Pin=R11-2
+Removed Pin From Net: NetName=VCC Pin=R12-1
+Removed Pin From Net: NetName=PB8 Pin=R12-2
+Added Component: Designator=C14(CAPE_I_16)
+Added Component: Designator=C15(Cap-0603)
+Added Component: Designator=R10(Res-0603)
+Added Component: Designator=R13(Res-0603)
+Added Component: Designator=R14(Res-0603)
+Added Component: Designator=R15(Res-0603)
+Added Component: Designator=U4(*SSO-36)
+Added Pin To Net: NetName=24V Pin=C14-1
+Added Pin To Net: NetName=GND Pin=C14-2
+Added Pin To Net: NetName=GND Pin=C15-2
+Added Pin To Net: NetName=VCC Pin=R10-2
+Added Pin To Net: NetName=GND Pin=R12-1
+Added Pin To Net: NetName=VCC Pin=R11-1
+Added Pin To Net: NetName=PB9 Pin=R11-2
+Added Pin To Net: NetName=VCC Pin=R12-1
+Added Pin To Net: NetName=PB8 Pin=R12-2
+Added Pin To Net: NetName=M+ Pin=U4-2
+Added Pin To Net: NetName=M+ Pin=U4-2
+Added Pin To Net: NetName=GND Pin=U4-3
+Added Pin To Net: NetName=GND Pin=U4-4
+Added Pin To Net: NetName=GND Pin=U4-6
+Added Pin To Net: NetName=M+ Pin=U4-8
+Added Pin To Net: NetName=PB7 Pin=U4-15
+Added Pin To Net: NetName=PB6 Pin=U4-17
+Added Pin To Net: NetName=GND Pin=U4-20
+Added Pin To Net: NetName=PB4 Pin=U4-22
+Added Pin To Net: NetName=24V Pin=U4-24
+Added Pin To Net: NetName=M- Pin=U4-29
+Added Pin To Net: NetName=GND Pin=U4-30
+Added Pin To Net: NetName=GND Pin=U4-31
+Added Pin To Net: NetName=GND Pin=U4-33
+Added Pin To Net: NetName=GND Pin=U4-34
+Added Pin To Net: NetName=M- Pin=U4-35
+Added Pin To Net: NetName=M- Pin=U4-35
+Added Pin To Net: NetName=ADC Pin=R13-1
+Added Pin To Net: NetName=ADC Pin=U1-11
+Added Net: Name=ADC
+Added Pin To Net: NetName=NetC15_1 Pin=C15-1
+Added Pin To Net: NetName=NetC15_1 Pin=R12-2
+Added Pin To Net: NetName=NetC15_1 Pin=R13-2
+Added Pin To Net: NetName=NetC15_1 Pin=U4-19
+Added Net: Name=NetC15_1
+Added Pin To Net: NetName=NetR11_2 Pin=R11-2
+Added Pin To Net: NetName=NetR11_2 Pin=U4-21
+Added Net: Name=NetR11_2
+Added Member To Class: ClassName=LowerMachine Member=Component C14 CAPE-SMD
+Added Member To Class: ClassName=LowerMachine Member=Component C15 10nf
+Added Member To Class: ClassName=LowerMachine Member=Component R10 4.7K
+Added Member To Class: ClassName=LowerMachine Member=Component R13 10K
+Added Member To Class: ClassName=LowerMachine Member=Component R14 4.7K
+Added Member To Class: ClassName=LowerMachine Member=Component R15 4.7K
+Added Member To Class: ClassName=LowerMachine Member=Component U4 VNH5180A-E
+Added Room: Name=LowerMachine

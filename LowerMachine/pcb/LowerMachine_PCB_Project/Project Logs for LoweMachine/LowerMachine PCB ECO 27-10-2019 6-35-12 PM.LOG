@@ -1,0 +1,44 @@
+Removed Pin From Net: NetName=M+ Pin=U4-2
+Removed Pin From Net: NetName=M+ Pin=U4-2
+Removed Pin From Net: NetName=GND Pin=U4-3
+Removed Pin From Net: NetName=GND Pin=U4-4
+Removed Pin From Net: NetName=GND Pin=U4-6
+Removed Pin From Net: NetName=M+ Pin=U4-8
+Removed Pin From Net: NetName=PB7 Pin=U4-15
+Removed Pin From Net: NetName=PB6 Pin=U4-17
+Removed Pin From Net: NetName=NetC15_1 Pin=U4-19
+Removed Pin From Net: NetName=GND Pin=U4-20
+Removed Pin From Net: NetName=NetR14_2 Pin=U4-21
+Removed Pin From Net: NetName=PB4 Pin=U4-22
+Removed Pin From Net: NetName=24V Pin=U4-24
+Removed Pin From Net: NetName=M- Pin=U4-29
+Removed Pin From Net: NetName=GND Pin=U4-30
+Removed Pin From Net: NetName=GND Pin=U4-31
+Removed Pin From Net: NetName=GND Pin=U4-33
+Removed Pin From Net: NetName=GND Pin=U4-34
+Removed Pin From Net: NetName=M- Pin=U4-35
+Removed Pin From Net: NetName=M- Pin=U4-35
+Removed Member From Class: ClassName=LowerMachine Member=U4
+Added Component: Designator=U?(*SSO-36)
+Added Pin To Net: NetName=M+ Pin=U?-2
+Added Pin To Net: NetName=M+ Pin=U?-2
+Added Pin To Net: NetName=GND Pin=U?-3
+Added Pin To Net: NetName=GND Pin=U?-4
+Added Pin To Net: NetName=GND Pin=U?-6
+Added Pin To Net: NetName=M+ Pin=U?-8
+Added Pin To Net: NetName=PB7 Pin=U?-15
+Added Pin To Net: NetName=PB6 Pin=U?-17
+Added Pin To Net: NetName=NetC15_1 Pin=U?-19
+Added Pin To Net: NetName=GND Pin=U?-20
+Added Pin To Net: NetName=NetR14_2 Pin=U?-21
+Added Pin To Net: NetName=PB4 Pin=U?-22
+Added Pin To Net: NetName=24V Pin=U?-24
+Added Pin To Net: NetName=M- Pin=U?-29
+Added Pin To Net: NetName=GND Pin=U?-30
+Added Pin To Net: NetName=GND Pin=U?-31
+Added Pin To Net: NetName=GND Pin=U?-33
+Added Pin To Net: NetName=GND Pin=U?-34
+Added Pin To Net: NetName=M- Pin=U?-35
+Added Pin To Net: NetName=M- Pin=U?-35
+Added Member To Class: ClassName=LowerMachine Member=Component U? VNH5180A-E
+Added Room: Name=LowerMachine

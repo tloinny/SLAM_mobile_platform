@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=NetC15_1 Pin=R12-2
+Added Pin To Net: NetName=PB9 Pin=R11-2
+Added Pin To Net: NetName=PB8 Pin=R12-2
+Added Pin To Net: NetName=GND Pin=R15-1
+Added Pin To Net: NetName=NetC15_1 Pin=R15-2
+Added Pin To Net: NetName=NetR14_2 Pin=R14-2
+Added Pin To Net: NetName=NetR14_2 Pin=U4-21
+Added Net: Name=NetR14_2
+Added Room: Name=LowerMachine
