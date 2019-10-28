@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=BOOT1 Pin=R6-1
+Removed Pin From Net: NetName=GND Pin=R6-2
+Removed Member From Class: ClassName=LowerMachine Member=R7
+Change Component Designator: OldDesignator=R7 NewDesignator=R6
+Added Room: Name=LowerMachine
