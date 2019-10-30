@@ -99,7 +99,7 @@ void matchMsg(Buf *buf)
 			CAN_send_feedback(c_receive_call);
 		break;
 		case STOP:
-			motor_brake();
+			A4950_motor_brake();
 			CAN_send_feedback(c_motor_stoped);
 		break;
 		case ASK_FOR_SPEED_FEEDNACK:

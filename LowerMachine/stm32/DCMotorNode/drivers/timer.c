@@ -122,13 +122,13 @@ void PID_TIM3_Init(float UnitTime_ms)
  *			arr：自动重装值
  *			psc：时钟预分频数
  */
-void TIM4_PWM_Init(u16 arr,u16 psc)
+void TIM4_PWM_Init(u16 arr,u16 psc,u8 mode)
 {  
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
 	TIM_OCInitTypeDef TIM_OCInitStructure;
 
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
-	motor_io_init();	/* 初始化电机驱动引脚 */
+	A4950_io_init();	/* 初始化电机驱动引脚 */
 
    /* 初始化TIM4 */
 	TIM_TimeBaseStructure.TIM_Period = arr;
@@ -142,11 +142,18 @@ void TIM4_PWM_Init(u16 arr,u16 psc)
  	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; /* 输出极性:TIM输出比较极性高 */
 	
-	TIM_OC1Init(TIM4, &TIM_OCInitStructure);  /* 初始化外设TIM4 OC1 */
-	TIM_OC2Init(TIM4, &TIM_OCInitStructure);  /* 初始化外设TIM4 OC2 */
+	if(mode == 0)
+	{	
+		TIM_OC1Init(TIM4, &TIM_OCInitStructure);  /* 初始化外设TIM4 OC1 */
+		TIM_OC2Init(TIM4, &TIM_OCInitStructure);  /* 初始化外设TIM4 OC2 */
 
-	TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR1上的预装载寄存器 */
-	TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR2上的预装载寄存器 */
+		TIM_OC1PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR1上的预装载寄存器 */
+		TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR2上的预装载寄存器 */
+	}else if(mode == 1)
+	{
+		TIM_OC2Init(TIM4, &TIM_OCInitStructure);  /* 初始化外设TIM4 OC2 */
+		TIM_OC2PreloadConfig(TIM4, TIM_OCPreload_Enable);  /* 使能TIM4在CCR2上的预装载寄存器 */
+	}
 	
 	TIM_Cmd(TIM4, ENABLE);  /* 使能TIM4 */
 }
@@ -247,10 +254,10 @@ void TIM3_IRQHandler(void)
 					PWM_output = -1;
 				}
 			}
-			motor_run_FastDecay(PWM_output);
+			A4950_motor_run_FastDecay(PWM_output);
 		}else
 		{
-			motor_brake();
+			A4950_motor_brake();
 		}
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}

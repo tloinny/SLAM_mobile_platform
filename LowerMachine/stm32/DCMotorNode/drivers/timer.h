@@ -23,7 +23,7 @@ extern const int max_st;
 void TIM1_Init(float UnitTime_ms);
 void TIM2_Init(float UnitTime_ms);
 void PID_TIM3_Init(float sampleTime_ms);
-void TIM4_PWM_Init(u16 arr,u16 psc);
+void TIM4_PWM_Init(u16 arr,u16 psc,u8 mode);
 void TIM1_UP_IRQHandler(void);
 void TIM2_IRQHandler(void);
 void TIM3_IRQHandler(void);
