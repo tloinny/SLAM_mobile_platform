@@ -29,7 +29,7 @@ int main(void)
 	LED0 = 1;
 		while(1)
 		{	
-			VNH5180_motor_run(0.5);
+			VNH5180_motor_run(-1);
 			//A4950_motor_run_FastDecay(1);
 			//A4950_motor_run_SlowDecay(1);
 //			if(Can_Receive_Msg(RecBuf.s) != 0)
