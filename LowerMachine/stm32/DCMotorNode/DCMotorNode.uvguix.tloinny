@@ -3525,9 +3525,9 @@
       </Doc>
       <Doc>
         <Name>.\applications\main.c</Name>
-        <ColumnNumber>25</ColumnNumber>
+        <ColumnNumber>36</ColumnNumber>
         <TopLine>1</TopLine>
-        <CurrentLine>32</CurrentLine>
+        <CurrentLine>37</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
         <PaneID>0</PaneID>
