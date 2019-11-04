@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=VCC Pin=R10-2
+Removed Pin From Net: NetName=VCC Pin=R14-1
+Removed Member From Class: ClassName=LowerMachine Member=R10
+Removed Member From Class: ClassName=LowerMachine Member=R14
+Change Component Comment : Designator=R15 Old Comment=4.7K New Comment=1K
+Added Component: Designator=U4(VNH7100)
+Added Pin To Net: NetName=GND Pin=U4-1
+Added Pin To Net: NetName=M+ Pin=U4-2
+Added Pin To Net: NetName=PB6 Pin=U4-3
+Added Pin To Net: NetName=24V Pin=U4-4
+Added Pin To Net: NetName=24V Pin=U4-5
+Added Pin To Net: NetName=PB5 Pin=U4-6
+Added Pin To Net: NetName=M- Pin=U4-7
+Added Pin To Net: NetName=GND Pin=U4-8
+Added Pin To Net: NetName=GND Pin=U4-9
+Added Pin To Net: NetName=M- Pin=U4-10
+Added Pin To Net: NetName=PB7 Pin=U4-11
+Added Pin To Net: NetName=24V Pin=U4-12
+Added Pin To Net: NetName=NetC15_1 Pin=U4-13
+Added Pin To Net: NetName=M+ Pin=U4-15
+Added Pin To Net: NetName=GND Pin=U4-16
+Change Class Name : Old Net Name=LowerMachine New Net Name=LowerMachine_test_v3.0
+Added Member To Class: ClassName=LowerMachine_test_v3.0 Member=Component U4 VNH7100
+Added Room: Name=LowerMachine_test_v3.0

@@ -1,0 +1,9 @@
+Added Component: Designator=R10(Res-0603)
+Added Component: Designator=R13(Res-0603)
+Added Pin To Net: NetName=GND Pin=R10-1
+Added Pin To Net: NetName=NetC15_1 Pin=R10-2
+Added Pin To Net: NetName=ADC Pin=R13-1
+Added Pin To Net: NetName=NetC15_1 Pin=R13-2
+Added Member To Class: ClassName=LowerMachine_test_v3.0 Member=Component R10 1K
+Added Member To Class: ClassName=LowerMachine_test_v3.0 Member=Component R13 10K
+Added Room: Name=LowerMachine_test_v3.0

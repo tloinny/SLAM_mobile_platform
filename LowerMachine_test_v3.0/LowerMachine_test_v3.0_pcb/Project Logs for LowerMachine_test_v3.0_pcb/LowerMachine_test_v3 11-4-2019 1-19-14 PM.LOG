@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=ADC Pin=R10-1
+Removed Pin From Net: NetName=GND Pin=R11-1
+Removed Pin From Net: NetName=NetC15_1 Pin=R11-2
+Removed Pin From Net: NetName=PB9 Pin=R12-2
+Removed Pin From Net: NetName=VCC Pin=R13-1
+Removed Pin From Net: NetName=PB8 Pin=R13-2
+Change Component Comment : Designator=R11 Old Comment=1K New Comment=4.7K
+Change Component Comment : Designator=R10 Old Comment=10K New Comment=1K
+Added Component: Designator=R13(Res-0603)
+Added Pin To Net: NetName=GND Pin=R10-1
+Added Pin To Net: NetName=VCC Pin=R11-1
+Added Pin To Net: NetName=PB9 Pin=R11-2
+Added Pin To Net: NetName=PB8 Pin=R12-2
+Added Pin To Net: NetName=ADC Pin=R10-1
+Added Pin To Net: NetName=NetC15_1 Pin=R10-2
+Added Room: Name=LowerMachine_test_v3.0

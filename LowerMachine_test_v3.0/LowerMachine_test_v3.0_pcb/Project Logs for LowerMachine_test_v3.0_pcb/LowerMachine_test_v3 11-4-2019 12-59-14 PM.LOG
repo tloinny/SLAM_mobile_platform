@@ -1,0 +1,18 @@
+Added Component: Designator=U4(VNH7100)
+Added Pin To Net: NetName=GND Pin=U4-1
+Added Pin To Net: NetName=M+ Pin=U4-2
+Added Pin To Net: NetName=PB6 Pin=U4-3
+Added Pin To Net: NetName=24V Pin=U4-4
+Added Pin To Net: NetName=24V Pin=U4-5
+Added Pin To Net: NetName=PB5 Pin=U4-6
+Added Pin To Net: NetName=M- Pin=U4-7
+Added Pin To Net: NetName=GND Pin=U4-8
+Added Pin To Net: NetName=GND Pin=U4-9
+Added Pin To Net: NetName=M- Pin=U4-10
+Added Pin To Net: NetName=PB7 Pin=U4-11
+Added Pin To Net: NetName=24V Pin=U4-12
+Added Pin To Net: NetName=NetC15_1 Pin=U4-13
+Added Pin To Net: NetName=M+ Pin=U4-15
+Added Pin To Net: NetName=GND Pin=U4-16
+Added Member To Class: ClassName=LowerMachine_test_v3.0 Member=Component U4 VNH7100
+Added Room: Name=LowerMachine_test_v3.0
