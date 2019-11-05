@@ -41,7 +41,7 @@ void A4950_io_init()
 	TIM4_PWM_Init(TIM4_ARR,TIM4_PSC,0);	/* 初始化TIM4,提供给电机驱动使用 */
 }
 
-void VNH5180_io_init()
+void VNH_io_init()
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);  /* 使能GPIO外设 */
 	

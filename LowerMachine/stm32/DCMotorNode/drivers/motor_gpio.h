@@ -20,6 +20,6 @@ typedef struct
 extern motor Motor;
 
 void A4950_io_init(void);
-void VNH5180_io_init(void);
+void VNH_io_init(void);
 
 #endif

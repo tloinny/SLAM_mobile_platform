@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\template.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\template.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Nov 01 16:17:23 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Nov 05 10:18:07 2019
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -282,7 +282,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;update
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 </UL>
 
 <P><STRONG><a name="[3f]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
@@ -317,7 +317,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setGoal
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 <LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_IRQHandler
 </UL>
 
@@ -352,13 +352,13 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 </UL>
 
 <P><STRONG><a name="[53]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setGoal
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 </UL>
 
 <P><STRONG><a name="[4c]"></a>__aeabi_d2f</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, d2f.o(.text))
@@ -376,14 +376,14 @@ Global Symbols
 
 <P><STRONG><a name="[54]"></a>__aeabi_cfcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
 </UL>
 
 <P><STRONG><a name="[52]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfrcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setGoal
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 <LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
 </UL>
 
@@ -488,7 +488,7 @@ Global Symbols
 <P><STRONG><a name="[60]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(i.GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_io_init
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_io_init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
@@ -599,7 +599,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5f]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd))
-<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_io_init
+<BR><BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_io_init
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
@@ -665,7 +665,7 @@ Global Symbols
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_io_init
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_io_init
 </UL>
 
 <P><STRONG><a name="[67]"></a>TIM_ClearITPendingBit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_ClearITPendingBit))
@@ -712,7 +712,7 @@ Global Symbols
 <P><STRONG><a name="[50]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_SetCompare2))
 <BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_run_FastDecay
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;A4950_motor_brake
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 </UL>
 
 <P><STRONG><a name="[6d]"></a>TIM_TimeBaseInit</STRONG> (Thumb, 122 bytes, Stack size 0 bytes, stm32f10x_tim.o(i.TIM_TimeBaseInit))
@@ -768,8 +768,8 @@ Global Symbols
 <P><STRONG><a name="[5]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_it.o(i.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[77]"></a>VNH5180_io_init</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, motor_gpio.o(i.VNH5180_io_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = VNH5180_io_init &rArr; TIM4_PWM_Init &rArr; TIM_OC2Init
+<P><STRONG><a name="[77]"></a>VNH_io_init</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, motor_gpio.o(i.VNH_io_init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = VNH_io_init &rArr; TIM4_PWM_Init &rArr; TIM_OC2Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -778,8 +778,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_init
 </UL>
 
-<P><STRONG><a name="[78]"></a>VNH5180_motor_run</STRONG> (Thumb, 150 bytes, Stack size 32 bytes, motor_operate.o(i.VNH5180_motor_run))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VNH5180_motor_run &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[78]"></a>VNH_motor_run</STRONG> (Thumb, 150 bytes, Stack size 32 bytes, motor_operate.o(i.VNH_motor_run))
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = VNH_motor_run &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
@@ -815,21 +815,21 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[35]"></a>main</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; VNH5180_motor_run &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = main &rArr; VNH_motor_run &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart2_init
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_init
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_motor_run
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_motor_run
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P><STRONG><a name="[7e]"></a>motor_init</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, motor_operate.o(i.motor_init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = motor_init &rArr; VNH5180_io_init &rArr; TIM4_PWM_Init &rArr; TIM_OC2Init
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = motor_init &rArr; VNH_io_init &rArr; TIM4_PWM_Init &rArr; TIM_OC2Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH5180_io_init
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VNH_io_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>

@@ -21,7 +21,7 @@ float wheel_speed_goal;	/* 轮子目标速度 */
  */
 void motor_init(void)
 {
-	VNH5180_io_init();
+	VNH_io_init();
 	//as5600_init();	/* 初始化磁编码器 */
 	//PID_CONTROLLER(0.035,0.01,0.02,25);	/* 初始化PID控制器，包括定时器3 */
 }
@@ -79,11 +79,11 @@ void A4950_motor_brake(void)
 }
 
 /**
- *@function VNH5180 driver motor
+ *@function VNH driver motor
  *@param Duty_cycle
  *@return void
  */
-void VNH5180_motor_run(float Duty_cycle)
+void VNH_motor_run(float Duty_cycle)
 {
 	if(Duty_cycle > 0)
 	{
@@ -101,11 +101,11 @@ void VNH5180_motor_run(float Duty_cycle)
 }
 
 /**
- *@function VNH5180 motor brake
+ *@function VNH motor brake
  *@param void
  *@return void
  */
-void VNH5180_motor_brake()
+void VNH_motor_brake()
 {
 	INA = 1;
 	INB = 1;
