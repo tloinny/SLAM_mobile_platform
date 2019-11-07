@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=D2-2
+Added Pin To Net: NetName=GND Pin=D2-1
+Added Pin To Net: NetName=NetD2_2 Pin=D2-2
+Added Pin To Net: NetName=NetD2_2 Pin=R5-2
+Added Net: Name=NetD2_2
+Added Room: Name=LowerMachine_test_v3.0
