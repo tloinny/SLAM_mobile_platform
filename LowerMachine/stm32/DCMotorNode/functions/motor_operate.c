@@ -22,8 +22,9 @@ float wheel_speed_goal;	/* 轮子目标速度 */
 void motor_init(void)
 {
 	VNH_io_init();
-	//as5600_init();	/* 初始化磁编码器 */
+	as5600_init();	/* 初始化磁编码器 */
 	//PID_CONTROLLER(0.035,0.01,0.02,25);	/* 初始化PID控制器，包括定时器3 */
+	PID_CONTROLLER(0.0055,0.0001,0.001,2);	/* 初始化PID控制器，包括定时器3 */
 }
 
 /**

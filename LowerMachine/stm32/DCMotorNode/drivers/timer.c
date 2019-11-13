@@ -205,6 +205,13 @@ void TIM2_IRQHandler(void)
 				int noise_num = 0;
 				sample_times = 0;
 				BubbleSort(sample_log, max_st);
+//				for(int i=0;i<max_st;++i)
+//				{
+//					if(i != max_st-1)
+//					printf("%d,",sample_log[i]);
+//					else
+//						printf("%d\r\n",sample_log[i]);
+//				}
 				AngleDelta_middle = sample_log[max_st/2];
 				for(int i=0;i<max_st;++i)
 				{
@@ -254,10 +261,12 @@ void TIM3_IRQHandler(void)
 					PWM_output = -1;
 				}
 			}
-			A4950_motor_run_FastDecay(PWM_output);
+			//A4950_motor_run_FastDecay(PWM_output);
+			VNH_motor_run(PWM_output);
 		}else
 		{
-			A4950_motor_brake();
+			//A4950_motor_brake();
+			VNH_motor_brake();
 		}
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 	}

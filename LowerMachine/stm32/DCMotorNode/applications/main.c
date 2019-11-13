@@ -25,19 +25,15 @@ int main(void)
 	LED_Init();
 	uart2_init(256000);
 	motor_init();
-	//CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
-	LED0 = 1;
+	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
 		while(1)
 		{	
-			VNH_motor_run(-1);
-			//A4950_motor_run_FastDecay(1);
-			//A4950_motor_run_SlowDecay(1);
-//			if(Can_Receive_Msg(RecBuf.s) != 0)
-//			{
-//				printf("%f\r\n",RecBuf.f);
-//				wheel_speed_goal = RecBuf.f;
-//				matchMsg(&RecBuf);
-//			}
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				printf("%f\r\n",RecBuf.f);
+				wheel_speed_goal = RecBuf.f;
+				matchMsg(&RecBuf);
+			}
 		}
 }
 
