@@ -30,7 +30,6 @@ int main(void)
 		{	
 			if(Can_Receive_Msg(RecBuf.s) != 0)
 			{
-				printf("%f\r\n",RecBuf.f);
 				wheel_speed_goal = RecBuf.f;
 				matchMsg(&RecBuf);
 			}

@@ -30,17 +30,17 @@ int main(void)
 	M4_LED = 1;
 		while(1)
 		{
-			for(int i=-6000;i<6000;i+=1)
-			{
-				CAN_send_wheel_speed(i, slave_0);
-				delay_us(100);
-			}
-			for(int i=6000;i>-6000;i-=1)
-			{
-				CAN_send_wheel_speed(i, slave_0);
-				delay_us(100);
-			}
-				//CAN_send_wheel_speed(6000, slave_0);
+//			for(int i=-6000;i<6000;i+=1)
+//			{
+//				CAN_send_wheel_speed(i, slave_0);
+//				delay_us(100);
+//			}
+//			for(int i=6000;i>-6000;i-=1)
+//			{
+//				CAN_send_wheel_speed(i, slave_0);
+//				delay_us(100);
+//			}
+				CAN_send_wheel_speed(700, slave_0);
 //			USART_Commuincate();
 //			if(Can_Receive_Msg(RecBuf.s) != 0)
 //			{
