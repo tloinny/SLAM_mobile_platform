@@ -12,6 +12,9 @@ Section Cross References
     main.o(i.main) refers to delay.o(i.delay_ms) for delay_ms
     main.o(i.main) refers to master_can_protocol.o(i.CAN_Call) for CAN_Call
     main.o(i.main) refers to master_can_protocol.o(i.CAN_send_wheel_speed) for CAN_send_wheel_speed
+    main.o(i.main) refers to can.o(i.Can_Receive_Msg) for Can_Receive_Msg
+    main.o(i.main) refers to master_can_protocol.o(i.match_feedback) for match_feedback
+    main.o(i.main) refers to master_can_protocol.o(.data) for RecBuf
     inverse_solution.o(i.speed_inverse_solution) refers to f2d.o(.text) for __aeabi_f2d
     inverse_solution.o(i.speed_inverse_solution) refers to dmul.o(.text) for __aeabi_dmul
     inverse_solution.o(i.speed_inverse_solution) refers to fadd.o(.text) for __aeabi_fsub
@@ -250,7 +253,6 @@ Removing Unused input sections from the image.
     Removing inverse_solution.o(.bss), (28 bytes).
     Removing master_can_protocol.o(i.CAN_CallForFeedBack), (120 bytes).
     Removing master_can_protocol.o(i.CAN_distribute), (64 bytes).
-    Removing master_can_protocol.o(i.match_feedback), (156 bytes).
     Removing master_can_protocol.o(.bss), (16 bytes).
     Removing usart_communication.o(i.CheckRecBuf), (24 bytes).
     Removing usart_communication.o(i.ConvertRecInfo2Vector), (80 bytes).
@@ -735,7 +737,7 @@ Removing Unused input sections from the image.
     Removing d2f.o(.text), (56 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-488 unused section(s) (total 20490 bytes) removed from the image.
+487 unused section(s) (total 20334 bytes) removed from the image.
 
 ==============================================================================
 
@@ -745,32 +747,32 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
-    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
-    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     Libraries\CORE\core_cm3.c                0x00000000   Number         0  core_cm3.o ABSOLUTE
     Libraries\CORE\startup_stm32f10x_md.s    0x00000000   Number         0  startup_stm32f10x_md.o ABSOLUTE
     Libraries\STM32F10x_StdPeriph_Driver\src\misc.c 0x00000000   Number         0  misc.o ABSOLUTE
@@ -829,8 +831,8 @@ Image Symbol Table
     .text                                    0x08000124   Section        0  fadd.o(.text)
     .text                                    0x080001d4   Section        0  fmul.o(.text)
     .text                                    0x08000238   Section        0  ffixui.o(.text)
-    .text                                    0x08000260   Section        0  fepilogue.o(.text)
     .text                                    0x08000260   Section        0  iusefp.o(.text)
+    .text                                    0x08000260   Section        0  fepilogue.o(.text)
     .text                                    0x080002d0   Section       36  init.o(.text)
     i.BusFault_Handler                       0x080002f4   Section        0  stm32f10x_it.o(i.BusFault_Handler)
     i.CAN_Call                               0x080002f8   Section        0  master_can_protocol.o(i.CAN_Call)
@@ -893,6 +895,7 @@ Image Symbol Table
     i.delay_init                             0x0800154c   Section        0  delay.o(i.delay_init)
     i.delay_ms                               0x08001590   Section        0  delay.o(i.delay_ms)
     i.main                                   0x080015dc   Section        0  main.o(i.main)
+    i.match_feedback                         0x08001654   Section        0  master_can_protocol.o(i.match_feedback)
     .data                                    0x20000000   Section       48  master_can_protocol.o(.data)
     .data                                    0x20000030   Section        4  delay.o(.data)
     fac_us                                   0x20000030   Data           1  delay.o(.data)
@@ -1038,9 +1041,10 @@ Image Symbol Table
     clean_can_send_buf                       0x08001535   Thumb Code    18  master_can_protocol.o(i.clean_can_send_buf)
     delay_init                               0x0800154d   Thumb Code    50  delay.o(i.delay_init)
     delay_ms                                 0x08001591   Thumb Code    72  delay.o(i.delay_ms)
-    main                                     0x080015dd   Thumb Code    88  main.o(i.main)
-    Region$$Table$$Base                      0x08001640   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001660   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080015dd   Thumb Code   102  main.o(i.main)
+    match_feedback                           0x08001655   Thumb Code   134  master_can_protocol.o(i.match_feedback)
+    Region$$Table$$Base                      0x080016f0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001710   Number         0  anon$$obj.o(Region$$Table)
     slave                                    0x20000000   Data          24  master_can_protocol.o(.data)
     slave_num                                0x20000018   Data           1  master_can_protocol.o(.data)
     ready_num                                0x20000019   Data           1  master_can_protocol.o(.data)
@@ -1062,9 +1066,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000016c0, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001770, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001660, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001710, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1151,22 +1155,23 @@ Memory Map of the image
     0x08001534   0x08001534   0x00000018   Code   RO          160    i.clean_can_send_buf  master_can_protocol.o
     0x0800154c   0x0800154c   0x00000044   Code   RO          273    i.delay_init        delay.o
     0x08001590   0x08001590   0x0000004c   Code   RO          274    i.delay_ms          delay.o
-    0x080015dc   0x080015dc   0x00000064   Code   RO            1    i.main              main.o
-    0x08001640   0x08001640   0x00000020   Data   RO         3680    Region$$Table       anon$$obj.o
+    0x080015dc   0x080015dc   0x00000078   Code   RO            1    i.main              main.o
+    0x08001654   0x08001654   0x0000009c   Code   RO          161    i.match_feedback    master_can_protocol.o
+    0x080016f0   0x080016f0   0x00000020   Data   RO         3680    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001660, Size: 0x000004c8, Max: 0x00005000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001710, Size: 0x000004c8, Max: 0x00005000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08001660   0x00000030   Data   RW          163    .data               master_can_protocol.o
-    0x20000030   0x08001690   0x00000004   Data   RW          276    .data               delay.o
-    0x20000034   0x08001694   0x00000001   Data   RW          524    .data               dma_usart1_debug.o
-    0x20000035   0x08001695   0x00000014   Data   RW         2215    .data               stm32f10x_rcc.o
-    0x20000049   0x080016a9   0x00000003   PAD
-    0x2000004c   0x080016ac   0x00000014   Data   RW         3589    .data               system_stm32f10x.o
+    0x20000000   0x08001710   0x00000030   Data   RW          163    .data               master_can_protocol.o
+    0x20000030   0x08001740   0x00000004   Data   RW          276    .data               delay.o
+    0x20000034   0x08001744   0x00000001   Data   RW          524    .data               dma_usart1_debug.o
+    0x20000035   0x08001745   0x00000014   Data   RW         2215    .data               stm32f10x_rcc.o
+    0x20000049   0x08001759   0x00000003   PAD
+    0x2000004c   0x0800175c   0x00000014   Data   RW         3589    .data               system_stm32f10x.o
     0x20000060        -       0x00000064   Zero   RW          523    .bss                dma_usart1_debug.o
-    0x200000c4   0x080016c0   0x00000004   PAD
+    0x200000c4   0x08001770   0x00000004   PAD
     0x200000c8        -       0x00000400   Zero   RW         3629    STACK               startup_stm32f10x_md.o
 
 
@@ -1181,8 +1186,8 @@ Image component sizes
        144         22          0          4          0       1192   delay.o
        516         46          0          1        100       3121   dma_usart1_debug.o
        120         10          0          0          0        515   led.o
-       100         12          0          0          0     270455   main.o
-       252         32          0         48          0       4621   master_can_protocol.o
+       120         18          0          0          0     270467   main.o
+       408         54          0         48          0       5278   master_can_protocol.o
        172         22          0          0          0       2265   misc.o
         36          8        236          0       1024        820   startup_stm32f10x_md.o
       1264         28          0          0          0       5491   stm32f10x_can.o
@@ -1197,7 +1202,7 @@ Image component sizes
        168         16          0          0          0       1078   timer.o
 
     ----------------------------------------------------------------------
-      4944        344        268         96       1128     522292   Object Totals
+      5120        372        268         96       1128     522961   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         12          0          0          3          4          0   (incl. Padding)
 
@@ -1242,15 +1247,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5460        360        268         96       1128     520104   Grand Totals
-      5460        360        268         96       1128     520104   ELF Image Totals
-      5460        360        268         96          0          0   ROM Totals
+      5636        388        268         96       1128     520721   Grand Totals
+      5636        388        268         96       1128     520721   ELF Image Totals
+      5636        388        268         96          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 5728 (   5.59kB)
+    Total RO  Size (Code + RO Data)                 5904 (   5.77kB)
     Total RW  Size (RW Data + ZI Data)              1224 (   1.20kB)
-    Total ROM Size (Code + RO Data + RW Data)       5824 (   5.69kB)
+    Total ROM Size (Code + RO Data + RW Data)       6000 (   5.86kB)
 
 ==============================================================================
 

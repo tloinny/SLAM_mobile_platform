@@ -41,11 +41,12 @@ int main(void)
 //				delay_us(100);
 //			}
 				CAN_send_wheel_speed(700, slave_0);
+			
 //			USART_Commuincate();
-//			if(Can_Receive_Msg(RecBuf.s) != 0)
-//			{
-//				match_feedback(RecBuf.s);				
-//			}
+			if(Can_Receive_Msg(RecBuf.s) != 0)
+			{
+				match_feedback(RecBuf.s);				
+			}
 		}
 }
 
