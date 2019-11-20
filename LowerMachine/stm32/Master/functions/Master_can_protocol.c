@@ -53,7 +53,7 @@ u8 CAN_send_cmd(u8 cmd, u32 ID)
 {
 	u16 i;
 	u8 result;
-	for(i = 0; i < can_buf_size; ++i) *(SendBuf.s + i) = cmd;
+	for(i = 4; i < can_buf_size; ++i) *(SendBuf.s + i) = cmd;
 	result = Can_Send_Msg(SendBuf.s, can_buf_size, ID);
 	clean_can_send_buf();
 	return result;

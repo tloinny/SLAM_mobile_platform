@@ -28,8 +28,10 @@ int main(void)
 	M2_LED = 1;
 	M3_LED = 1;
 	M4_LED = 1;
+	float test_speed = 6000;
 		while(1)
 		{
+			//CAN_send_wheel_speed(test_speed, slave_0);
 //			for(int i=-6000;i<6000;i+=1)
 //			{
 //				CAN_send_wheel_speed(i, slave_0);
@@ -40,13 +42,15 @@ int main(void)
 //				CAN_send_wheel_speed(i, slave_0);
 //				delay_us(100);
 //			}
-				CAN_send_wheel_speed(700, slave_0);
-			
+//				CAN_send_wheel_speed(test_speed, slave_0);
+//				delay_ms(5000);
+//				CAN_send_wheel_speed(-1*test_speed, slave_0);
+//				delay_ms(5000);
 //			USART_Commuincate();
-			if(Can_Receive_Msg(RecBuf.s) != 0)
-			{
-				match_feedback(RecBuf.s);				
-			}
+//			if(Can_Receive_Msg(RecBuf.s) != 0)
+//			{
+//				match_feedback(RecBuf.s);				
+//			}
 		}
 }
 

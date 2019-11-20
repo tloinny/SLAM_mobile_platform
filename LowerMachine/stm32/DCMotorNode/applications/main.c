@@ -23,9 +23,11 @@ int main(void)
 	delay_init();
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	LED_Init();
-	uart2_init(256000);
-	motor_init();
 	CAN_Mode_Init(CAN_SJW_1tq,CAN_BS2_8tq,CAN_BS1_9tq,4,CAN_Mode_Normal);	/* 初始化CAN总线 */
+	uart2_init(256000);
+	printf(">>> Init CAN successed\r\n>>> Try to init the Motor function...\r\n");
+	motor_init();
+	printf(">>> ready to run!\r\n");
 		while(1)
 		{	
 			if(Can_Receive_Msg(RecBuf.s) != 0)

@@ -150,9 +150,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>48</LineNumber>
+          <LineNumber>25</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134223418</Address>
+          <Address>134223328</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -161,23 +161,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\applications\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\template\applications/main.c\48</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>43</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134223400</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>I:\WorkSpace\git鏈湴浠撳簱\SLAM_mobile_platform\LowerMachine\stm32\Master\applications\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\template\applications/main.c\43</Expression>
+          <Expression>\\template\applications/main.c\25</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

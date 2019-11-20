@@ -21,10 +21,13 @@ float wheel_speed_goal;	/* 轮子目标速度 */
  */
 void motor_init(void)
 {
+	printf(">>> try to init the motor dirver io...\r\n");
 	VNH_io_init();
+	printf(">>> init motor dirver io successed\r\n>>> try to init the encoder...\r\n");
 	as5600_init();	/* 初始化磁编码器 */
-	//PID_CONTROLLER(0.035,0.01,0.02,25);	/* 初始化PID控制器，包括定时器3 */
+	printf(">>> init encoder successed\r\n>>> try to init pid controller...\r\n");
 	PID_CONTROLLER(0.0055,0.0001,0.001,2);	/* 初始化PID控制器，包括定时器3 */
+	printf(">>> init pid controller successed\r\n");
 }
 
 /**
