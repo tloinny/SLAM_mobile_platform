@@ -32,16 +32,16 @@ int main(void)
 		while(1)
 		{
 			//CAN_send_wheel_speed(test_speed, slave_0);
-//			for(int i=-6000;i<6000;i+=1)
-//			{
-//				CAN_send_wheel_speed(i, slave_0);
-//				delay_us(100);
-//			}
-//			for(int i=6000;i>-6000;i-=1)
-//			{
-//				CAN_send_wheel_speed(i, slave_0);
-//				delay_us(100);
-//			}
+			for(int i=-6000;i<6000;i+=1)
+			{
+				CAN_send_wheel_speed(i, slave_0);
+				delay_us(90);
+			}
+			for(int i=6000;i>-6000;i-=1)
+			{
+				CAN_send_wheel_speed(i, slave_0);
+				delay_us(90);
+			}
 //				CAN_send_wheel_speed(test_speed, slave_0);
 //				delay_ms(5000);
 //				CAN_send_wheel_speed(-1*test_speed, slave_0);
